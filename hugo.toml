@@ -1,4 +1,4 @@
-baseURL = 'https://pabloalgo.github.io/pabloib/'
+baseURL = 'https://pabloib.com/'
 languageCode = 'es-es'
 title = 'Pablo IB | Tech Blog & Second Brain'
 theme = 'paper'
