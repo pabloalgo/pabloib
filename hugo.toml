@@ -1,0 +1,19 @@
+baseURL = 'https://pabloalgo.github.io/pabloib/'
+languageCode = 'es-es'
+title = "Pablo's Blog - Segunda Memoria Refinada"
+theme = 'paper'
+author = 'pablo'
+copyright = '© 2026 Pablo'
+
+[params]
+  description = "Blog personal de tecnología e IA - Segunda memoria refinada"
+  avatar = ''
+  math = true
+
+[services]
+  [services.disqus]
+    shortname = ''
+
+[taxonomies]
+  category = 'categories'
+  tag = 'tags'
