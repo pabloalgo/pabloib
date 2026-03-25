@@ -1,0 +1,117 @@
+{{- /* SEO Meta Tags */ -}}
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+{{- /* Title */ -}}
+{{- if .IsHome -}}
+  <title>{{ .Site.Title }}</title>
+{{- else -}}
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+{{- end -}}
+
+{{- /* Description */ -}}
+{{- $description := .Site.Params.description -}}
+{{- if .Description -}}
+  {{- $description = .Description -}}
+{{- else if .Summary -}}
+  {{- $description = .Summary -}}
+{{- end -}}
+<meta name="description" content="{{ $description | truncate 160 }}">
+
+{{- /* Keywords */ -}}
+{{- if .Keywords -}}
+  <meta name="keywords" content="{{ delimit .Keywords ", " }}">
+{{- else if .Params.tags -}}
+  <meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+{{- end -}}
+
+{{- /* Author */ -}}
+<meta name="author" content="{{ .Site.Params.author }}">
+
+{{- /* Canonical URL */ -}}
+<link rel="canonical" href="{{ .Permalink }}">
+
+{{- /* Open Graph */ -}}
+<meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ $description | truncate 200 }}">
+<meta property="og:image" content="{{ .Site.Params.image | absURL }}">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:locale" content="{{ .Site.LanguageCode }}">
+
+{{- if .IsPage -}}
+  <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+  <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}">
+  <meta property="article:author" content="{{ .Site.Params.author }}">
+  {{- range .Params.tags -}}
+    <meta property="article:tag" content="{{ . }}">
+  {{- end -}}
+{{- end -}}
+
+{{- /* Twitter Cards */ -}}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:description" content="{{ $description | truncate 200 }}">
+<meta name="twitter:image" content="{{ .Site.Params.image | absURL }}">
+
+{{- if .Site.Params.twitter -}}
+  <meta name="twitter:site" content="@{{ .Site.Params.twitter }}">
+  <meta name="twitter:creator" content="@{{ .Site.Params.twitter }}">
+{{- end -}}
+
+{{- /* Robots */ -}}
+{{- if .Params.noindex -}}
+  <meta name="robots" content="noindex, nofollow">
+{{- else -}}
+  <meta name="robots" content="index, follow">
+{{- end -}}
+
+{{- /* JSON-LD Structured Data */ -}}
+{{- if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ .Site.Title }}",
+  "url": "{{ .Site.BaseURL }}",
+  "description": "{{ .Site.Params.description }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}",
+    "url": "{{ .Site.BaseURL }}about/",
+    "sameAs": {{ .Site.Params.jsonld.sameAs | jsonify }}
+  }
+}
+</script>
+{{- else if .IsPage -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ .Site.Params.author }}"
+  },
+  "description": "{{ $description | truncate 160 }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  }
+  {{- if .Params.categories -}}
+  ,"articleSection": "{{ index .Params.categories 0 }}"
+  {{- end -}}
+  {{- if .Params.tags -}}
+  ,"keywords": "{{ delimit .Params.tags ", " }}"
+  {{- end -}}
+}
+</script>
+{{- end -}}
+
+{{- /* RSS */ -}}
+<link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }}">

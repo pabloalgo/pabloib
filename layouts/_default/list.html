@@ -1,0 +1,75 @@
+{{ define "head" }}
+  {{ partial "head.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<section class="min-h-screen py-12 px-8">
+  <div class="max-w-4xl mx-auto">
+    
+    {{- /* Section Header */ -}}
+    <header class="mb-12">
+      <h1 class="text-4xl font-bold mb-4">{{ .Title }}</h1>
+      {{- if .Description -}}
+      <p class="text-xl text-gray-600 dark:text-gray-400">{{ .Description }}</p>
+      {{- end -}}
+    </header>
+
+    {{- /* Posts Grid */ -}}
+    <div class="grid gap-8 md:grid-cols-2">
+      {{- range .Pages -}}
+      <article class="post-card group p-6 bg-white dark:bg-gray-800 rounded-xl border border-gray-200 dark:border-gray-700 hover:border-blue-500 dark:hover:border-blue-400 transition-all hover:shadow-lg">
+        <div class="mb-3 flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+          <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+          {{- if .Params.categories -}}
+          <span>•</span>
+          <span class="category">{{ index .Params.categories 0 }}</span>
+          {{- end -}}
+          {{- if .Params.readingTime -}}
+          <span>•</span>
+          <span>{{ .Params.readingTime }} min</span>
+          {{- end -}}
+        </div>
+        
+        <h2 class="text-xl font-semibold mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <a href="{{ .Permalink }}" class="hover:underline">{{ .Title }}</a>
+        </h2>
+        
+        <p class="text-gray-600 dark:text-gray-400 text-sm line-clamp-2">
+          {{ .Summary | plainify | truncate 120 }}
+        </p>
+        
+        {{- if .Params.tags -}}
+        <div class="mt-4 flex flex-wrap gap-2">
+          {{- range first 3 .Params.tags -}}
+          <span class="text-xs px-2 py-1 bg-gray-100 dark:bg-gray-700 rounded">{{ . }}</span>
+          {{- end -}}
+        </div>
+        {{- end -}}
+      </article>
+      {{- end -}}
+    </div>
+
+    {{- /* Pagination */ -}}
+    {{- if gt .Paginator.TotalPages 1 -}}
+    <nav class="mt-12 flex justify-center gap-2">
+      {{- if .Paginator.HasPrev -}}
+      <a href="{{ .Paginator.Prev.URL }}" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        ← Anterior
+      </a>
+      {{- end -}}
+      
+      <span class="px-4 py-2 text-gray-600 dark:text-gray-400">
+        Página {{ .Paginator.PageNumber }} de {{ .Paginator.TotalPages }}
+      </span>
+      
+      {{- if .Paginator.HasNext -}}
+      <a href="{{ .Paginator.Next.URL }}" class="px-4 py-2 bg-gray-100 dark:bg-gray-800 rounded hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+        Siguiente →
+      </a>
+      {{- end -}}
+    </nav>
+    {{- end -}}
+
+  </div>
+</section>
+{{ end }}

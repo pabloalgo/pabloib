@@ -1,19 +1,83 @@
 baseURL = 'https://pabloalgo.github.io/pabloib/'
 languageCode = 'es-es'
-title = "Pablo's Blog - Segunda Memoria Refinada"
+title = 'Pablo IB | Tech Blog & Second Brain'
 theme = 'paper'
-author = 'pablo'
-copyright = '© 2026 Pablo'
+
+# SEO
+enableRobotsTXT = true
+canonifyURLs = true
+rssLimit = 20
 
 [params]
-  description = "Blog personal de tecnología e IA - Segunda memoria refinada"
-  avatar = ''
+  # Theme settings
+  color = 'linen'
+  name = 'Pablo IB'
+  bio = 'Desarrollador • Escritor • Eterno aprendiz'
+  github = 'pabloalgo'
+  rss = true
   math = true
+  disableHLJS = false
+  monoDarkIcon = true
 
-[services]
-  [services.disqus]
-    shortname = ''
+  # SEO & Social
+  description = 'Blog personal sobre tecnología, IA, desarrollo y productividad. Mi segunda memoria refinada.'
+  keywords = ['tecnología', 'ia', 'desarrollo', 'productividad', 'blog', 'programación']
+  author = 'Pablo IB'
+  image = '/images/og-image.png'
+  
+  # Social links
+  twitter = ''
+  linkedin = ''
+  instagram = ''
+  
+  # JSON-LD
+  [params.jsonld]
+    sameAs = [
+      'https://github.com/pabloalgo'
+    ]
 
+# Taxonomies
 [taxonomies]
   category = 'categories'
   tag = 'tags'
+
+# Menú
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = 'Inicio'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    identifier = 'blog'
+    name = 'Blog'
+    url = '/posts/'
+    weight = 2
+  [[menu.main]]
+    identifier = 'about'
+    name = 'Sobre mí'
+    url = '/about/'
+    weight = 3
+
+# Outputs
+[outputs]
+  home = ['HTML', 'RSS', 'JSON']
+  section = ['HTML', 'RSS']
+
+# Sitemap
+[sitemap]
+  changefreq = 'weekly'
+  filename = 'sitemap.xml'
+  priority = 0.5
+
+# Markup
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = false
+    noClasses = false
+    style = 'monokai'
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

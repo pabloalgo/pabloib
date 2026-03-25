@@ -28,3 +28,19 @@
 {"at":"2026-03-25T03:23:51.827Z","level":"info","message":"suggestion.turn.received","meta":{"turnId":"f0cb5479","status":"success","generationId":12}}
 {"at":"2026-03-25T03:24:03.758Z","level":"info","message":"suggestion.generated","meta":{"turnId":"f0cb5479","tokens":1900,"cost":0.00109802,"preview":"termina los artículos"}}
 {"at":"2026-03-25T03:24:52.591Z","level":"info","message":"steering.recorded","meta":{"classification":"changed_course","similarity":0.2000978473581213}}
+{"at":"2026-03-25T03:33:33.905Z","level":"info","message":"suggestion.turn.received","meta":{"turnId":"5f34b03b","status":"success","generationId":14}}
+{"at":"2026-03-25T03:33:35.771Z","level":"info","message":"suggestion.generated","meta":{"turnId":"5f34b03b","tokens":2108,"cost":0.00121962,"preview":"adelante"}}
+{"at":"2026-03-25T03:34:34.726Z","level":"info","message":"steering.recorded","meta":{"classification":"changed_course","similarity":0.10526315789473684}}
+{"at":"2026-03-25T03:35:47.967Z","level":"info","message":"suggestion.turn.received","meta":{"turnId":"debe62e3","status":"success","generationId":16}}
+{"at":"2026-03-25T03:35:52.738Z","level":"info","message":"suggestion.generated","meta":{"turnId":"debe62e3","tokens":1880,"cost":0.00057139,"preview":"Se ve bien"}}
+{"at":"2026-03-25T03:36:45.854Z","level":"info","message":"steering.recorded","meta":{"classification":"changed_course","similarity":0.5277777777777778}}
+{"at":"2026-03-25T03:40:18.162Z","level":"info","message":"suggestion.turn.received","meta":{"turnId":"d9088c55","status":"success","generationId":18}}
+{"at":"2026-03-25T03:40:23.752Z","level":"info","message":"suggestion.generated","meta":{"turnId":"d9088c55","tokens":2193,"cost":0.0022127999999999996,"preview":"prueba con otro theme más minimalista"}}
+{"at":"2026-03-25T03:45:01.381Z","level":"info","message":"steering.recorded","meta":{"classification":"changed_course","similarity":0.14195298372513562}}
+{"at":"2026-03-25T04:15:41.551Z","level":"info","message":"suggestion.turn.received","meta":{"turnId":"674c419d","status":"error","generationId":20}}
+{"at":"2026-03-25T04:15:41.569Z","level":"info","message":"suggestion.generated","meta":{"turnId":"674c419d","preview":"continue"}}
+{"at":"2026-03-25T04:16:06.976Z","level":"info","message":"suggestion.turn.received","meta":{"turnId":"150f578e","status":"error","generationId":21}}
+{"at":"2026-03-25T04:16:06.983Z","level":"debug","message":"stale.check.completed","meta":{"stale":false,"via":"turn_interval","interval":10}}
+{"at":"2026-03-25T04:16:06.988Z","level":"info","message":"suggestion.generated","meta":{"turnId":"150f578e","preview":"continue"}}
+{"at":"2026-03-25T04:16:50.645Z","level":"info","message":"suggestion.turn.received","meta":{"turnId":"7dc3c880","status":"error","generationId":22}}
+{"at":"2026-03-25T04:16:50.661Z","level":"info","message":"suggestion.generated","meta":{"turnId":"7dc3c880","preview":"continue"}}

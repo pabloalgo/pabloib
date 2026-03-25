@@ -1,0 +1,73 @@
+{{ define "head" }}
+  {{ partial "head.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<article class="min-h-screen py-12 px-8">
+  <div class="max-w-3xl mx-auto">
+    
+    {{- /* Post Header */ -}}
+    <header class="mb-12 text-center">
+      <div class="mb-4 flex items-center justify-center gap-2 text-sm text-gray-600 dark:text-gray-400">
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+        {{- if .Params.categories -}}
+        <span>•</span>
+        <span class="category px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-600 dark:text-blue-400 rounded">
+          {{ index .Params.categories 0 }}
+        </span>
+        {{- end -}}
+        {{- if .Params.readingTime -}}
+        <span>•</span>
+        <span>{{ .Params.readingTime }} min de lectura</span>
+        {{- end -}}
+      </div>
+      
+      <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">{{ .Title }}</h1>
+      
+      {{- if .Description -}}
+      <p class="text-xl text-gray-600 dark:text-gray-400">{{ .Description }}</p>
+      {{- end -}}
+    </header>
+
+    {{- /* Post Content */ -}}
+    <div class="prose prose-lg dark:prose-invert max-w-none">
+      {{ .Content }}
+    </div>
+
+    {{- /* Tags */ -}}
+    {{- if .Params.tags -}}
+    <footer class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-800">
+      <div class="flex flex-wrap gap-2">
+        {{- range .Params.tags -}}
+        <a href="{{ "/tags/" | relURL }}{{ . | urlize }}" class="px-3 py-1 text-sm bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+          #{{ . }}
+        </a>
+        {{- end -}}
+      </div>
+    </footer>
+    {{- end -}}
+
+    {{- /* Navigation */ -}}
+    <nav class="mt-12 flex justify-between items-center gap-4">
+      {{- with .PrevInSection -}}
+      <a href="{{ .Permalink }}" class="flex-1 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+        <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">← Anterior</div>
+        <div class="font-medium">{{ .Title }}</div>
+      </a>
+      {{- else -}}
+      <div class="flex-1"></div>
+      {{- end -}}
+      
+      {{- with .NextInSection -}}
+      <a href="{{ .Permalink }}" class="flex-1 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-right">
+        <div class="text-sm text-gray-600 dark:text-gray-400 mb-1">Siguiente →</div>
+        <div class="font-medium">{{ .Title }}</div>
+      </a>
+      {{- else -}}
+      <div class="flex-1"></div>
+      {{- end -}}
+    </nav>
+
+  </div>
+</article>
+{{ end }}
