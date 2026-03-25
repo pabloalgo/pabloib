@@ -1,0 +1,59 @@
+{
+  "seedVersion": 3,
+  "generatedAt": "2026-03-25T02:56:00.006Z",
+  "generatorVersion": "2026-03-11.2",
+  "seederPromptVersion": "2026-03-11.2",
+  "suggestionPromptVersion": "2026-03-11.1",
+  "configFingerprint": "sha256:1c8240f0803f32e5bd8896c2fabd508516dbefbc88d624d285ba5069a7cccf1a",
+  "projectIntentSummary": "pabloib es un blog personal enfocado en temas de tecnología e Inteligencia Artificial. El proyecto se encuentra actualmente en fase de planificación inicial, con el objetivo de establecer una plataforma de publicación de contenido. El blog es gestionado por Pablo y busca consolidar una presencia digital para compartir conocimientos y opiniones sobre el ámbito tecnológico, con especial énfasis en la IA.",
+  "objectivesSummary": "Los objetivos principales del proyecto incluyen: 1) Decidir la tecnología final para el blog, evaluando opciones como Astro o mantener el stack actual de WordPress + Elementor (ya se descartó WordPress Headless). 2) Diseñar la estructura del blog para organizar el contenido de manera efectiva. 3) Configurar el dominio para la publicación del sitio. 4) Migrar el contenido existente si la decisión final implica un cambio de plataforma. El estado actual indica que el proyecto está en las primeras etapas de definición técnica y arquitectónica.",
+  "constraintsSummary": "El proyecto presenta restricciones basadas en las decisiones tomadas durante la fase de evaluación: Se ha descartado explícitamente la opción de WordPress Headless. La opción actual (WordPress + Elementor) sigue en uso mientras se evalúa la migración a Astro. Esto sugiere una restricción de preferencia hacia soluciones modernas o frameworks basados en componentes (Astro) frente a arquitecturas headless más complejas o mantener la solución legacy. No se mencionan restricciones de presupuesto, tiempo o infraestructura específicas en la documentación disponible.",
+  "principlesGuidelinesSummary": "No se han definido principios, lineamientos o convenciones de desarrollo explícitos en el repositorio. Dado que el proyecto está en fase de planificación, no existe documentación sobre estándares de código, estilos de arquitectura, guías de contribución o metodologías de trabajo a seguir. La única guía presente es la lista de tareas pendientes en el README, que funciona como hoja de ruta inicial.",
+  "implementationStatusSummary": "El estado de implementación es 'Planificación'. El proyecto se inició el 2025-03-25 y actualmente se encuentra evaluando opciones tecnológicas. No existe código fuente, configuración de despliegue ni estructura de archivos de desarrollo en el repositorio más allá de la documentación básica. Todas las tareas listadas (decisión de tecnología, diseño de estructura, configuración de dominio y migración) están pendientes.",
+  "topObjectives": [
+    "Decidir la tecnología final para el blog (Astro vs mantener WordPress + Elementor)",
+    "Diseñar la estructura del blog",
+    "Configurar el dominio del sitio",
+    "Migrar contenido existente si se realiza cambio de plataforma"
+  ],
+  "constraints": [
+    "WordPress Headless ha sido descartado como opción tecnológica",
+    "WordPress + Elementor es la solución actual y funcional",
+    "La migración a Astro está pendiente de evaluación"
+  ],
+  "keyFiles": [
+    {
+      "path": "README.md",
+      "hash": "sha256:8cdad1fbee6220bd730d3f63698316467b75d3608eacdffc09fe8a2216207d7d",
+      "whyImportant": "Archivo principal que define la visión del proyecto como blog personal de tecnología e IA, establece el estado actual de planificación y lista las opciones tecnológicas consideradas y los próximos pasos.",
+      "category": "vision"
+    }
+  ],
+  "categoryFindings": {
+    "vision": {
+      "found": true,
+      "rationale": "El archivo README.md contiene la descripción del proyecto 'Blog personal de tecnología e IA', el estado actual (Planificación), la fecha de inicio y la lista de opciones tecnológicas consideradas. Esto constituye la visión de alto nivel del proyecto.",
+      "files": [
+        "README.md"
+      ]
+    },
+    "architecture": {
+      "found": false,
+      "rationale": "No existen archivos de configuración (package.json, tsconfig, astro.config, etc.), diagramas, ni documentación técnica que defina la arquitectura del sistema. El README solo menciona opciones consideradas (WordPress, Astro) pero no detalla ninguna arquitectura implementada o diseñada.",
+      "files": []
+    },
+    "principles_guidelines": {
+      "found": false,
+      "rationale": "No se encontraron archivos de convenciones (CONTRIBUTING.md, GUIDELINES.md), documentos de principios, archivos de configuración de linters (eslint, prettier) o任何 documentación que establezca principios de diseño o lineamientos de desarrollo.",
+      "files": []
+    }
+  },
+  "openQuestions": [
+    "¿Qué criterios se utilizarán para decidir entre Astro y mantener WordPress + Elementor?",
+    "¿Existe contenido existente que deba ser priorizado durante la migración?",
+    "¿Cuáles son los requisitos técnicos específicos o preferencias de stack tecnológico para el nuevo blog?"
+  ],
+  "reseedNotes": "El repositorio está extremadamente vacío, conteniendo solo un README.md y directorios ocultos de herramientas (.pi, .serena). No hay código fuente, configuración de proyecto ni documentación técnica profunda. La evidencia se limita enteramente al README. Se recomienda re-seedear una vez que se hayan tomado decisiones tecnológicas y se haya inicializado el proyecto con archivos de configuración (ej. package.json o configuración de Astro).",
+  "lastReseedReason": "initial_missing",
+  "lastChangedFiles": []
+}

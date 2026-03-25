@@ -1,0 +1,14 @@
+{
+  "stateVersion": 8,
+  "steeringHistory": [
+    {
+      "turnId": "8e31b1fa",
+      "suggestedPrompt": "Quiero definir la tecnología, comparando Astro con mi WordPress actual.",
+      "actualUserPrompt": "que te parece hugo? y en que sitios gratis lo podria albergar en github en cloudflare?",
+      "classification": "changed_course",
+      "similarity": 0.20382165605095542,
+      "timestamp": "2026-03-25T02:56:56.474Z"
+    }
+  ],
+  "turnsSinceLastStalenessCheck": 1
+}

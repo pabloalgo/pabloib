@@ -1,0 +1,30 @@
+{
+  "stateVersion": 8,
+  "steeringHistory": [
+    {
+      "turnId": "8e31b1fa",
+      "suggestedPrompt": "Quiero definir la tecnología, comparando Astro con mi WordPress actual.",
+      "actualUserPrompt": "que te parece hugo? y en que sitios gratis lo podria albergar en github en cloudflare?",
+      "classification": "changed_course",
+      "similarity": 0.20382165605095542,
+      "timestamp": "2026-03-25T02:56:56.474Z"
+    },
+    {
+      "turnId": "11cbb23b",
+      "suggestedPrompt": "vamos con todo lo anterior",
+      "actualUserPrompt": "en /home/pablo/docs/ lee el readme y ahi tengo varios articulos que usare en hugo",
+      "classification": "changed_course",
+      "similarity": 0.14018691588785046,
+      "timestamp": "2026-03-25T02:59:31.305Z"
+    },
+    {
+      "turnId": "5d6b9b84",
+      "suggestedPrompt": "haz todo lo anterior",
+      "actualUserPrompt": "lo primero seria crear el proyecto en github?",
+      "classification": "changed_course",
+      "similarity": 0.16853146853146855,
+      "timestamp": "2026-03-25T03:04:51.342Z"
+    }
+  ],
+  "turnsSinceLastStalenessCheck": 3
+}
