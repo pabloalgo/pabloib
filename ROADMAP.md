@@ -4,7 +4,7 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ---
 
-## 🎯 v2.1 - Funcionalidad Core (Próxima)
+## 🎯 v2.1 - Funcionalidad Core
 
 ### 🔴 Alta Prioridad
 
@@ -18,7 +18,7 @@ Plan de desarrollo y mejoras futuras del proyecto.
   - Filtrar artículos sin recargar página
   - Actualizar URL con parámetro `?category=`
 
-- [ ] **Página About personalizada**
+- [x] **Página About personalizada**
   - Bio completa con foto
   - Enlaces a redes sociales
   - Timeline de experiencia

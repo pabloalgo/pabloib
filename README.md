@@ -11,8 +11,16 @@
 - 🎨 **Diseño Editorial** - Inspirado en revistas técnicas modernas
 - 🌓 **Dark Mode** - Toggle con persistencia en localStorage
 - 📱 **Mobile First** - Bottom navigation optimizada para móvil
+- 🔍 **Búsqueda Client-Side** - Fuse.js para búsqueda instantánea
+- 🏷️ **Filtrado por Categorías** - Filtro interactivo sin recargar
+- 📄 **Paginación** - Navegación entre páginas (10 posts/página)
+- 🔗 **Artículos Relacionados** - Basados en tags compartidos
+- 📊 **Scroll Progress** - Barra de progreso de lectura
+- ⬆️ **Back to Top** - Botón flotante para volver arriba
+- 📋 **Copy Code Button** - Copiar código con un click
+- ⚡ **PWA Ready** - Service Worker + manifest para instalación
+- 🚀 **Prefetch Inteligente** - Precarga de páginas en hover
 - 🔍 **SEO Optimizado** - Meta tags, Open Graph, JSON-LD
-- ⚡ **Rendimiento** - Tailwind CDN + lazy loading preparado
 - 📰 **RSS Feed** - Sindicación automática
 
 ## 🛠️ Stack Tecnológico
@@ -31,22 +39,33 @@
 ```
 pabloib/
 ├── content/
-│   ├── posts/          # Artículos del blog (7 posts)
+│   ├── posts/          # Artículos del blog (8 posts)
 │   └── about.md        # Página About
 ├── layouts/
 │   ├── _default/
-│   │   ├── baseof.html # Template base + navegación
-│   │   ├── single.html # Páginas individuales
-│   │   └── list.html   # Listados (tags, categorías)
+│   │   ├── baseof.html      # Template base + navegación
+│   │   ├── single.html      # Páginas individuales + relacionados
+│   │   ├── list.html        # Listados (tags, categorías)
+│   │   └── index.json       # Índice de búsqueda JSON
 │   ├── partials/
-│   │   └── head.html   # Head con Tailwind config
-│   └── index.html      # Homepage
+│   │   ├── head.html        # Head con Tailwind + PWA manifest
+│   │   ├── pagination.html  # Sistema de paginación
+│   │   └── related.html     # Artículos relacionados
+│   └── index.html           # Homepage con paginación
 ├── assets/
-│   └── images/         # Imágenes procesables (Hugo Pipes)
+│   ├── css/
+│   │   └── input.css        # Tailwind CSS input
+│   └── images/              # Imágenes procesables (Hugo Pipes)
 ├── static/
-│   └── images/         # Imágenes estáticas (og-image, etc.)
+│   ├── js/
+│   │   └── main.js          # Búsqueda, filtros, scroll, prefetch
+│   ├── manifest.json        # PWA manifest
+│   ├── sw.js                # Service Worker
+│   └── images/              # Imágenes estáticas (og-image, etc.)
 ├── themes/paper/       # Theme base (submodule)
 ├── hugo.toml           # Configuración Hugo
+├── package.json        # NPM config (Tailwind build)
+├── tailwind.config.js  # Tailwind configuration
 ├── README.md           # Este archivo
 ├── CHANGELOG.md        # Historial de cambios
 └── ROADMAP.md          # Plan de desarrollo
@@ -76,13 +95,23 @@ hugo --minify
 
 ## 📝 Contenido
 
-- **7 artículos** sobre Pi Agent, IA y productividad
+- **8 artículos** sobre Pi Agent, IA y productividad
 - Categorías: Pi, Workflow, Desarrollo
 - Tags: pi, workflow, productividad, typescript, agentes
 
-## 🗺️ Roadmap
+## 🏷️ Versiones
 
-Ver [ROADMAP.md](./ROADMAP.md) para ver las mejoras planificadas.
+| Versión | Estado | Descripción |
+|---------|--------|-------------|
+| v2.0 | ✅ Completado | Rediseño "Architectural Editor" + Tailwind |
+| v2.1 | ✅ Completado | Búsqueda, filtros, copy code, about page |
+| v2.2 | ✅ Completado | Paginación, relacionados, scroll progress, back to top |
+| v2.5 | ✅ Completado | PWA, Service Worker, prefetch, Tailwind local |
+| v2.3 | 📋 Planificado | SEO: OG images, Schema.org ampliado |
+| v2.4 | 📋 Planificado | Comentarios, newsletter |
+| v3.0 | 💭 Visión | Nuevas secciones: proyectos, /now |
+
+Ver [ROADMAP.md](./ROADMAP.md) para detalles completos.
 
 ## 📜 Changelog
 
