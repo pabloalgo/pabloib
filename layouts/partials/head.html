@@ -68,50 +68,208 @@
   <meta name="robots" content="index, follow">
 {{- end -}}
 
-{{- /* JSON-LD Structured Data */ -}}
-{{- if .IsHome -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "{{ .Site.Title }}",
-  "url": "{{ .Site.BaseURL }}",
-  "description": "{{ .Site.Params.description }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ .Site.Params.author }}",
-    "url": "{{ .Site.BaseURL }}about/",
-    "sameAs": {{ .Site.Params.jsonld.sameAs | jsonify }}
-  }
-}
-</script>
-{{- else if .IsPage -}}
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "{{ .Title }}",
-  "url": "{{ .Permalink }}",
-  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}",
-  "author": {
-    "@type": "Person",
-    "name": "{{ .Site.Params.author }}"
-  },
-  "description": "{{ $description | truncate 160 }}",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "{{ .Permalink }}"
-  }
-  {{- if .Params.categories -}}
-  ,"articleSection": "{{ index .Params.categories 0 }}"
-  {{- end -}}
-  {{- if .Params.tags -}}
-  ,"keywords": "{{ delimit .Params.tags ", " }}"
-  {{- end -}}
-}
-</script>
-{{- end -}}
-
 {{- /* RSS */ -}}
 <link rel="alternate" type="application/rss+xml" href="{{ "index.xml" | absURL }}" title="{{ .Site.Title }}">
+
+{{- /* Fonts - Editorial Design */ -}}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Plus+Jakarta+Sans:wght@700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+{{- /* Tailwind CSS CDN */ -}}
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-variant": "#dae2fd",
+          "surface-container-highest": "#dae2fd",
+          "inverse-surface": "#283044",
+          "on-tertiary-fixed": "#2d1600",
+          "surface-tint": "#006780",
+          "tertiary-fixed": "#ffdcbf",
+          "primary-fixed-dim": "#6cd3f7",
+          "surface-container": "#eaedff",
+          "primary-container": "#007f9d",
+          "outline": "#6e797e",
+          "on-background": "#131b2e",
+          "surface-container-low": "#f2f3ff",
+          "on-primary-container": "#fafdff",
+          "on-surface": "#131b2e",
+          "on-tertiary-fixed-variant": "#6a3b00",
+          "surface": "#faf8ff",
+          "error-container": "#ffdad6",
+          "primary": "#00647c",
+          "on-primary-fixed-variant": "#004e61",
+          "on-primary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-secondary-container": "#466977",
+          "inverse-on-surface": "#eef0ff",
+          "surface-container-lowest": "#ffffff",
+          "on-primary-fixed": "#001f28",
+          "on-tertiary-container": "#fffbff",
+          "secondary-fixed": "#c3e8f8",
+          "secondary": "#406370",
+          "tertiary": "#894e00",
+          "background": "#faf8ff",
+          "surface-dim": "#d2d9f4",
+          "primary-fixed": "#b7eaff",
+          "on-secondary": "#ffffff",
+          "inverse-primary": "#6cd3f7",
+          "tertiary-fixed-dim": "#ffb873",
+          "outline-variant": "#bdc8ce",
+          "on-tertiary": "#ffffff",
+          "tertiary-container": "#a86516",
+          "on-secondary-fixed-variant": "#284b58",
+          "secondary-container": "#c3e8f8",
+          "on-error-container": "#93000a",
+          "on-surface-variant": "#3e484d",
+          "on-secondary-fixed": "#001f28",
+          "surface-container-high": "#e2e7ff",
+          "secondary-fixed-dim": "#a8ccdb",
+          "surface-bright": "#faf8ff",
+          "on-error": "#ffffff"
+        },
+        fontFamily: {
+          "headline": ["Plus Jakarta Sans", "sans-serif"],
+          "body": ["Inter", "sans-serif"],
+          "label": ["Space Grotesk", "sans-serif"]
+        },
+        borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+      },
+    },
+  }
+</script>
+
+<style>
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  body {
+    min-height: max(884px, 100dvh);
+  }
+  
+  /* Dark mode color overrides */
+  .dark body {
+    background-color: #0f172a;
+    color: #f1f5f9;
+  }
+  .dark .bg-background { background-color: #0f172a !important; }
+  .dark .bg-surface { background-color: #1e293b !important; }
+  .dark .bg-surface-container-low { background-color: #1e293b !important; }
+  .dark .bg-surface-container { background-color: #334155 !important; }
+  .dark .bg-surface-container-high { background-color: #475569 !important; }
+  .dark .bg-surface-container-highest { background-color: #475569 !important; }
+  .dark .bg-surface-container-lowest { background-color: #0f172a !important; }
+  .dark .text-on-background { color: #f1f5f9 !important; }
+  .dark .text-on-surface { color: #f1f5f9 !important; }
+  .dark .text-on-surface-variant { color: #94a3b8 !important; }
+  .dark .text-outline { color: #64748b !important; }
+  .dark .text-outline-variant { color: #475569 !important; }
+  .dark .border-outline-variant\/20 { border-color: rgba(71, 85, 105, 0.2) !important; }
+  .dark .border-outline-variant\/40 { border-color: rgba(71, 85, 105, 0.4) !important; }
+  .dark .prose h2, .dark .prose h3 { color: #f1f5f9 !important; }
+  .dark .prose code { background: #334155 !important; }
+  .dark .prose blockquote { color: #94a3b8 !important; }
+</style>
+
+{{- /* Custom CSS for prose content */ -}}
+<style>
+  .prose {
+    line-height: 1.75;
+  }
+  .prose h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 800;
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: #131b2e;
+  }
+  .prose h3 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: #131b2e;
+  }
+  .prose p {
+    margin-bottom: 1.5rem;
+  }
+  .prose a {
+    color: #00647c;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .prose a:hover {
+    color: #007f9d;
+  }
+  .prose code {
+    font-family: 'Space Grotesk', monospace;
+    font-size: 0.875em;
+    background: #eaedff;
+    padding: 0.2em 0.4em;
+    border-radius: 0.25rem;
+  }
+  .prose pre {
+    background: #131b2e;
+    color: #faf8ff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+  }
+  .prose pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+  }
+  .prose ul, .prose ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  .prose blockquote {
+    border-left: 4px solid #00647c;
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: #3e484d;
+    margin: 1.5rem 0;
+  }
+  .prose img {
+    border-radius: 0.5rem;
+    margin: 1.5rem 0;
+  }
+  .prose hr {
+    border: none;
+    border-top: 1px solid #bdc8ce;
+    margin: 2rem 0;
+  }
+</style>
+
+{{- /* Theme color */ -}}
+<meta name="theme-color" content="#00647c" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: dark)">
+
+{{- /* PWA */ -}}
+<link rel="manifest" href="/manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+{{- /* Favicon */ -}}
+<link rel="icon" href="{{ .Site.Params.favicon | default `favicon.ico` | absURL }}">
+<link rel="apple-touch-icon" href="{{ .Site.Params.appleTouchIcon | default `apple-touch-icon.png` | absURL }}">
+
+{{- /* Generator */ -}}
+{{- hugo.Generator -}}
+
+{{- /* Main JS */ -}}
+<script src="/js/main.js" defer></script>

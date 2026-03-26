@@ -1,0 +1,65 @@
+{{- /* Paginación estilo editorial */ -}}
+{{ $paginator := .Paginator }}
+
+{{ if gt $paginator.TotalPages 1 }}
+<nav class="flex justify-center items-center gap-2 mt-12" aria-label="Navegación de páginas">
+  
+  {{- /* Página anterior */ -}}
+  {{ if $paginator.HasPrev }}
+    <a href="{{ $paginator.Prev.URL }}" class="flex items-center gap-1 px-4 py-2 bg-surface-container-highest text-on-surface-variant font-label text-sm uppercase tracking-widest rounded-full hover:bg-surface-container-high transition-colors">
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+      Anterior
+    </a>
+  {{ else }}
+    <span class="flex items-center gap-1 px-4 py-2 bg-surface-container-highest/50 text-outline font-label text-sm uppercase tracking-widest rounded-full cursor-not-allowed">
+      <span class="material-symbols-outlined text-base">arrow_back</span>
+      Anterior
+    </span>
+  {{ end }}
+
+  {{- /* Números de página */ -}}
+  <div class="flex items-center gap-1">
+    {{ $currentPage := $paginator.PageNumber }}
+    {{ $totalPages := $paginator.TotalPages }}
+    
+    {{ range $paginator.Pagers }}
+      {{ if eq . $paginator }}
+        <span class="w-10 h-10 flex items-center justify-center bg-primary-container text-on-primary-container font-headline font-bold rounded-full">
+          {{ .PageNumber }}
+        </span>
+      {{ else if or (eq .PageNumber 1) (eq .PageNumber $totalPages) }}
+        <a href="{{ .URL }}" class="w-10 h-10 flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-headline font-bold rounded-full hover:bg-surface-container-high transition-colors">
+          {{ .PageNumber }}
+        </a>
+      {{ else if and (ge .PageNumber (sub $currentPage 1)) (le .PageNumber (add $currentPage 1)) }}
+        <a href="{{ .URL }}" class="w-10 h-10 flex items-center justify-center bg-surface-container-highest text-on-surface-variant font-headline font-bold rounded-full hover:bg-surface-container-high transition-colors">
+          {{ .PageNumber }}
+        </a>
+      {{ else if eq .PageNumber 2 }}
+        <span class="px-2 text-outline">...</span>
+      {{ else if eq .PageNumber (sub $totalPages 1) }}
+        <span class="px-2 text-outline">...</span>
+      {{ end }}
+    {{ end }}
+  </div>
+
+  {{- /* Página siguiente */ -}}
+  {{ if $paginator.HasNext }}
+    <a href="{{ $paginator.Next.URL }}" class="flex items-center gap-1 px-4 py-2 bg-surface-container-highest text-on-surface-variant font-label text-sm uppercase tracking-widest rounded-full hover:bg-surface-container-high transition-colors">
+      Siguiente
+      <span class="material-symbols-outlined text-base">arrow_forward</span>
+    </a>
+  {{ else }}
+    <span class="flex items-center gap-1 px-4 py-2 bg-surface-container-highest/50 text-outline font-label text-sm uppercase tracking-widest rounded-full cursor-not-allowed">
+      Siguiente
+      <span class="material-symbols-outlined text-base">arrow_forward</span>
+    </span>
+  {{ end }}
+  
+</nav>
+
+{{- /* Info de páginas */ -}}
+<p class="text-center mt-4 font-body text-sm text-on-surface-variant">
+  Página {{ $paginator.PageNumber }} de {{ $paginator.TotalPages }}
+</p>
+{{ end }}

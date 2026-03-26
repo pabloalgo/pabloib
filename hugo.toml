@@ -8,6 +8,9 @@ enableRobotsTXT = true
 canonifyURLs = true
 rssLimit = 20
 
+[pagination]
+  pagerSize = 10
+
 [params]
   # Theme settings
   color = 'linen'

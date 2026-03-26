@@ -1,70 +1,111 @@
-<!doctype html>
-<html lang="{{ .Site.LanguageCode }}" class="not-ready lg:text-base">
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "es" }}">
 <head>
-  {{- block "head" . }}{{ end -}}
-  
-  {{- /* Theme Styles (Safe access) */ -}}
-  {{- $style := resources.Get "css/main.css" | default (resources.Get "scss/main.scss") -}}
-  {{- if $style -}}
-    {{- $processed := $style | resources.Minify | resources.Fingerprint -}}
-    <link rel="stylesheet" href="{{ $processed.Permalink }}" integrity="{{ $processed.Data.Integrity }}">
-  {{- end -}}
-  
-  {{- /* Favicon */ -}}
-  <link rel="icon" href="/favicon.ico">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-  {{- /* Generator */ -}}
-  {{ hugo.Generator }}
+  {{- block "head" . }}{{- end }}
+  {{- /* Dark mode script - runs before page renders to prevent flash */ -}}
+  <script>
+    (function() {
+      const getTheme = () => {
+        if (localStorage.getItem('theme')) return localStorage.getItem('theme');
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      };
+      if (getTheme() === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
 </head>
-
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-white antialiased">
-  <header class="sticky top-0 z-50 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
-    <nav class="max-w-4xl mx-auto px-8 h-16 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-        {{ .Site.Params.name }}
-      </a>
-      
-      <div class="flex items-center gap-6">
-        {{- range .Site.Menus.main -}}
-        <a href="{{ .URL }}" class="text-sm font-medium text-gray-600 hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400 transition-colors">
-          {{ .Name }}
+<body class="bg-background font-body text-on-background antialiased pb-24">
+  
+  {{- /* TopAppBar Shell */ -}}
+  <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
+    {{- /* Scroll Progress Bar */ -}}
+    <div id="scroll-progress" class="absolute bottom-0 left-0 h-1 bg-primary transition-all duration-150" style="width: 0%"></div>
+    <div class="flex items-center justify-between px-5 h-16 w-full max-w-screen-xl mx-auto">
+      <div class="flex items-center gap-4">
+        <a href="{{ .Site.BaseURL }}" class="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+          <span class="material-symbols-outlined text-cyan-700 dark:text-cyan-400">menu</span>
         </a>
-        {{- end -}}
-        
-        <button id="theme-toggle" class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle dark mode">
-          <svg class="w-5 h-5 hidden dark:block" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
-          </svg>
-          <svg class="w-5 h-5 block dark:hidden" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
-          </svg>
+        <a href="{{ .Site.BaseURL }}">
+          <h1 class="text-xl font-extrabold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">Pablo IB</h1>
+        </a>
+      </div>
+      <div class="flex items-center gap-1">
+        {{- /* Dark Mode Toggle */ -}}
+        <button id="theme-toggle" class="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full" aria-label="Toggle dark mode">
+          <span class="material-symbols-outlined text-cyan-700 dark:text-cyan-400" id="theme-icon">dark_mode</span>
+        </button>
+        <button class="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+          <span class="material-symbols-outlined text-cyan-700 dark:text-cyan-400">search</span>
         </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  {{ block "main" . }}{{ end }}
-
-  <footer class="border-t border-gray-200 dark:border-gray-800 py-12 px-8">
-    <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="text-sm text-gray-600 dark:text-gray-400">
-        © {{ now.Year }} {{ .Site.Params.name }}. Hecho con 
-        <a href="https://gohugo.io" class="text-blue-600 dark:text-blue-400 hover:underline">Hugo</a>
-      </div>
-    </div>
-  </footer>
-
+  {{- /* Dark Mode Toggle Script */ -}}
   <script>
-    const toggle = document.getElementById('theme-toggle');
-    const html = document.documentElement;
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-      html.classList.add('dark');
-    }
-    toggle.addEventListener('click', () => {
-      html.classList.toggle('dark');
-      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    
+    // Update icon based on current theme
+    const updateIcon = () => {
+      const isDark = document.documentElement.classList.contains('dark');
+      themeIcon.textContent = isDark ? 'light_mode' : 'dark_mode';
+    };
+    
+    // Initial icon update
+    updateIcon();
+    
+    // Toggle theme on button click
+    themeToggle.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcon();
     });
   </script>
+
+  <main class="pt-20 px-5 space-y-12 max-w-screen-xl mx-auto">
+    {{- block "main" . }}{{- end }}
+  </main>
+
+  {{- /* BottomNavBar Shell */ -}}
+  <nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 pb-safe h-20 bg-white dark:bg-slate-950 border-t border-slate-100 dark:border-slate-800 shadow-[0_-4px_20px_0_rgba(19,27,46,0.05)] z-50 rounded-t-2xl">
+    <a class="flex flex-col items-center justify-center text-cyan-700 dark:text-cyan-400 bg-cyan-50/50 dark:bg-cyan-950/30 rounded-xl px-3 py-1 transition-transform active:scale-90" href="{{ .Site.BaseURL }}">
+      <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">article</span>
+      <span class="font-label text-[10px] uppercase tracking-widest mt-1">Feed</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 px-3 py-1 hover:text-slate-900 dark:hover:text-slate-100 transition-transform active:scale-90" href="{{ .Site.BaseURL }}posts/">
+      <span class="material-symbols-outlined">grid_view</span>
+      <span class="font-label text-[10px] uppercase tracking-widest mt-1">Archivos</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 px-3 py-1 hover:text-slate-900 dark:hover:text-slate-100 transition-transform active:scale-90" href="{{ .Site.BaseURL }}tags/">
+      <span class="material-symbols-outlined">local_offer</span>
+      <span class="font-label text-[10px] uppercase tracking-widest mt-1">Tags</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-600 px-3 py-1 hover:text-slate-900 dark:hover:text-slate-100 transition-transform active:scale-90" href="{{ .Site.BaseURL }}about/">
+      <span class="material-symbols-outlined">person</span>
+      <span class="font-label text-[10px] uppercase tracking-widest mt-1">About</span>
+    </a>
+  </nav>
+
+  {{- /* Back to Top Button */ -}}
+  <button id="back-to-top" class="fixed bottom-24 right-5 z-40 p-3 bg-primary text-on-primary rounded-full shadow-lg opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:bg-primary/90" aria-label="Volver arriba">
+    <span class="material-symbols-outlined">keyboard_arrow_up</span>
+  </button>
+
+  {{- /* Service Worker Registration */ -}}
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then((registration) => {
+            console.log('[SW] Registered:', registration.scope);
+          })
+          .catch((error) => {
+            console.log('[SW] Registration failed:', error);
+          });
+      });
+    }
+  </script>
+
 </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "name": "pabloib-blog",
+  "version": "2.2.0",
+  "description": "Blog personal de Pablo IB sobre tecnología, IA y productividad",
+  "scripts": {
+    "dev:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --watch",
+    "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./assets/css/output.css --minify",
+    "dev:hugo": "hugo server --buildDrafts -D",
+    "dev": "npm run dev:css & npm run dev:hugo",
+    "build": "npm run build:css && hugo --minify",
+    "clean": "rm -rf public resources assets/css/output.css"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "keywords": ["hugo", "blog", "tailwindcss"],
+  "author": "Pablo IB",
+  "license": "MIT"
+}

@@ -1,0 +1,58 @@
+{{- /* Artículos relacionados basados en tags */ -}}
+{{ $current := . }}
+{{ $currentTags := .Params.tags | default (slice) }}
+{{ $related := slice }}
+
+{{ if $currentTags }}
+  {{- /* Buscar artículos con tags compartidos */ -}}
+  {{ range where .Site.RegularPages "Type" "page" }}
+    {{ if and (ne .Permalink $current.Permalink) (eq .Section "posts") }}
+      {{ $score := 0 }}
+      {{ $pageTags := .Params.tags | default (slice) }}
+      {{ range $tag := $currentTags }}
+        {{ if in $tag $pageTags }}
+          {{ $score = add $score 1 }}
+        {{ end }}
+      {{ end }}
+      {{ if gt $score 0 }}
+        {{ $related = $related | append (dict "page" . "score" $score) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+
+  {{- /* Ordenar por score y tomar los 3 mejores */ -}}
+  {{ $related = sort $related "score" "desc" | first 3 }}
+{{ end }}
+
+{{ if $related }}
+<section class="mt-16 pt-12 border-t border-outline-variant/20">
+  <h2 class="text-xl font-headline font-bold text-on-surface mb-8">
+    Artículos relacionados
+  </h2>
+  
+  <div class="grid md:grid-cols-3 gap-6">
+    {{ range $related }}
+      {{ $page := .page }}
+      <a href="{{ $page.Permalink }}" class="group block p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+        
+        <div class="flex items-center gap-2 mb-2">
+          <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">
+            {{ if $page.Params.categories }}{{ index $page.Params.categories 0 }}{{ else }}Blog{{ end }}
+          </span>
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <span class="font-label text-[10px] uppercase tracking-widest text-outline">{{ $page.ReadingTime }} min</span>
+        </div>
+        
+        <h3 class="font-headline font-bold text-on-surface group-hover:text-primary transition-colors line-clamp-2">
+          {{ $page.Title }}
+        </h3>
+        
+        <p class="text-sm font-body text-on-surface-variant mt-2 line-clamp-2">
+          {{ $page.Summary | plainify | truncate 80 }}
+        </p>
+        
+      </a>
+    {{ end }}
+  </div>
+</section>
+{{ end }}
