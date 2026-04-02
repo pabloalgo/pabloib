@@ -152,14 +152,14 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ## 📊 Estado del Progreso
 
-| Versión | Estado | Fecha Estimada |
-|---------|--------|----------------|
+| Versión | Estado | Fecha |
+|---------|--------|-------|
 | v2.0 | ✅ Completado | 2026-03-26 |
 | v2.1 | ✅ Completado | 2026-03-26 |
 | v2.2 | ✅ Completado | 2026-03-26 |
-| v2.3 | 📋 Planificado | TBD |
-| v2.4 | 💡 Idea | TBD |
 | v2.5 | ✅ Completado | 2026-03-26 |
+| v2.3 | 📋 Planificado | TBD |
+| v2.4 | 📋 Planificado | TBD |
 | v3.0 | 💭 Visión | TBD |
 
 ---
@@ -173,4 +173,4 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ---
 
-*Última actualización: 2026-03-26*
+*Última actualización: 2026-04-02*

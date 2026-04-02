@@ -7,6 +7,12 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 
 ---
 
+## [Unreleased]
+
+*No hay cambios pendientes.*
+
+---
+
 ## [2.2.0] - 2026-03-26
 
 ### ✨ Added
@@ -115,3 +121,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 [1.2.0]: https://github.com/pabloalgo/pabloib/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/pabloalgo/pabloib/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/pabloalgo/pabloib/releases/tag/v1.0.0
+
+---
+
+*Última actualización: 2026-04-02*

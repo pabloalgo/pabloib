@@ -1,6 +1,8 @@
 # 🚀 Pablo IB - Blog Personal
 
 > Mi segunda memoria refinada. Blog sobre tecnología, IA y productividad.
+>
+> **Última actualización:** 2026-04-02
 
 ![Hugo](https://img.shields.io/badge/Hugo-v0.145-ff4081?logo=hugo&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4-38bdf8?logo=tailwindcss&logoColor=white)
@@ -27,7 +29,7 @@
 
 | Categoría | Tecnología |
 |-----------|------------|
-| **SSG** | Hugo v0.145 (extended) |
+| **SSG** | Hugo v0.159 (extended) |
 | **CSS** | Tailwind CSS v3.4 (CDN) |
 | **Fuentes** | Plus Jakarta Sans, Inter, Space Grotesk |
 | **Iconos** | Material SymbolsOutlined |
@@ -95,7 +97,7 @@ hugo --minify
 
 ## 📝 Contenido
 
-- **8 artículos** sobre Pi Agent, IA y productividad
+- **7 artículos** sobre Pi Agent, IA y productividad
 - Categorías: Pi, Workflow, Desarrollo
 - Tags: pi, workflow, productividad, typescript, agentes
 
@@ -123,4 +125,4 @@ MIT © Pablo IB
 
 ---
 
-*Hecho con ❤️ y [Hugo](https://gohugo.io)*
+*Hecho con ❤️ y [Hugo](https://gohugo.io) — *Última actualización: 2026-04-02*
