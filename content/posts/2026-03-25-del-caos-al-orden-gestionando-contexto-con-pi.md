@@ -28,7 +28,7 @@ Las sesiones de IA son como una pila de platos: pones uno, otro, otro... eventua
 Imagina esta sesión típica:
 
 ```
-09:00 - Empezas a trabajar en una feature
+09:00 - Empiezas a trabajar en una feature
 10:30 - Agregas funcionalidad A
 11:00 - Bug report, lo arreglas
 12:00 - Meeting, pausas
@@ -249,7 +249,7 @@ Pi tiene compaction automática que comprime contexto viejo.
 | **Volver atrás** | ❌ No | ✅ Sí (`/tag checkout`) |
 | **Mergear contextos** | ❌ No | ✅ Sí (`/branch merge`) |
 
-> 💡 **Tip:** Pi tiene pi-context extension que añade aún más features de gestión de contexto.
+> 💡 **Tip:** Pi tiene la extensión pi-context, que añade aún más funciones de gestión de contexto.
 
 ---
 
@@ -413,9 +413,9 @@ Pi tiene compaction automática que comprime contexto viejo.
 
 ## 🔗 Recursos
 
-- [pi-context](../03-extensions/pi-context.md) - Documentación completa
-- [pi-context Cheatsheet](../09-reference/pi-context-cheatsheet.md) - Referencia rápida
-- [Pi Context Skill](../06-skills/pi-context/SKILL.md) - Skill de gestión de contexto
+- [Por qué Pi cambió mi workflow de desarrollo](/posts/2026-03-23-pi-cambio-mi-workflow/) - Contexto general sobre Pi
+- [Ant Colony: cuando un agente no es suficiente](/posts/2026-03-25-ant-colony-cuando-un-agente-no-es-suficiente/) - Trabajo masivo con múltiples agentes
+- [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Flujo de troubleshooting y verificación
 
 ---
 
@@ -429,4 +429,4 @@ Pi tiene compaction automática que comprime contexto viejo.
 
 ---
 
-*Este artículo es parte de la serie [Pi Wiki](../README.md)*
+*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

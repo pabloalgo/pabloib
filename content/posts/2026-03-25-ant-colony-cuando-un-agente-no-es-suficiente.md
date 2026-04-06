@@ -150,7 +150,7 @@ Ant Colony es poderoso pero no es un martillo para todo clavo.
 | Refactor de 1 módulo | Pi directo | Ant Colony |
 | Migración masiva | Ant Colony | Pi directo |
 | 50 tests que escribir | Ant Colony | Pi directo |
-| Análisis profundo de códigobase | Ant Colony | Pi directo (o Serena) |
+| Análisis profundo de la base de código | Ant Colony | Pi directo (o Serena) |
 
 **Regla de oro:**
 - Tarea unitaria → Pi directo
@@ -310,10 +310,9 @@ Pi tiene otro sistema multi-agente: `pi-subagents` (de Nico).
 
 ## 🔗 Recursos
 
-- [Ant Colony - Documentación Completa](../02-tools/ant-colony/README.md) - Guía detallada
-- [Ant Colony - Cheatsheet](../02-tools/ant-colony/03-cheatsheet.md) - Referencia rápida
-- [Pi - Tutorial Principiante](../11-tutoriales/principiante/01-que-es-pi.md) - Empezar desde cero
-- [pi.dev/packages](https://buildwithpi.ai/packages) - Ecosistema de extensions
+- [Por qué Pi cambió mi workflow de desarrollo](/posts/2026-03-23-pi-cambio-mi-workflow/) - Contexto general sobre Pi
+- [Prompt engineering para agentes de código](/posts/2026-03-25-prompt-engineering-para-agentes-de-codigo/) - Cómo escribir mejores tareas
+- [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Verificación y corrección
 
 ---
 
@@ -327,4 +326,4 @@ Pi tiene otro sistema multi-agente: `pi-subagents` (de Nico).
 
 ---
 
-*Este artículo es parte de la serie [Pi Wiki](../README.md)*
+*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

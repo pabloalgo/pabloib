@@ -220,7 +220,7 @@ rename_symbol(name_path="X", new_name="Y")
 
 ---
 
-## 6. glimpsui
+## 6. glimpseui
 
 **Paquete:** `npm:glimpseui`
 
@@ -366,7 +366,7 @@ Nada que configurar. Se activa en cada sesión.
 
 ---
 
-## 🥇0 10. pi-studio
+## 10. pi-studio
 
 **Paquete:** `npm:pi-studio`
 
@@ -445,7 +445,7 @@ cp custom-footer.ts ~/.pi/agent/extensions/
 | pi-rewind | 40% | 10 min/semana |
 | pi-subagents | 30% | 1h/semana |
 | pi-serena-tools | 80% | 3h/semana |
-| glimpsui | 20% | 20 min/semana |
+| glimpseui | 20% | 20 min/semana |
 | onetool-pi | 85% | 1h/día |
 | pi-tidy-mcp-adapter | 5% | 30 min/mes |
 | pi-studio | 25% | 2h/semana |
@@ -458,7 +458,7 @@ cp custom-footer.ts ~/.pi/agent/extensions/
 ## En resumen
 
 1. **No instales por instalar** → si no lo usas en 50%+ de sesiones, desinstala
-2. **Mi stack de producción:** pi-context, pi-ask-user, pi-rewind, pi-subagents, pi-serena-tools, glimpsui, onetool-pi, pi-tidy-mcp-adapter, pi-studio, custom-footer.ts
+2. **Mi stack de producción:** pi-context, pi-ask-user, pi-rewind, pi-subagents, pi-serena-tools, glimpseui, onetool-pi, pi-tidy-mcp-adapter, pi-studio, custom-footer.ts
 3. **El costo de todas:** ~$0.05 - $0.10 por sesión
 4. **El ahorro:** ~8 horas/semana = ROI 100x
 5. **Mi regla de oro:** Si no me ahorra tiempo medible → fuera
@@ -467,9 +467,9 @@ cp custom-footer.ts ~/.pi/agent/extensions/
 
 ## 🔗 Recursos
 
-- [Extensions](../03-extensions/README.md) - Todas las extensiones disponibles
-- [pi.dev/packages](https://buildwithpi.ai/packages) - Marketplace de Pi
-- [Custom Extensions](../11-tutoriales/avanzado/03-custom-extension.md) - Crear tus propias extensiones
+- [Del caos al orden: gestionando contexto con Pi](/posts/2026-03-25-del-caos-al-orden-gestionando-contexto-con-pi/) - Cómo organizar sesiones largas
+- [Serena vs OneTool: ¿cuándo usar cada uno?](/posts/2026-03-25-serena-vs-onetool-cuando-usar-cada-uno/) - Integraciones y herramientas
+- [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Flujo de verificación
 
 ---
 
@@ -483,4 +483,4 @@ cp custom-footer.ts ~/.pi/agent/extensions/
 
 ---
 
-*Este artículo es parte de la serie [Pi Wiki](../README.md)*
+*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

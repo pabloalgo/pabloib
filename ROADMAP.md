@@ -61,9 +61,57 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ---
 
-## 🌟 v2.3 - Contenido & SEO
+## 🌟 v2.3 - Performance
 
-### 📈 SEO & Meta
+### ⚡ Optimizaciones
+
+- [x] **Tailwind build local**
+  - Migrar de CDN a build
+  - Reducir CSS de ~200KB a ~28KB
+  - PurgeCSS automático
+  - Plugins: forms, container-queries
+
+- [x] **Service Worker / PWA**
+  - Cache offline
+  - Instalable en móvil
+  - Actualizaciones automáticas
+  - Iconos SVG placeholder
+
+- [x] **Prefetch inteligente**
+  - Precargar links en hover
+  - Solo en desktop
+  - Mejora percepción de velocidad
+
+---
+
+## 🔒 v2.4 - Security Hardening
+
+### 🛡️ Seguridad
+
+- [x] **Security headers**
+  - `_headers` para Cloudflare Pages
+  - HSTS (1 año + preload)
+  - X-Frame-Options, X-Content-Type-Options
+  - Referrer-Policy, Permissions-Policy
+
+- [x] **Content Security Policy**
+  - CSP endurecido: solo `self` + cdn.jsdelivr.net
+  - Tailwind CDN removido de allowlist
+
+- [x] **SRI para recursos externos**
+  - Fuse.js con hash sha384
+  - Google Fonts con crossorigin
+
+- [x] **Hardening de contenido**
+  - `unsafe = false` en Goldmark renderer
+  - `baseURL` real de producción
+  - SVG placeholders (og-image, iconos PWA)
+
+---
+
+## 📈 v2.5 - Contenido & SEO
+
+### 📊 SEO & Meta
 
 - [ ] **Imágenes Open Graph dinámicas**
   - Generar OG images automáticamente
@@ -80,9 +128,13 @@ Plan de desarrollo y mejoras futuras del proyecto.
   - BreadcrumbList
   - Person schema en About
 
+- [ ] **Descripciones en posts**
+  - Agregar `description` a todo el front matter
+  - Mejorar snippets en buscadores
+
 ---
 
-## 💬 v2.4 - Interactividad
+## 💬 v2.6 - Interactividad
 
 ### 🗣️ Comunidad
 
@@ -100,27 +152,6 @@ Plan de desarrollo y mejoras futuras del proyecto.
   - Integración con Buttondown/ConvertKit
   - Formulario en footer
   - CTA en artículos populares
-
----
-
-## 🔧 v2.5 - Performance
-
-### ⚡ Optimizaciones
-
-- [x] **Tailwind build local**
-  - Migrar de CDN a build
-  - Reducir CSS de ~200KB a ~15KB
-  - PurgeCSS automático
-
-- [x] **Service Worker / PWA**
-  - Cache offline
-  - Instalable en móvil
-  - Actualizaciones automáticas
-
-- [x] **Prefetch inteligente**
-  - Precargar links en hover
-  - Solo en desktop
-  - Mejora percepción de velocidad
 
 ---
 
@@ -157,9 +188,10 @@ Plan de desarrollo y mejoras futuras del proyecto.
 | v2.0 | ✅ Completado | 2026-03-26 |
 | v2.1 | ✅ Completado | 2026-03-26 |
 | v2.2 | ✅ Completado | 2026-03-26 |
-| v2.5 | ✅ Completado | 2026-03-26 |
-| v2.3 | 📋 Planificado | TBD |
-| v2.4 | 📋 Planificado | TBD |
+| v2.3 | ✅ Completado | 2026-03-26 |
+| v2.4 | ✅ Completado | 2026-04-06 |
+| v2.5 | 📋 Planificado | TBD |
+| v2.6 | 📋 Planificado | TBD |
 | v3.0 | 💭 Visión | TBD |
 
 ---
@@ -173,4 +205,4 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ---
 
-*Última actualización: 2026-04-02*
+*Última actualización: 2026-04-06*

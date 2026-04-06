@@ -1,4 +1,4 @@
-baseURL = '/'
+baseURL = 'https://pabloib.com/'
 languageCode = 'es-es'
 title = 'Pablo IB | Tech Blog & Second Brain'
 theme = 'paper'
@@ -26,7 +26,7 @@ rssLimit = 20
   description = 'Blog personal sobre tecnología, IA, desarrollo y productividad. Mi segunda memoria refinada.'
   keywords = ['tecnología', 'ia', 'desarrollo', 'productividad', 'blog', 'programación']
   author = 'Pablo IB'
-  image = '/images/og-image.png'
+  image = '/images/og-image.svg'
   
   # Social links
   twitter = ''
@@ -83,4 +83,4 @@ rssLimit = 20
     style = 'monokai'
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
+      unsafe = false

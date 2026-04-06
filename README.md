@@ -2,10 +2,10 @@
 
 > Mi segunda memoria refinada. Blog sobre tecnología, IA y productividad.
 >
-> **Última actualización:** 2026-04-02
+> **Última actualización:** 2026-04-06
 
 ![Hugo](https://img.shields.io/badge/Hugo-v0.145-ff4081?logo=hugo&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4-38bdf8?logo=tailwindcss&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4%20(build%20local)-38bdf8?logo=tailwindcss&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## ✨ Características
@@ -29,8 +29,8 @@
 
 | Categoría | Tecnología |
 |-----------|------------|
-| **SSG** | Hugo v0.159 (extended) |
-| **CSS** | Tailwind CSS v3.4 (CDN) |
+| **SSG** | Hugo v0.159.2 (extended, vía npm) |
+| **CSS** | Tailwind CSS v3.4 (build local) |
 | **Fuentes** | Plus Jakarta Sans, Inter, Space Grotesk |
 | **Iconos** | Material SymbolsOutlined |
 | **Hosting** | GitHub Pages / Cloudflare Pages |
@@ -41,7 +41,7 @@
 ```
 pabloib/
 ├── content/
-│   ├── posts/          # Artículos del blog (8 posts)
+│   ├── posts/          # Artículos del blog (9 posts)
 │   └── about.md        # Página About
 ├── layouts/
 │   ├── _default/
@@ -84,20 +84,21 @@ cd pabloib
 git submodule update --init --recursive
 
 # Iniciar servidor de desarrollo
-hugo server --buildDrafts -D
+npm run dev
 
 # Build para producción
-hugo --minify
+npm run build
 ```
 
 ### Requisitos
 
-- Hugo v0.145+ (extended)
+- Node.js y npm
 - Git
+- Hugo extended v0.159.2 se descarga automáticamente vía los scripts de npm; no requiere instalación global
 
 ## 📝 Contenido
 
-- **7 artículos** sobre Pi Agent, IA y productividad
+- **9 artículos** sobre Pi Agent, IA y productividad
 - Categorías: Pi, Workflow, Desarrollo
 - Tags: pi, workflow, productividad, typescript, agentes
 
@@ -108,10 +109,11 @@ hugo --minify
 | v2.0 | ✅ Completado | Rediseño "Architectural Editor" + Tailwind |
 | v2.1 | ✅ Completado | Búsqueda, filtros, copy code, about page |
 | v2.2 | ✅ Completado | Paginación, relacionados, scroll progress, back to top |
-| v2.5 | ✅ Completado | PWA, Service Worker, prefetch, Tailwind local |
-| v2.3 | 📋 Planificado | SEO: OG images, Schema.org ampliado |
-| v2.4 | 📋 Planificado | Comentarios, newsletter |
-| v3.0 | 💭 Visión | Nuevas secciones: proyectos, /now |
+| v2.3 | ✅ Completado | PWA, Service Worker, prefetch, Tailwind build local |
+| v2.4 | ✅ Completado | Security hardening: HSTS, CSP, SRI, unsafe=false |
+| v2.5 | 📋 Planificado | SEO: OG images, Schema.org ampliado |
+| v2.6 | 📋 Planificado | Comentarios, newsletter |
+| v3.0 | 💭 Visión | Nuevas secciones: proyectos, /now, /uses |
 
 Ver [ROADMAP.md](./ROADMAP.md) para detalles completos.
 
@@ -125,4 +127,4 @@ MIT © Pablo IB
 
 ---
 
-*Hecho con ❤️ y [Hugo](https://gohugo.io) — *Última actualización: 2026-04-02*
+*Hecho con ❤️ y [Hugo](https://gohugo.io) — *Última actualización: 2026-04-06*

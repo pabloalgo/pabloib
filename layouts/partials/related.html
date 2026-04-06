@@ -5,8 +5,8 @@
 
 {{ if $currentTags }}
   {{- /* Buscar artículos con tags compartidos */ -}}
-  {{ range where .Site.RegularPages "Type" "page" }}
-    {{ if and (ne .Permalink $current.Permalink) (eq .Section "posts") }}
+  {{ range where .Site.RegularPages "Section" "posts" }}
+    {{ if ne .Permalink $current.Permalink }}
       {{ $score := 0 }}
       {{ $pageTags := .Params.tags | default (slice) }}
       {{ range $tag := $currentTags }}

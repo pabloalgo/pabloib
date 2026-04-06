@@ -91,7 +91,7 @@ rename_symbol(
 
 ## OneTool: el orquestador de workflows
 
-OneTool es un **MCP server unificado** con 100+ herramientas. Es un suizo army knife.
+OneTool es un **MCP server unificado** con 100+ herramientas. Es una navaja suiza.
 
 ### Lo que hace mejor que nadie
 
@@ -293,9 +293,9 @@ ot.server(proxy='serena')          # OneTool → Serena
 
 ## 🔗 Recursos
 
-- [Serena - Documentación](../04-integrations/serena/README.md) - Guía completa
-- [OneTool - Documentación](../04-integrations/onetool/README.md) - Referencia de 100+ tools
-- [Serena vs OneTool - Comparación](../04-integrations/onetool/10-onetool-vs-serena-vs-bash.md) - Comparación detallada
+- [Cómo configurar Pi para proyectos TypeScript](/posts/2026-03-25-como-configurar-pi-para-proyectos-typescript/) - Ejemplos de Serena en TypeScript
+- [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Flujo de depuración con Serena
+- [Prompt engineering para agentes de código](/posts/2026-03-25-prompt-engineering-para-agentes-de-codigo/) - Cómo combinar tools y prompts
 
 ---
 
@@ -309,4 +309,4 @@ ot.server(proxy='serena')          # OneTool → Serena
 
 ---
 
-*Este artículo es parte de la serie [Pi Wiki](../README.md)*
+*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

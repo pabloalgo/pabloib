@@ -335,7 +335,7 @@ Pi: """
 
 Según IBM, PromptBestie, Cursor y Dev.to:
 
-1. **Context Engineering**取代传统 prompting → Compartir estado, no reiniciar
+1. **Context Engineering** reemplaza al prompting tradicional → Compartir estado, no reiniciar
 2. **Agentic Systems** → Agents que planifican y ejecutan autónomamente
 3. **Tool-First Approach** → Usa herramientas antes de texto
 4. **Iterative Verification** → Ejecuta, prueba, corrige, repite
@@ -358,10 +358,9 @@ Pi está diseñado exactamente para estas tendencias.
 
 ## 🔗 Recursos
 
-- [Ant Colony](../02-tools/ant-colony/README.md) - Agentes autónomos que eliminan prompting
-- [Prompt Templates](../08-architecture/prompt-templates.md) - Sistema de prompts en Pi
-- [Pi Subagents](../03-extensions/pi-subagents.md) - Chains y workflows automáticos
-- [Prompt Engineering Trends 2026](https://promptbestie.com/en/ai-prompt-engineering-trends-2026) - Guía externa
+- [Por qué Pi cambió mi workflow de desarrollo](/posts/2026-03-23-pi-cambio-mi-workflow/) - El flujo base que describe este artículo
+- [Del caos al orden: gestionando contexto con Pi](/posts/2026-03-25-del-caos-al-orden-gestionando-contexto-con-pi/) - Cómo sostener sesiones largas
+- [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Verificación y feedback rápido
 
 ---
 
@@ -375,4 +374,4 @@ Pi está diseñado exactamente para estas tendencias.
 
 ---
 
-*Este artículo es parte de la serie [Pi Wiki](../README.md)*
+*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

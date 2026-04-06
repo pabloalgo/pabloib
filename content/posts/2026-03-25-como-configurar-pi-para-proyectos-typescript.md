@@ -385,7 +385,7 @@ rename_symbol(name_path="User", relative_path="src/types.ts", new_name="UserDTO"
 
 1. **Pi está construido en TypeScript** → no es una configuración especial, es nativo
 2. **Configuración básica:** models.json + tsconfig.json
-3. **Extensiones esenciales:** pi-serena-tools, pi-context, glimpsui
+3. **Extensiones esenciales:** pi-serena-tools, pi-context, glimpseui
 4. **Serena entiende TS** → LSP nativo para inferencia de tipos
 5. **Funciona para todos los frameworks:** React, Vue, Next.js, Svelte
 6. **El setup es el mismo** → Pi es Pi, TS es JS con tipos
@@ -394,10 +394,9 @@ rename_symbol(name_path="User", relative_path="src/types.ts", new_name="UserDTO"
 
 ## 🔗 Recursos
 
-- [Pi - Proveedores y Modelos](../01-core/providers-models.md) - Configurar modelos TS-optimized
-- [Extensions](../03-extensions/README.md) - Extensiones disponibles
-- [Serena Tools](../03-extensions/pi-serena-tools.md) - LSP para TypeScript
-- [Pi Tutorial Principiante](../11-tutoriales/principiante/02-instalacion.md) - Instalar Pi
+- [Serena vs OneTool: ¿cuándo usar cada uno?](/posts/2026-03-25-serena-vs-onetool-cuando-usar-cada-uno/) - Cuándo conviene usar Serena
+- [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Flujo de troubleshooting en Pi
+- [Prompt engineering para agentes de código](/posts/2026-03-25-prompt-engineering-para-agentes-de-codigo/) - Cómo dar mejores instrucciones al agente
 
 ---
 
@@ -411,4 +410,4 @@ React, Vue, Next.js, Angular? ¿Algo diferente? ¿Tienes algún tip específico?
 
 ---
 
-*Este artículo es parte de la serie [Pi Wiki](../README.md)*
+*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

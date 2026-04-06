@@ -75,3 +75,9 @@ debug
 *.tar.gz
 *.rar
 *.7z
+
+# Tailwind output (generated)
+assets/css/output.css
+
+# Pi Lens
+.pi-lens/

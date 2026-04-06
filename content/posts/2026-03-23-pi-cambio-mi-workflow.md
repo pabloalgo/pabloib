@@ -163,9 +163,9 @@ Con FOXNIO/ZAI como provider:
 
 ## 🔗 Recursos
 
-- [Pi Wiki](../README.md) - Documentación completa
-- [Tutorial principiante](../11-tutoriales/principiante/01-que-es-pi.md) - Empezar desde cero
-- [Ant Colony](../02-tools/ant-colony/README.md) - Para tareas complejas
+- [Prompt engineering para agentes de código](/posts/2026-03-25-prompt-engineering-para-agentes-de-codigo/) - Patrones de prompting con herramientas
+- [Ant Colony: cuando un agente no es suficiente](/posts/2026-03-25-ant-colony-cuando-un-agente-no-es-suficiente/) - Workflows masivos con múltiples agentes
+- [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Cómo resolver bugs más rápido
 
 ---
 
@@ -173,4 +173,4 @@ Con FOXNIO/ZAI como provider:
 
 ---
 
-*Este artículo es parte de la [Pi Wiki](../README.md)*
+*Este artículo forma parte de la categoría [Pi](/categories/pi/)*
