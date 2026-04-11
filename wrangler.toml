@@ -1,0 +1,13 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "pabloib"
+compatibility_date = "2026-04-11"
+
+# Cloudflare Pages config
+# Build is configured via Dashboard:
+# - Build command: npm run build
+# - Build output directory: public
+# - Root directory: /
+# - Node.js version: 18
+
+[site]
+bucket = "./public"

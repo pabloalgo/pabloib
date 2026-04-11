@@ -33,8 +33,8 @@
 | **CSS** | Tailwind CSS v3.4 (build local) |
 | **Fuentes** | Plus Jakarta Sans, Inter, Space Grotesk |
 | **Iconos** | Material SymbolsOutlined |
-| **Hosting** | GitHub Pages / Cloudflare Pages |
-| **Dominio** | pabloib.com |
+| **Hosting** | Cloudflare Pages |
+| **Dominio** | pabloib.com (via Cloudflare) |
 
 ## 📁 Estructura del Proyecto
 
@@ -95,6 +95,24 @@ npm run build
 - Node.js y npm
 - Git
 - Hugo extended v0.159.2 se descarga automáticamente vía los scripts de npm; no requiere instalación global
+
+## ☁️ Deployment (Cloudflare Pages)
+
+El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pabloalgo/pabloib`.
+
+**Configuración en Cloudflare Dashboard:**
+
+| Parámetro | Valor |
+|-----------|-------|
+| Framework preset | None |
+| Build command | `npm run build` |
+| Build output directory | `public` |
+| Root directory | `/` |
+| Node.js version | `18` |
+
+**Dominio personalizado:** `pabloib.com` → configurado en Cloudflare Pages → Custom domains.
+
+Los DNS deben apuntar a Cloudflare Pages (CNAME `pabloib.com` → `pabloib.pages.dev`).
 
 ## 📝 Contenido
 

@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects
+# Hugo handles most redirects via aliases in generated HTML
+# This file ensures clean 404 handling
+
+# Custom 404
+/404.html  /404.html 404
