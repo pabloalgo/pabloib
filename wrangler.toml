@@ -2,12 +2,7 @@
 name = "pabloib"
 compatibility_date = "2026-04-11"
 
-# Cloudflare Pages config
-# Build is configured via Dashboard:
+# Cloudflare Pages — build config is set in Dashboard:
 # - Build command: npm run build
 # - Build output directory: public
-# - Root directory: /
-# - Node.js version: 18
-
-[site]
-bucket = "./public"
+# - NODE_VERSION: 18
