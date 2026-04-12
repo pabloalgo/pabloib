@@ -247,6 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
       behavior: 'smooth'
     });
   });
+});
 
 // === Dark Mode Toggle ===
 document.addEventListener('DOMContentLoaded', () => {
@@ -281,7 +282,6 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
-});
 
 // === Intelligent Prefetch ===
 document.addEventListener('DOMContentLoaded', () => {

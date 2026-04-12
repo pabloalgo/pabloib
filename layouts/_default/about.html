@@ -1,0 +1,154 @@
+{{ define "head" }}
+  {{ partial "head.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<section class="mt-6 space-y-12">
+  {{- /* Hero Section */ -}}
+  <div class="flex flex-col md:flex-row gap-8 items-start">
+    <div class="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-primary-container flex items-center justify-center flex-shrink-0">
+      <span class="text-5xl font-headline font-extrabold text-on-primary">P</span>
+    </div>
+    <div class="space-y-4">
+      <h1 class="text-3xl md:text-4xl font-headline font-extrabold text-on-surface tracking-tighter">
+        Hola, soy <span class="text-primary">Pablo</span> 👋
+      </h1>
+      <p class="text-lg font-body text-on-surface-variant leading-relaxed">
+        Desarrollador, escritor y eterno aprendiz. Este blog es mi <strong class="text-on-surface">segunda memoria refinada</strong>: un lugar donde documento lo que aprendo sobre tecnología, IA y productividad.
+      </p>
+    </div>
+  </div>
+
+  {{- /* Quick Links */ -}}
+  <div class="flex flex-wrap gap-3">
+    <a href="https://github.com/pabloalgo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-highest text-on-surface-variant font-label text-sm rounded-full hover:bg-surface-container-high transition-colors">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <a href="/index.xml" class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container-highest text-on-surface-variant font-label text-sm rounded-full hover:bg-surface-container-high transition-colors">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"/></svg>
+      RSS Feed
+    </a>
+    <a href="/posts/" class="inline-flex items-center gap-2 px-4 py-2 bg-primary-container text-on-primary-container font-label text-sm rounded-full hover:bg-primary transition-colors">
+      <span class="material-symbols-outlined text-sm">article</span>
+      Ver artículos
+    </a>
+  </div>
+
+  {{- /* What you'll find */ -}}
+  <section class="space-y-4">
+    <h2 class="text-xl font-headline font-bold text-on-surface">¿Qué encontrarás aquí?</h2>
+    <div class="grid md:grid-cols-2 gap-4">
+      <div class="p-4 bg-surface-container-low rounded-xl space-y-2">
+        <span class="material-symbols-outlined text-primary">edit_note</span>
+        <h3 class="font-headline font-bold text-on-surface">Reflexiones</h3>
+        <p class="text-sm font-body text-on-surface-variant">Pensamientos sobre desarrollo, IA y tecnología</p>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl space-y-2">
+        <span class="material-symbols-outlined text-primary">code</span>
+        <h3 class="font-headline font-bold text-on-surface">Tutoriales</h3>
+        <p class="text-sm font-body text-on-surface-variant">Guías prácticas sobre herramientas y técnicas</p>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl space-y-2">
+        <span class="material-symbols-outlined text-primary">lightbulb</span>
+        <h3 class="font-headline font-bold text-on-surface">Ideas</h3>
+        <p class="text-sm font-body text-on-surface-variant">Conceptos que me parecen interesantes</p>
+      </div>
+      <div class="p-4 bg-surface-container-low rounded-xl space-y-2">
+        <span class="material-symbols-outlined text-primary">rocket_launch</span>
+        <h3 class="font-headline font-bold text-on-surface">Proyectos</h3>
+        <p class="text-sm font-body text-on-surface-variant">Lo que estoy construyendo o explorando</p>
+      </div>
+    </div>
+  </section>
+
+  {{- /* Tech Stack */ -}}
+  <section class="space-y-4">
+    <h2 class="text-xl font-headline font-bold text-on-surface">Mi stack actual</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">🤖</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Pi Agent</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">⚡</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Neovim</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">🧠</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Obsidian</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">🚀</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Hugo</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">🧠</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Claude</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">📘</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">TypeScript</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">🐍</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Python</span>
+      </div>
+      <div class="flex flex-col items-center gap-2 p-4 bg-surface-container-low rounded-xl">
+        <span class="text-2xl">🔄</span>
+        <span class="font-label text-xs uppercase tracking-widest text-on-surface-variant">Git</span>
+      </div>
+    </div>
+  </section>
+
+  {{- /* Philosophy */ -}}
+  <section class="space-y-4">
+    <h2 class="text-xl font-headline font-bold text-on-surface">Mi filosofía</h2>
+    <blockquote class="p-6 bg-surface-container-low rounded-xl border-l-4 border-primary">
+      <p class="text-lg font-body text-on-surface italic">
+        "La mejor forma de aprender es enseñar. La mejor forma de recordar es escribir."
+      </p>
+    </blockquote>
+    <ul class="space-y-3 font-body text-on-surface-variant">
+      <li class="flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+        <span><strong class="text-on-surface">Aprendizaje continuo</strong> — Nunca dejo de explorar nuevas tecnologías</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+        <span><strong class="text-on-surface">Documentación constante</strong> — Si no lo escribo, lo olvido</span>
+      </li>
+      <li class="flex items-start gap-3">
+        <span class="material-symbols-outlined text-primary mt-0.5">check_circle</span>
+        <span><strong class="text-on-surface">Compartir conocimiento</strong> — Lo que aprendo debe ser útil para otros</span>
+      </li>
+    </ul>
+  </section>
+
+  {{- /* Stats */ -}}
+  <section class="grid grid-cols-3 gap-4">
+    <div class="text-center p-4 bg-surface-container-low rounded-xl">
+      <div class="text-3xl font-headline font-extrabold text-primary">{{ len (where .Site.RegularPages "Section" "posts") }}</div>
+      <div class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1">Artículos</div>
+    </div>
+    <div class="text-center p-4 bg-surface-container-low rounded-xl">
+      <div class="text-3xl font-headline font-extrabold text-primary">{{ len .Site.Taxonomies.tags }}</div>
+      <div class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1">Tags</div>
+    </div>
+    <div class="text-center p-4 bg-surface-container-low rounded-xl">
+      <div class="text-3xl font-headline font-extrabold text-primary">∞</div>
+      <div class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1">Curiosidad</div>
+    </div>
+  </section>
+
+  {{- /* CTA */ -}}
+  <section class="p-6 bg-gradient-to-r from-primary-container to-surface-container rounded-xl text-center space-y-4">
+    <h2 class="text-xl font-headline font-bold text-on-primary-container">¿Quieres colaborar?</h2>
+    <p class="font-body text-on-primary-container/80">Tienes alguna pregunta o quieres charlar sobre tecnología</p>
+    <a href="https://github.com/pabloalgo" target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-6 py-3 bg-on-primary-container text-primary-container font-label text-sm uppercase tracking-widest rounded-full hover:opacity-90 transition-opacity">
+      <span class="material-symbols-outlined text-lg">open_in_new</span>
+      Contactar en GitHub
+    </a>
+  </section>
+</section>
+{{ end }}

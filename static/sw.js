@@ -3,14 +3,15 @@
 // Cache Strategy: Stale While Revalidate
 // ============================================
 
-const CACHE_NAME = 'pabloib-v1';
-const STATIC_CACHE = 'pabloib-static-v1';
-const DYNAMIC_CACHE = 'pabloib-dynamic-v1';
+const CACHE_NAME = 'pabloib-v2';
+const STATIC_CACHE = 'pabloib-static-v2';
+const DYNAMIC_CACHE = 'pabloib-dynamic-v2';
 
 // Assets to cache immediately on install
 const STATIC_ASSETS = [
   '/',
   '/index.json',
+  '/css/output.css',
   '/js/main.js',
   '/manifest.json',
   '/favicon.ico',
@@ -64,7 +65,7 @@ self.addEventListener('fetch', (event) => {
   event.respondWith(
     caches.match(request)
       .then((cachedResponse) => {
-        // Return cached response immediately
+        // Return cached response immediately, but always revalidate
         const fetchPromise = fetch(request)
           .then((networkResponse) => {
             // Update cache with fresh response
@@ -75,10 +76,7 @@ self.addEventListener('fetch', (event) => {
             }
             return networkResponse;
           })
-          .catch(() => {
-            // Return cached response if network fails
-            return cachedResponse;
-          });
+          .catch(() => cachedResponse);
 
         return cachedResponse || fetchPromise;
       })
