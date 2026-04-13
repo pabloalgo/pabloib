@@ -1,11 +1,12 @@
 # Pablo IB — Blog Personal Hugo
 
-Blog estático sobre tecnología, IA y productividad. Deploy en pabloib.com.
+Blog estático sobre tecnología, IA y productividad. Deploy en pabloib.com vía Cloudflare Pages.
 
 ## Stack
 
-- Hugo v0.159.2 extended (npx, no global), Tailwind CSS v3.4 build local, tema Paper (submodule)
+- Hugo v0.159.2 extended (vía npx, no binario global), Tailwind CSS v3.4 build local, tema Paper (submodule)
 - Node.js 18, Cloudflare Pages, dominio pabloib.com
+- 15 artículos publicados, v2.5.0
 
 ## Comandos
 
@@ -15,18 +16,21 @@ npm run build   # Tailwind minify + Hugo minify → public/
 npm run clean   # rm -rf public resources static/css/output.css
 ```
 
-Después de cambios en código (no docs): `npm run build` y verificar que compila sin errores.
+Después de cambios en código (no docs): `npm run build` → verificar sin errores → `git push` → verificar deploy en Cloudflare Pages.
 
 ## Estructura clave
 
-- `content/posts/*.md` — Artículos. Front matter obligatorio: title, description, date, categories, tags, readingTime
+- `content/posts/*.md` — Artículos (15). Front matter obligatorio: title, description, date, categories, tags, readingTime
+- `content/about.md` — Página About (contiene HTML, ojo con Goldmark unsafe=false)
 - `layouts/` — Templates Hugo. Overrides del tema Paper (NO editar themes/paper/)
 - `layouts/partials/` — head.html (SEO/meta), jsonld.html (Schema.org), og-image.html (OG dinámicas)
-- `static/css/output.css` — Tailwind compilado (generado, no editar)
+- `static/css/output.css` — Tailwind compilado (generado por build, NO editar manualmente)
 - `assets/css/input.css` — Tailwind input
-- `hugo.toml` — Config Hugo (taxonomías, menú, markup, outputs)
-- `wrangler.toml` — NO existe. Pages no necesita config files
-- `tailwind.config.js` — Design system
+- `hugo.toml` — Config Hugo (taxonomías, menú, markup unsafe=false, outputs HTML+RSS+JSON)
+- `tailwind.config.js` — Design system (colores Material Design, tipografías, plugins)
+- `static/_headers` — Security headers para Cloudflare
+- `static/js/main.js` — Búsqueda Fuse.js, filtros, dark mode, prefetch
+- `static/js/theme-init.js` — Dark mode init (externo para CSP compliance)
 
 ## Patrones
 
@@ -43,7 +47,7 @@ draft: false
 ---
 ```
 
-**Layouts** — Todos heredan baseof.html con blocks `head` y `main`. SEO se gestiona en partials:
+**Layouts** — Todos heredan baseof.html con blocks `head` y `main`. SEO en partials:
 - `head.html` → meta tags, OG, Twitter cards (usa description del front matter)
 - `jsonld.html` → Article + BreadcrumbList por página
 - `og-image.html` → SVG dinámico con título del post via `resources.FromString`
@@ -52,14 +56,21 @@ draft: false
 
 **JavaScript** — Solo client-side. Archivos externos en `static/js/`. Nunca inline scripts (CSP).
 
-**Dark mode** — Clase `.dark` en `<html>`, init en `theme-init.js`, toggle en `main.js`
-
 ## Convenciones
 
 - **Commits:** Conventional Commits. Ejemplo: `feat(seo): add JSON-LD for articles`
 - **Versión:** Semantic Versioning en `package.json`
 - **Changelog:** Keep a Changelog en `CHANGELOG.md`
 - **Idioma:** Contenido en español (es-es)
+
+## Deployment (Cloudflare Pages)
+
+- **Plataforma:** Cloudflare Pages (NO Workers)
+- **Build command:** `npm run build` (Tailwind + Hugo v0.159.2 via npx)
+- **Output:** `public/`
+- **Auto-deploy:** en cada push a `master`
+- **Custom domain:** `pabloib.com` via Pages → Custom domains
+- **Sin config files** — Pages no necesita wrangler.toml ni ningún archivo de config
 
 ## Seguridad (defense-in-depth)
 
@@ -70,13 +81,11 @@ draft: false
 
 ## Restricciones
 
-- Tailwind output va a `static/css/output.css`, NO a `assets/css/` — Hugo no sirve assets como static
-- No usar `[site]` ni `[assets]` en wrangler.toml — Pages no usa wrangler. Si se necesita Workers, usar `[assets]` nunca `[site]`
+- Tailwind output va a `static/css/output.css`, NO a `assets/css/` — Hugo no sirve assets como static files
 - No crear CNAME DNS manual a `.workers.dev` o `.pages.dev` — da error 1014 cross-user banned. Usar Pages → Custom domains
 - `_redirects` solo acepta códigos: 200, 301, 302, 303, 307, 308
 - No instalar paquetes sin añadir a devDependencies
 - No editar `themes/paper/` — es submodule, overrides en `layouts/`
 - No inline scripts en templates — CSP los bloquea, usar archivos .js externos
-- No olvidar `description` en front matter — obligatorio para meta tags, OG, Schema.org
+- No olvidar `description` en front matter de nuevos posts — obligatorio para meta tags, OG, Schema.org
 - No usar Tailwind CDN — build local con purge (~28KB vs ~200KB)
-- No usar `git add -A` ni `git add .` — solo `git add <archivos-específicos>`
