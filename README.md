@@ -23,7 +23,8 @@
 - ⚡ **PWA Ready** - Service Worker + manifest para instalación
 - 🚀 **Prefetch Inteligente** - Precarga de páginas en hover
 - 🔍 **SEO Optimizado** - Meta tags, Open Graph, JSON-LD
-- 📰 **RSS Feed** - Sindicación automática
+- 📝 **Contenido** - 15 artículos sobre Pi, IA y productividad
+- 🔍 **SEO** - Meta descriptions, Schema.org JSON-LD, sitemap optimizado, OG images dinámicas
 
 ## 🛠️ Stack Tecnológico
 
@@ -33,8 +34,8 @@
 | **CSS** | Tailwind CSS v3.4 (build local) |
 | **Fuentes** | Plus Jakarta Sans, Inter, Space Grotesk |
 | **Iconos** | Material SymbolsOutlined |
-| **Hosting** | Cloudflare Pages |
-| **Dominio** | pabloib.com (via Cloudflare) |
+| **Hosting** | Cloudflare Workers (static assets) |
+| **Dominio** | pabloib.com (via Cloudflare Workers custom domain) |
 
 ## 📁 Estructura del Proyecto
 
@@ -96,9 +97,9 @@ npm run build
 - Git
 - Hugo extended v0.159.2 se descarga automáticamente vía los scripts de npm; no requiere instalación global
 
-## ☁️ Deployment (Cloudflare Pages)
+## ☁️ Deployment (Cloudflare Workers)
 
-El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pabloalgo/pabloib`.
+El sitio se deploya automáticamente via Cloudflare Workers conectado al repo `pabloalgo/pabloib`.
 
 **Configuración en Cloudflare Dashboard:**
 
@@ -107,12 +108,16 @@ El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pab
 | Framework preset | None |
 | Build command | `npm run build` |
 | Build output directory | `public` |
+| Deploy command | `npx wrangler deploy` |
 | Root directory | `/` |
 | Node.js version | `18` |
 
-**Dominio personalizado:** `pabloib.com` → configurado en Cloudflare Pages → Custom domains.
+**Custom domain:** `pabloib.com` via `wrangler.toml` (`custom_domain = true`).
 
-Los DNS deben apuntar a Cloudflare Pages (CNAME `pabloib.com` → `pabloib.pages.dev`).
+**⚠️ Lecciones importantes:**
+- Tailwind CSS output va a `static/css/output.css` (NO a `assets/css/` — Hugo no sirve assets como static)
+- El `wrangler.toml` usa `[assets]` con `directory = "./public"` y `routes` con `custom_domain = true`
+- No crear CNAME manual a `.workers.dev` — da error 1014 cross-user banned
 
 ## 📝 Contenido
 
@@ -129,7 +134,7 @@ Los DNS deben apuntar a Cloudflare Pages (CNAME `pabloib.com` → `pabloib.pages
 | v2.2 | ✅ Completado | Paginación, relacionados, scroll progress, back to top |
 | v2.3 | ✅ Completado | PWA, Service Worker, prefetch, Tailwind build local |
 | v2.4 | ✅ Completado | Security hardening: HSTS, CSP, SRI, unsafe=false |
-| v2.5 | ✅ Completado | SEO: OG images, Schema.org ampliado |
+| v2.5 | ✅ Completado | SEO: descriptions, Schema.org, sitemap, OG images |
 | v2.6 | 📋 Planificado | Comentarios, newsletter |
 | v3.0 | 💭 Visión | Nuevas secciones: proyectos, /now, /uses |
 

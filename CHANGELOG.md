@@ -11,6 +11,27 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 
 ---
 
+## [2.5.0] - 2026-04-13
+
+### Added
+- SEO descriptions in front matter for all 15 posts (improves Google snippets)
+- Schema.org JSON-LD structured data: Article schema on posts, BreadcrumbList on all pages, Person schema on About, WebSite schema on homepage
+- Custom sitemap template with smart priorities: homepage 1.0, posts 0.8, tags 0.4, about 0.6
+- Dynamic OG images per post (SVG with article title + blog branding)
+- `wrangler.toml` with `custom_domain = true` for Cloudflare Workers deployment
+
+### Changed
+- Tailwind CSS output moved from `assets/css/` to `static/css/` to fix 404 in production
+- Version bumped from 2.4.2 to 2.5.0
+- Deployment: Cloudflare Workers with static assets (not Cloudflare Pages)
+- README updated with deployment documentation
+- ROADMAP v2.5 marked as completed
+
+### Fixed
+- CSS 404 in production: Tailwind output was in `assets/` (not served by Hugo as static)
+- `_redirects` file: removed invalid 404 status code
+- Cloudflare deployment: removed `[site]` section from wrangler.toml that triggered Workers mode incorrectly
+
 ## [2.4.2] - 2026-04-06
 
 ### Fixed
