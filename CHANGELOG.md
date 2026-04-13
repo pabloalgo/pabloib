@@ -23,7 +23,6 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 ### Changed
 - Tailwind CSS output moved from `assets/css/` to `static/css/` to fix 404 in production
 - Version bumped from 2.4.2 to 2.5.0
-- Deployment: Cloudflare Workers with static assets (not Cloudflare Pages)
 - README updated with deployment documentation
 - ROADMAP v2.5 marked as completed
 
@@ -31,6 +30,14 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 - CSS 404 in production: Tailwind output was in `assets/` (not served by Hugo as static)
 - `_redirects` file: removed invalid 404 status code
 - Cloudflare deployment: removed `[site]` section from wrangler.toml that triggered Workers mode incorrectly
+
+### Changed
+- Migrated from Cloudflare Workers to **Cloudflare Pages** (correct platform for static sites)
+- Removed `wrangler.toml` — Pages uses zero config files
+- Build command: `npm run build` (Tailwind + Hugo v0.159.2 via npx)
+- Custom domain `pabloib.com` configured via Pages dashboard
+- AGENTS.md optimized from ~1200 to ~637 tokens (47% reduction)
+- Installed 3 agent skills: ui-ux-pro-max, hugo-template-dev, seo-content-writer
 
 ## [2.4.2] - 2026-04-06
 

@@ -5,7 +5,7 @@ Blog estático sobre tecnología, IA y productividad. Deploy en pabloib.com.
 ## Stack
 
 - Hugo v0.159.2 extended (npx, no global), Tailwind CSS v3.4 build local, tema Paper (submodule)
-- Node.js 18, Cloudflare Workers static assets, dominio pabloib.com
+- Node.js 18, Cloudflare Pages, dominio pabloib.com
 
 ## Comandos
 
@@ -25,7 +25,7 @@ Después de cambios en código (no docs): `npm run build` y verificar que compil
 - `static/css/output.css` — Tailwind compilado (generado, no editar)
 - `assets/css/input.css` — Tailwind input
 - `hugo.toml` — Config Hugo (taxonomías, menú, markup, outputs)
-- `wrangler.toml` — Deploy Cloudflare Workers
+- `wrangler.toml` — NO existe. Pages no necesita config files
 - `tailwind.config.js` — Design system
 
 ## Patrones
@@ -71,8 +71,8 @@ draft: false
 ## Restricciones
 
 - Tailwind output va a `static/css/output.css`, NO a `assets/css/` — Hugo no sirve assets como static
-- `wrangler.toml` usa `[assets]`, NO `[site]` — `[site]` activa Workers legacy y falla el deploy
-- Custom domain via `routes` con `custom_domain = true`, NO CNAME manual a `.workers.dev` (error 1014)
+- No usar `[site]` ni `[assets]` en wrangler.toml — Pages no usa wrangler. Si se necesita Workers, usar `[assets]` nunca `[site]`
+- No crear CNAME DNS manual a `.workers.dev` o `.pages.dev` — da error 1014 cross-user banned. Usar Pages → Custom domains
 - `_redirects` solo acepta códigos: 200, 301, 302, 303, 307, 308
 - No instalar paquetes sin añadir a devDependencies
 - No editar `themes/paper/` — es submodule, overrides en `layouts/`

@@ -190,7 +190,7 @@ Plan de desarrollo y mejoras futuras del proyecto.
 | v2.2 | ✅ Completado | 2026-03-26 |
 | v2.3 | ✅ Completado | 2026-03-26 |
 | v2.4 | ✅ Completado | 2026-04-06 |
-| v2.5 | ✅ Completado | 2026-04-12 |
+| v2.5 | ✅ Completado | 2026-04-13 |
 | v2.6 | 📋 Planificado | TBD |
 | v3.0 | 💭 Visión | TBD |
 

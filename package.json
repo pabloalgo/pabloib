@@ -3,7 +3,7 @@
 	"version": "2.5.0",
 	"description": "Blog personal de Pablo IB sobre tecnología, IA y productividad",
 	"scripts": {
-"dev:css": "npx --yes tailwindcss@3.4.0 -i ./assets/css/input.css -o ./static/css/output.css --watch",
+		"dev:css": "npx --yes tailwindcss@3.4.0 -i ./assets/css/input.css -o ./static/css/output.css --watch",
 		"build:css": "npx --yes tailwindcss@3.4.0 -i ./assets/css/input.css -o ./static/css/output.css --minify",
 		"dev:hugo": "npx --yes hugo-extended@0.159.2 server --buildDrafts -D --port 1315",
 		"build:hugo": "npx --yes hugo-extended@0.159.2 --minify",
@@ -22,5 +22,10 @@
 		"tailwindcss"
 	],
 	"author": "Pablo IB",
-	"license": "MIT"
+	"license": "MIT",
+	"dependencies": {
+		"pi-pai-lite": "^1.0.0",
+		"pi-secret-guard": "^1.2.15",
+		"pi-smart-fetch": "^0.2.24"
+	}
 }
