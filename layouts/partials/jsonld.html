@@ -1,0 +1,103 @@
+{{- /* JSON-LD Structured Data for SEO */ -}}
+{{- $schema := slice -}}
+
+{{- if .IsHome -}}
+  {{- /* WebSite schema for homepage */ -}}
+  {{- $website := dict
+    "@context" "https://schema.org"
+    "@type" "WebSite"
+    "name" .Site.Title
+    "url" .Site.BaseURL
+    "description" .Site.Params.description
+    "inLanguage" .Site.LanguageCode
+    "author" (dict
+      "@type" "Person"
+      "name" .Site.Params.author
+      "url" .Site.BaseURL
+      "sameAs" .Site.Params.jsonld.sameAs
+    )
+  -}}
+  {{- $schema = $schema | append $website -}}
+
+{{- else if eq .Section "posts" -}}
+  {{- /* Article schema for blog posts */ -}}
+  {{- $article := dict
+    "@context" "https://schema.org"
+    "@type" "Article"
+    "headline" .Title
+    "description" (or .Description (.Summary | plainify | truncate 160))
+    "url" .Permalink
+    "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+    "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
+    "author" (dict
+      "@type" "Person"
+      "name" .Site.Params.author
+      "url" .Site.BaseURL
+    )
+    "publisher" (dict
+      "@type" "Person"
+      "name" .Site.Params.author
+      "url" .Site.BaseURL
+    )
+    "inLanguage" .Site.LanguageCode
+    "mainEntityOfPage" (dict
+      "@type" "WebPage"
+      "@id" .Permalink
+    )
+  -}}
+  {{- if .Params.tags -}}
+    {{- $article = merge $article (dict "keywords" (delimit .Params.tags ", ")) -}}
+  {{- end -}}
+  {{- $schema = $schema | append $article -}}
+
+{{- else if .IsPage -}}
+  {{- /* WebPage schema for other pages (about, etc) */ -}}
+  {{- $page := dict
+    "@context" "https://schema.org"
+    "@type" "WebPage"
+    "name" .Title
+    "description" (or .Description (.Summary | plainify | truncate 160))
+    "url" .Permalink
+    "author" (dict
+      "@type" "Person"
+      "name" .Site.Params.author
+      "url" .Site.BaseURL
+    )
+  -}}
+  {{- $schema = $schema | append $page -}}
+
+  {{- /* Person schema on About page */ -}}
+  {{- if eq .RelPermalink "/about/" -}}
+    {{- $person := dict
+      "@context" "https://schema.org"
+      "@type" "Person"
+      "name" .Site.Params.author
+      "url" .Site.BaseURL
+      "jobTitle" "Desarrollador"
+      "description" .Site.Params.description
+      "sameAs" .Site.Params.jsonld.sameAs
+    -}}
+    {{- $schema = $schema | append $person -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* BreadcrumbList for all pages */ -}}
+{{- $crumbs := slice -}}
+{{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 1 "name" "Inicio" "item" .Site.BaseURL) -}}
+{{- if .IsHome -}}
+{{- else if eq .Section "posts" -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" "Blog" "item" (printf "%sposts/" .Site.BaseURL)) -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) -}}
+{{- else -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}
+{{- end -}}
+{{- $breadcrumb := dict
+  "@context" "https://schema.org"
+  "@type" "BreadcrumbList"
+  "itemListElement" $crumbs
+-}}
+{{- $schema = $schema | append $breadcrumb -}}
+
+{{- range $schema -}}
+<script type="application/ld+json">{{ . | jsonify (dict "indent" "  ") | safeJS }}</script>
+{{- end -}}

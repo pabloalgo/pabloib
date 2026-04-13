@@ -1,5 +1,6 @@
 ---
 title: "Patrones avanzados — Multi-agente y automatización"
+description: "Los 5 patrones agentic principales de Pi: orquestación multi-agente, subagentes con contexto aislado, automatización y el SDK para integración programática."
 date: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "multi-agente", "automatización", "sdk", "avanzado"]

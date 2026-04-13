@@ -1,5 +1,6 @@
 ---
 title: "Del caos al orden: gestionando contexto con Pi"
+description: "Las sesiones de IA son como una pila de platos que eventualmente se cae. Pi tiene 3 sistemas para transformar el caos en orden predecible."
 date: 2026-03-25
 categories: ["Pi"]
 tags: ["pi", "context", "productividad"]

@@ -1,5 +1,6 @@
 ---
 title: "Ant Colony: cuando un agente no es suficiente"
+description: "Cuando un solo agente se ahoga en tu código, no necesitas un mejor modelo. Necesitas más agentes. Así funciona Ant Colony y el patrón multi-agente en Pi."
 date: 2026-03-25
 categories: ["Pi"]
 tags: ["ant-colony", "pi", "agentes", "productividad"]

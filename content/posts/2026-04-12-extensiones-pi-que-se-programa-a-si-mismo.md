@@ -1,5 +1,6 @@
 ---
 title: "Extensiones — Pi que se programa a sí mismo"
+description: "Las skills dan instrucciones a Pi. Las extensiones le dan código ejecutable: módulos TypeScript que registran tools, interceptan llamadas y crean componentes UI."
 date: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "extensiones", "typescript", "personalización", "intermedio"]

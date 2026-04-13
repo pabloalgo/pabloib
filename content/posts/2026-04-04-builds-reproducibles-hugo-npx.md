@@ -1,5 +1,6 @@
 ---
 title: "Builds reproducibles en Hugo con npx"
+description: "Fijar la versión de Hugo en package.json con npx elimina dependencias de binarios globales y garantiza builds idénticos en local, CI y cualquier máquina."
 date: 2026-04-04
 categories: ["Hugo"]
 tags: ["hugo", "build", "devops", "productividad", "ci-cd"]

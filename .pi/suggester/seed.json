@@ -1,59 +1,144 @@
 {
   "seedVersion": 3,
-  "generatedAt": "2026-03-25T02:56:00.006Z",
+  "generatedAt": "2026-04-11T23:29:26.121Z",
+  "sourceCommit": "3b73ba6e8ad62a9405f652b7a8d3d97c6f7e5066",
   "generatorVersion": "2026-03-11.2",
   "seederPromptVersion": "2026-03-11.2",
   "suggestionPromptVersion": "2026-03-11.1",
   "configFingerprint": "sha256:1c8240f0803f32e5bd8896c2fabd508516dbefbc88d624d285ba5069a7cccf1a",
-  "projectIntentSummary": "pabloib es un blog personal enfocado en temas de tecnología e Inteligencia Artificial. El proyecto se encuentra actualmente en fase de planificación inicial, con el objetivo de establecer una plataforma de publicación de contenido. El blog es gestionado por Pablo y busca consolidar una presencia digital para compartir conocimientos y opiniones sobre el ámbito tecnológico, con especial énfasis en la IA.",
-  "objectivesSummary": "Los objetivos principales del proyecto incluyen: 1) Decidir la tecnología final para el blog, evaluando opciones como Astro o mantener el stack actual de WordPress + Elementor (ya se descartó WordPress Headless). 2) Diseñar la estructura del blog para organizar el contenido de manera efectiva. 3) Configurar el dominio para la publicación del sitio. 4) Migrar el contenido existente si la decisión final implica un cambio de plataforma. El estado actual indica que el proyecto está en las primeras etapas de definición técnica y arquitectónica.",
-  "constraintsSummary": "El proyecto presenta restricciones basadas en las decisiones tomadas durante la fase de evaluación: Se ha descartado explícitamente la opción de WordPress Headless. La opción actual (WordPress + Elementor) sigue en uso mientras se evalúa la migración a Astro. Esto sugiere una restricción de preferencia hacia soluciones modernas o frameworks basados en componentes (Astro) frente a arquitecturas headless más complejas o mantener la solución legacy. No se mencionan restricciones de presupuesto, tiempo o infraestructura específicas en la documentación disponible.",
-  "principlesGuidelinesSummary": "No se han definido principios, lineamientos o convenciones de desarrollo explícitos en el repositorio. Dado que el proyecto está en fase de planificación, no existe documentación sobre estándares de código, estilos de arquitectura, guías de contribución o metodologías de trabajo a seguir. La única guía presente es la lista de tareas pendientes en el README, que funciona como hoja de ruta inicial.",
-  "implementationStatusSummary": "El estado de implementación es 'Planificación'. El proyecto se inició el 2025-03-25 y actualmente se encuentra evaluando opciones tecnológicas. No existe código fuente, configuración de despliegue ni estructura de archivos de desarrollo en el repositorio más allá de la documentación básica. Todas las tareas listadas (decisión de tecnología, diseño de estructura, configuración de dominio y migración) están pendientes.",
+  "projectIntentSummary": "pabloib es un blog personal maduro y en producción, descrito como 'mi segunda memoria refinada', enfocado en tecnología, IA y productividad. Gestionado por Pablo IB y desplegado en pabloib.com vía Cloudflare Pages. El proyecto evolucionó desde una fase de planificación (donde se evaluaban WordPress+Elementor vs Astro) hasta convertirse en un sitio Hugo completo (v2.4.2) con diseño editorial moderno, Tailwind CSS v3.4 build local, PWA con Service Worker, seguridad endurecida (CSP estricto, SRI, HSTS preload, Goldmark unsafe=false), búsqueda client-side con Fuse.js, dark mode con persistencia, paginación, artículos relacionados, y 9 artículos publicados sobre Pi Agent, IA y productividad. El repositorio vive en GitHub (pabloalgo/pabloib) con deploy automático a Cloudflare Pages. El proyecto adopta Conventional Commits, Semantic Versioning, y Keep a Changelog como convenciones oficiales, y mantiene un roadmap detallado con versiones planificadas hasta v3.0 (nuevas secciones: Proyectos, /now, /uses, Bookmarks).",
+  "objectivesSummary": "Los objetivos se organizan por versiones con estado explícito:\n\n**Completados (v2.0–v2.4):** Rediseño editorial 'Architectural Editor' inspirado en revistas técnicas, Tailwind CSS v3.4 migrado de CDN (~200KB) a build local (~28KB), dark mode con localStorage, navegación mobile-first con bottom nav, búsqueda client-side Fuse.js con índice JSON, filtrado por categorías sin recarga, copy code button con feedback visual, paginación (10 posts/página), artículos relacionados por tags compartidos, scroll progress indicator, back to top flotante, lazy loading nativo, Service Worker/PWA instalable, prefetch inteligente en hover (solo desktop), y security hardening completo (HSTS 1 año+preload, CSP solo self+cdn.jsdelivr.net, SRI para Fuse.js, Goldmark unsafe=false, headers de seguridad).\n\n**Planificados (v2.5):** Imágenes Open Graph dinámicas generadas automáticamente, sitemap.xml mejorado con lastmod y prioridades, Schema.org ampliado (Article, BreadcrumbList, Person), descripciones en front matter de todos los posts.\n\n**Planificados (v2.6):** Sistema de comentarios (Giscus con GitHub Discussions o Utterances con GitHub Issues) con tema consistente con dark mode, reacciones por artículo (👍👀🎉) sin login vía localStorage, newsletter signup con Buttondown/ConvertKit en footer y CTAs.\n\n**Visión (v3.0):** Página de Proyectos tipo portfolio con filtros por tecnología y links a GitHub/demo, página /now inspirada en nownownow.com con actualización mensual, página /uses con herramientas y setup de desarrollo, sección Bookmarks/Links con artículos recomendados y recursos útiles.",
+  "constraintsSummary": "**Stack tecnológico fijo:** Hugo v0.159.2 extended como SSG (ejecutado vía npx, sin binario global), Tailwind CSS v3.4 con build local (CLI, no PostCSS), tema Paper como Git submodule, plugins @tailwindcss/forms y @tailwindcss/container-queries.\n\n**Infraestructura:** Hosting obligatorio en Cloudflare Pages, dominio pabloib.com con DNS apuntando CNAME a pabloib.pages.dev, Node.js 18 como runtime de build, build command `npm run build`, output directory `public/`.\n\n**Seguridad:** CSP estricto (solo self + cdn.jsdelivr.net para Fuse.js con hash SRI sha384), Goldmark renderer con unsafe=false (prohíbe HTML crudo en markdown para prevenir XSS), headers _headers para Cloudflare Pages (HSTS 1 año + preload, X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy, Permissions-Policy). Verificación continua vía drift-check.sh.\n\n**Convenciones:** Conventional Commits obligatorio (adoptado en v1.2.0), Semantic Versioning para releases, changelog en formato Keep a Changelog v1.1.0 texto plano sin emojis. Contribuciones via fork + PR.\n\n**Contenido:** Idioma español (es-es), taxonomías de categories y tags, outputs HTML+RSS+JSON, RSS limit 20, sitemap semanal.",
+  "principlesGuidelinesSummary": "**Convenciones de desarrollo:** Conventional Commits adoptado oficialmente desde v1.2.0, Semantic Versioning para versionado, Keep a Changelog v1.1.0 para documentación de cambios. Contribuciones vía fork + pull request siguiendo Conventional Commits (detallado en ROADMAP.md sección 'Cómo Contribuir').\n\n**Principios de diseño:** Diseño editorial inspirado en revistas técnicas modernas (no glassmorphism ni decoraciones superfluas, eliminados en v2.0). Mobile First con bottom navigation optimizada. Dark Mode con persistencia en localStorage y toggle accesible. Performance-first: Tailwind build local con purge automático (~28KB vs ~200KB CDN), prefetch solo en desktop, lazy loading nativo, CSS minimificado.\n\n**Principios de seguridad (defense-in-depth):** Múltiples capas — HSTS preload, CSP restrictivo, SRI para recursos externos, Goldmark unsafe=false para prevenir XSS en contenido markdown, headers de seguridad completos. El script drift-check.sh implementa verificación continua de integridad: alineación de versiones package.json/CHANGELOG, conteo de posts, ausencia de Tailwind CDN, existencia y tamaño de output.css, configuración goldmark, presencia de _headers, estado de submodules, y auditoría npm.\n\n**Principios de arquitectura:** Interactividad client-side (búsqueda Fuse.js, filtros sin recarga, dark mode) para minimizar dependencias server-side. Índice JSON autogenerado (/index.json) para búsqueda offline-capable. PWA con Service Worker para cache offline. Separación clara de concerns: contenido (content/), templates (layouts/), assets procesables (assets/), estáticos (static/). Hugo Pipes para procesamiento de imágenes. Progressive enhancement: funcionalidad base sin JS, mejoras con JS habilitado.",
+  "implementationStatusSummary": "El proyecto está en producción activa, versión v2.4.2, desplegado en pabloib.com vía Cloudflare Pages. Todas las funcionalidades de v2.0 a v2.4 están completadas: diseño editorial con Tailwind, dark mode, búsqueda Fuse.js, filtrado por categorías, copy code, paginación, artículos relacionados, scroll progress, back to top, lazy loading, PWA/Service Worker, prefetch, y security hardening completo. Existen 9 artículos publicados en content/posts/ (sobre Pi Agent, IA, productividad, debugging, builds reproducibles), una página About, y el sitio genera outputs HTML+RSS+JSON con sitemap.xml. Las versiones v2.5 (SEO), v2.6 (interactividad) y v3.0 (nuevas secciones) están planificadas en ROADMAP.md pero sin implementación iniciada. Se mantiene drift-check.sh para verificación de integridad continua del build.",
   "topObjectives": [
-    "Decidir la tecnología final para el blog (Astro vs mantener WordPress + Elementor)",
-    "Diseñar la estructura del blog",
-    "Configurar el dominio del sitio",
-    "Migrar contenido existente si se realiza cambio de plataforma"
+    "Completar v2.5: OG images dinámicas, sitemap mejorado con lastmod, Schema.org ampliado (Article, BreadcrumbList, Person), descripciones en front matter",
+    "Completar v2.6: Sistema de comentarios (Giscus/Utterances), reacciones por artículo, newsletter signup (Buttondown/ConvertKit)",
+    "Completar v3.0: Nuevas secciones — Proyectos (portfolio con filtros), /now (inspirado nownownow.com), /uses (herramientas), Bookmarks/Links",
+    "Mantener postura de seguridad endurecida (CSP, SRI, HSTS, Goldmark unsafe=false) a medida que se añaden funcionalidades",
+    "Continuar publicando contenido sobre Pi Agent, IA y productividad"
   ],
   "constraints": [
-    "WordPress Headless ha sido descartado como opción tecnológica",
-    "WordPress + Elementor es la solución actual y funcional",
-    "La migración a Astro está pendiente de evaluación"
+    "Stack fijo: Hugo v0.159.2 extended vía npx (sin binario global), Tailwind CSS v3.4 build local (no CDN, no PostCSS v4), tema Paper (Git submodule)",
+    "Hosting: Cloudflare Pages con dominio pabloib.com, Node.js 18, build output public/",
+    "Seguridad: CSP estricto (self + cdn.jsdelivr.net), SRI para externos, Goldmark unsafe=false, HSTS preload, _headers completos",
+    "Convenciones obligatorias: Conventional Commits, Semantic Versioning, Keep a Changelog v1.1.0",
+    "Idioma del contenido: español (es-es), taxonomías categories y tags",
+    "Plugins Tailwind: @tailwindcss/forms y @tailwindcss/container-queries"
   ],
   "keyFiles": [
     {
       "path": "README.md",
-      "hash": "sha256:8cdad1fbee6220bd730d3f63698316467b75d3608eacdffc09fe8a2216207d7d",
-      "whyImportant": "Archivo principal que define la visión del proyecto como blog personal de tecnología e IA, establece el estado actual de planificación y lista las opciones tecnológicas consideradas y los próximos pasos.",
+      "hash": "sha256:d7187e349e7d1d22648f4b97d192a842fae8f696f9941c7a153ad1e0a977a7c3",
+      "whyImportant": "Documento principal del proyecto: visión como 'segunda memoria refinada', stack completo (Hugo+Tailwind+Cloudflare), features implementadas, estructura de proyecto, instrucciones de dev/deploy, tabla de versiones con estado.",
       "category": "vision"
+    },
+    {
+      "path": "ROADMAP.md",
+      "hash": "sha256:8b1e426d5cdb1ebe317c37d578e7852160ac8ca3ee1f0328e6ebd3e48c59c639",
+      "whyImportant": "Plan de desarrollo detallado por versión (v2.1–v3.0) con tareas, prioridades, estado (✅/📋/💭), fechas, y sección 'Cómo Contribuir' que establece Conventional Commits.",
+      "category": "vision"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "hash": "sha256:33ffd1031adbad2edb4a986cfd2c8e7111bcfaf388a1e2ac12c25f235f3af310",
+      "whyImportant": "Historial completo v1.0.0–v2.4.2 en formato Keep a Changelog. Documenta evolución desde planificación hasta producción, cada feature, fix y cambio arquitectónico.",
+      "category": "principles_guidelines"
+    },
+    {
+      "path": "hugo.toml",
+      "hash": "sha256:5794ece40456be75a10922c418d4c063f0368e0148c7df57c940afd6d4610dfb",
+      "whyImportant": "Configuración central del SSG: baseURL, taxonomías (categories, tags), menú (Inicio, Blog, Sobre mí), params SEO/JSON-LD, markup config (Goldmark unsafe=false, highlight monokai), outputs HTML+RSS+JSON, paginación 10, sitemap semanal.",
+      "category": "architecture"
+    },
+    {
+      "path": "package.json",
+      "hash": "sha256:ee01365e68ad125a1176a5f7dddb8940cadc341c72237a0f8b6389afea4b314c",
+      "whyImportant": "Pipeline de build definido: Tailwind CLI build/watch + Hugo extended vía npx. Versión 2.4.2. Dependencias: tailwindcss, @tailwindcss/forms, @tailwindcss/container-queries. Scripts: dev, build, clean.",
+      "category": "architecture"
+    },
+    {
+      "path": "tailwind.config.js",
+      "hash": "sha256:ff6c3de838259025db6d562e4e7fa2f71325446e48464689dfe8e89878a0763a",
+      "whyImportant": "Design system completo: paleta de colores editorial (surface, primary, secondary, tertiary con todas las variantes Material Design), tipografías (Plus Jakarta Sans headlines, Inter body, Space Grotesk labels), border-radius custom.",
+      "category": "architecture"
+    },
+    {
+      "path": "layouts/index.html",
+      "hash": "sha256:60d88fda5c5617d1852f3adf583e598fcc287aa81c45557dee317c7764b7c4d3",
+      "whyImportant": "Template principal del homepage con paginación Hugo (.Paginator), diseño editorial y featured post.",
+      "category": "code_entrypoint"
+    },
+    {
+      "path": "static/js/main.js",
+      "hash": "sha256:b2cdf8117ea1a7fb7f4889fc30e802c55e4f17ea21a8a2b92a7fbd37a19db692",
+      "whyImportant": "JavaScript central: búsqueda Fuse.js con índice JSON, filtrado por categorías, scroll progress tracking, back to top, prefetch en hover (solo desktop). Toda la interactividad client-side.",
+      "category": "code_entrypoint"
+    },
+    {
+      "path": "static/js/theme-init.js",
+      "hash": "sha256:9e61aba119ead4b00b7ae9a197842cbf48b429348c5b929aa21f9d6e7db428d2",
+      "whyImportant": "Script externo para inicialización de tema (dark mode) — extraído de inline para cumplimiento CSP (elimina unsafe-inline en script-src).",
+      "category": "code_entrypoint"
+    },
+    {
+      "path": "scripts/drift-check.sh",
+      "hash": "sha256:adc1bd27d44d1d14a1c0c563675feaf975acc08fef84280539d8024219862776",
+      "whyImportant": "Script de integridad que verifica: alineación versiones package.json/CHANGELOG, conteo posts README vs real, ausencia Tailwind CDN, output.css válido, goldmark unsafe=false, _headers presente, estado submodules, auditoría npm. Refleja principio defense-in-depth.",
+      "category": "principles_guidelines"
+    },
+    {
+      "path": "wrangler.toml",
+      "hash": "sha256:dd0a9f73e1648d51bec8caefa2dcaa85bbd101945524e56df914cb4a44247e98",
+      "whyImportant": "Configuración de Cloudflare/Wrangler para deployment del sitio.",
+      "category": "architecture"
     }
   ],
   "categoryFindings": {
     "vision": {
       "found": true,
-      "rationale": "El archivo README.md contiene la descripción del proyecto 'Blog personal de tecnología e IA', el estado actual (Planificación), la fecha de inicio y la lista de opciones tecnológicas consideradas. Esto constituye la visión de alto nivel del proyecto.",
+      "rationale": "README.md define la visión como 'mi segunda memoria refinada' — blog personal sobre tecnología, IA y productividad, con stack Hugo+Tailwind+Cloudflare Pages, features completas, y tabla de versiones. ROADMAP.md extiende la visión con roadmap detallado v2.1–v3.0 incluyendo nuevas secciones (Proyectos, /now, /uses, Bookmarks). CHANGELOG.md documenta la evolución desde planificación (v1.0.0 evaluando WordPress vs Astro) hasta producción actual (v2.4.2 con Hugo completo).",
       "files": [
-        "README.md"
+        "README.md",
+        "ROADMAP.md",
+        "CHANGELOG.md"
       ]
     },
     "architecture": {
-      "found": false,
-      "rationale": "No existen archivos de configuración (package.json, tsconfig, astro.config, etc.), diagramas, ni documentación técnica que defina la arquitectura del sistema. El README solo menciona opciones consideradas (WordPress, Astro) pero no detalla ninguna arquitectura implementada o diseñada.",
-      "files": []
+      "found": true,
+      "rationale": "Arquitectura bien definida: hugo.toml configura SSG (taxonomías, menús, outputs HTML+RSS+JSON, markup Goldmark), package.json define pipeline de build (Tailwind CLI → Hugo extended vía npx), tailwind.config.js establece design system completo (colores Material Design, tipografías, plugins), wrangler.toml para Cloudflare. Estructura de layouts sigue convenciones Hugo (baseof.html, single.html, list.html, partials). JS client-side (main.js, theme-init.js) para interactividad sin server-side. Deployment automático Cloudflare Pages con configuración documentada.",
+      "files": [
+        "hugo.toml",
+        "package.json",
+        "tailwind.config.js",
+        "wrangler.toml",
+        "layouts/index.html",
+        "static/js/main.js",
+        "static/js/theme-init.js"
+      ]
     },
     "principles_guidelines": {
-      "found": false,
-      "rationale": "No se encontraron archivos de convenciones (CONTRIBUTING.md, GUIDELINES.md), documentos de principios, archivos de configuración de linters (eslint, prettier) o任何 documentación que establezca principios de diseño o lineamientos de desarrollo.",
-      "files": []
+      "found": true,
+      "rationale": "Convenciones explícitas: Conventional Commits (adoptado v1.2.0, referenciado en ROADMAP.md 'Cómo Contribuir'), Semantic Versioning, Keep a Changelog v1.1.0 (texto plano sin emojis, documentado en CHANGELOG.md header). Principios de seguridad defense-in-depth implementados en drift-check.sh (verificación continua de integridad: versiones, posts, CDN, CSS, goldmark, headers, submodules, vulnerabilidades npm) y en configuración (CSP, SRI, HSTS, unsafe=false). Principios de diseño: Mobile First, performance-first (Tailwind build local), progressive enhancement (PWA, prefetch solo desktop). CHANGELOG.md documenta cada decisión arquitectónica con rationale.",
+      "files": [
+        "CHANGELOG.md",
+        "ROADMAP.md",
+        "scripts/drift-check.sh",
+        "README.md"
+      ]
     }
   },
   "openQuestions": [
-    "¿Qué criterios se utilizarán para decidir entre Astro y mantener WordPress + Elementor?",
-    "¿Existe contenido existente que deba ser priorizado durante la migración?",
-    "¿Cuáles son los requisitos técnicos específicos o preferencias de stack tecnológico para el nuevo blog?"
+    "Se implementará Giscus o Utterances para comentarios en v2.6? El roadmap lista ambas opciones sin decisión final.",
+    "Las OG images dinámicas de v2.5 se generarán con Hugo Pipes, SVG templates, o una herramienta externa?",
+    "El tema Paper (submodule) será customizado más allá de los overrides en layouts/ o se mantendrá como base mínima?",
+    "Cuál será el proveedor final para newsletter: Buttondown o ConvertKit?",
+    "Se considerará soporte multi-idioma (inglés) en el futuro además del español actual?",
+    "wrangler.toml está presente pero no se exploró su contenido — qué rol exacto juega en el deployment?"
   ],
-  "reseedNotes": "El repositorio está extremadamente vacío, conteniendo solo un README.md y directorios ocultos de herramientas (.pi, .serena). No hay código fuente, configuración de proyecto ni documentación técnica profunda. La evidencia se limita enteramente al README. Se recomienda re-seedear una vez que se hayan tomado decisiones tecnológicas y se haya inicializado el proyecto con archivos de configuración (ej. package.json o configuración de Astro).",
-  "lastReseedReason": "initial_missing",
-  "lastChangedFiles": []
+  "reseedNotes": "Reseed triggered by key_file_changed (README.md). El proyecto ha evolucionado dramáticamente desde el seed anterior: estaba en fase de planificación evaluando WordPress+Elementor vs Astro, y ahora es un blog Hugo completo (v2.4.2) en producción en pabloib.com. Todo el seed ha sido reescrito para reflejar el estado actual — features completadas hasta v2.4, arquitectura definida (Hugo+Tailwind+Cloudflare Pages), convenciones establecidas (Conventional Commits, SemVer, Keep a Changelog), principios de seguridad defense-in-depth con drift-check.sh, y roadmap planificado (v2.5–v3.0). Se encontraron archivos para las tres categorías: vision (README, ROADMAP, CHANGELOG), architecture (hugo.toml, package.json, tailwind.config.js, wrangler.toml, layouts, JS), y principles_guidelines (CHANGELOG, ROADMAP, drift-check.sh, README).",
+  "lastReseedReason": "key_file_changed",
+  "lastChangedFiles": [
+    "README.md"
+  ]
 }

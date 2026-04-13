@@ -1,5 +1,6 @@
 ---
 title: "Serena vs OneTool: ¿cuándo usar cada uno?"
+description: "Dos herramientas poderosas en mi stack. Pero usar ambas al mismo tiempo es como llevar un cuchillo de chef y un martillo a la misma cocina. Cuándo usar cada una."
 date: 2026-03-25
 categories: ["Pi"]
 tags: ["serena", "onetool", "pi", "integraciones"]

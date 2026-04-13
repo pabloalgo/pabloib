@@ -1,5 +1,6 @@
 ---
 title: "Debugging con Pi: del stack trace al fix"
+description: "Pi es mejor para debugging que tu IDE. Lee el stack trace, analiza el código, encuentra el root cause y propone el fix — todo en el mismo contexto."
 date: 2026-04-04
 categories: ["Pi"]
 tags: ["pi", "debugging", "productividad", "tutorial"]

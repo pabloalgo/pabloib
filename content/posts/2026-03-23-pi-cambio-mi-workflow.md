@@ -1,5 +1,6 @@
 ---
 title: "Por qué Pi cambió mi workflow de desarrollo"
+description: "La diferencia entre un agente de IA mediocre y uno excepcional no está en el modelo, sino en cuánto contexto puede acceder. Así redefinió Pi mi forma de programar."
 date: 2026-03-23
 categories: ["Pi"]
 tags: ["pi", "workflow", "productividad"]

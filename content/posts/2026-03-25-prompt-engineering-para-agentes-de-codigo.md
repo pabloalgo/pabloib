@@ -1,5 +1,6 @@
 ---
 title: "Prompt engineering para agentes de código"
+description: "El prompt engineering tradicional está muriendo. Lo que lo reemplaza no es mejor prompting, es context engineering + agentes. Guía práctica desde la terminal."
 date: 2026-03-25
 categories: ["AI"]
 tags: ["prompt-engineering", "agentes", "pi", "ia", "context-engineering"]

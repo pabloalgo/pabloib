@@ -32,12 +32,20 @@
 {{- /* Canonical URL */ -}}
 <link rel="canonical" href="{{ .Permalink }}">
 
+{{- /* OG Image - dynamic for posts, default for others */ -}}
+{{- $ogImage := "" -}}
+{{- if and .IsPage (ne .RelPermalink "/about/") -}}
+  {{- $ogImage = partial "og-image.html" . -}}
+{{- else -}}
+  {{- $ogImage = .Site.Params.image | absURL -}}
+{{- end -}}
+
 {{- /* Open Graph */ -}}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
 <meta property="og:title" content="{{ .Title }}">
 <meta property="og:description" content="{{ $description | truncate 200 }}">
-<meta property="og:image" content="{{ .Site.Params.image | absURL }}">
+<meta property="og:image" content="{{ $ogImage }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
 <meta property="og:locale" content="{{ .Site.LanguageCode }}">
 
@@ -54,7 +62,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ .Title }}">
 <meta name="twitter:description" content="{{ $description | truncate 200 }}">
-<meta name="twitter:image" content="{{ .Site.Params.image | absURL }}">
+<meta name="twitter:image" content="{{ $ogImage }}">
 
 {{- if .Site.Params.twitter -}}
   <meta name="twitter:site" content="@{{ .Site.Params.twitter }}">

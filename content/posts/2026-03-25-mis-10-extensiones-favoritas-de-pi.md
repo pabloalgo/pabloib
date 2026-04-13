@@ -1,5 +1,6 @@
 ---
 title: "Mis 10 extensiones favoritas de Pi"
+description: "Después de 6 meses con Pi en proyectos reales, estas son las extensiones que uso todos los días. No las más populares, las que realmente funcionan."
 date: 2026-03-25
 categories: ["Pi"]
 tags: ["pi", "extensiones", "productividad", "tutorial"]

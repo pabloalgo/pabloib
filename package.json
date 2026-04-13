@@ -1,6 +1,6 @@
 {
 	"name": "pabloib-blog",
-	"version": "2.4.2",
+	"version": "2.5.0",
 	"description": "Blog personal de Pablo IB sobre tecnología, IA y productividad",
 	"scripts": {
 "dev:css": "npx --yes tailwindcss@3.4.0 -i ./assets/css/input.css -o ./static/css/output.css --watch",

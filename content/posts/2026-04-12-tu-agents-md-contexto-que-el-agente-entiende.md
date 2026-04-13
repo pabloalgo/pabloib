@@ -1,5 +1,6 @@
 ---
 title: "Tu AGENTS.md — Contexto que el agente entiende"
+description: "Sin AGENTS.md, Pi adivina. Con él, Pi sabe. Cómo escribir el archivo más importante de tu proyecto para que el agente entienda tu código."
 date: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "agents-md", "contexto", "configuración", "principiante"]

@@ -1,5 +1,6 @@
 ---
 title: "Skills — Superpoderes bajo demanda"
+description: "Las skills son paquetes de instrucciones que se cargan bajo demanda sin inflar el core de Pi. Un estándar abierto que funciona en Pi, Claude Code y Codex."
 date: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "skills", "agentskills", "personalización", "intermedio"]

@@ -129,7 +129,7 @@ Los DNS deben apuntar a Cloudflare Pages (CNAME `pabloib.com` → `pabloib.pages
 | v2.2 | ✅ Completado | Paginación, relacionados, scroll progress, back to top |
 | v2.3 | ✅ Completado | PWA, Service Worker, prefetch, Tailwind build local |
 | v2.4 | ✅ Completado | Security hardening: HSTS, CSP, SRI, unsafe=false |
-| v2.5 | 📋 Planificado | SEO: OG images, Schema.org ampliado |
+| v2.5 | ✅ Completado | SEO: OG images, Schema.org ampliado |
 | v2.6 | 📋 Planificado | Comentarios, newsletter |
 | v3.0 | 💭 Visión | Nuevas secciones: proyectos, /now, /uses |
 

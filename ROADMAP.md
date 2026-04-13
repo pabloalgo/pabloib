@@ -113,22 +113,22 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ### 📊 SEO & Meta
 
-- [ ] **Imágenes Open Graph dinámicas**
+- [x] **Imágenes Open Graph dinámicas**
   - Generar OG images automáticamente
   - Título del artículo en la imagen
   - Marca de agua del blog
 
-- [ ] **Sitemap.xml mejorado**
+- [x] **Sitemap.xml mejorado**
   - Incluir lastmod
   - Prioridades por tipo de página
   - Submit automático a Google
 
-- [ ] **Schema.org ampliado**
+- [x] **Schema.org ampliado**
   - Article schema para posts
   - BreadcrumbList
   - Person schema en About
 
-- [ ] **Descripciones en posts**
+- [x] **Descripciones en posts**
   - Agregar `description` a todo el front matter
   - Mejorar snippets en buscadores
 
@@ -190,7 +190,7 @@ Plan de desarrollo y mejoras futuras del proyecto.
 | v2.2 | ✅ Completado | 2026-03-26 |
 | v2.3 | ✅ Completado | 2026-03-26 |
 | v2.4 | ✅ Completado | 2026-04-06 |
-| v2.5 | 📋 Planificado | TBD |
+| v2.5 | ✅ Completado | 2026-04-12 |
 | v2.6 | 📋 Planificado | TBD |
 | v3.0 | 💭 Visión | TBD |
 

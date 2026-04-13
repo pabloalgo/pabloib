@@ -1,5 +1,6 @@
 ---
 title: "Pi desde cero — Instalación y primera sesión"
+description: "Guía paso a paso para instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga, sin prerrequisitos imposibles."
 date: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "instalación", "principiante", "guía", "agentes-ia"]

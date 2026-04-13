@@ -1,5 +1,6 @@
 ---
 title: "Gestión de contexto y sesiones"
+description: "El contexto es el recurso más valioso con agentes de IA. Pi tiene compaction automática, sesiones en árbol y navegación temporal para mantener productividad durante horas."
 date: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "contexto", "sesiones", "compaction", "intermedio"]

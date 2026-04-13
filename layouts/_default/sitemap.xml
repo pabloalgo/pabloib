@@ -1,0 +1,40 @@
+{{- /* Custom sitemap with priority by page type */ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range .Pages -}}
+    {{- /* Determine priority and changefreq based on page type */ -}}
+    {{- $priority := "0.5" -}}
+    {{- $changefreq := "weekly" -}}
+
+    {{- if .IsHome -}}
+      {{- $priority = "1.0" -}}
+      {{- $changefreq = "daily" -}}
+    {{- else if eq .Section "posts" -}}
+      {{- if .IsNode -}}
+        {{- /* Posts list page */ -}}
+        {{- $priority = "0.7" -}}
+        {{- $changefreq = "daily" -}}
+      {{- else -}}
+        {{- /* Individual post */ -}}
+        {{- $priority = "0.8" -}}
+        {{- $changefreq = "monthly" -}}
+      {{- end -}}
+    {{- else if eq .RelPermalink "/about/" -}}
+      {{- $priority = "0.6" -}}
+      {{- $changefreq = "monthly" -}}
+    {{- else if or (eq .Section "tags") (eq .Section "categories") -}}
+      {{- $priority = "0.4" -}}
+      {{- $changefreq = "weekly" -}}
+    {{- end -}}
+
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</lastmod>
+    {{- end }}
+    <changefreq>{{ $changefreq }}</changefreq>
+    <priority>{{ $priority }}</priority>
+  </url>
+  {{- end -}}
+</urlset>
