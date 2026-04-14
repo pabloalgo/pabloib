@@ -2,9 +2,9 @@
 
 > Mi segunda memoria refinada. Blog sobre tecnología, IA y productividad.
 >
-> **Última actualización:** 2026-04-06
+> **Última actualización:** 2026-04-13
 
-![Hugo](https://img.shields.io/badge/Hugo-v0.145-ff4081?logo=hugo&logoColor=white)
+![Hugo](https://img.shields.io/badge/Hugo-v0.159.2-ff4081?logo=hugo&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4%20(build%20local)-38bdf8?logo=tailwindcss&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
@@ -13,7 +13,7 @@
 - 🎨 **Diseño Editorial** - Inspirado en revistas técnicas modernas
 - 🌓 **Dark Mode** - Toggle con persistencia en localStorage
 - 📱 **Mobile First** - Bottom navigation optimizada para móvil
-- 🔍 **Búsqueda Client-Side** - Fuse.js para búsqueda instantánea
+- 🔎 **Búsqueda Client-Side** - Fuse.js para búsqueda instantánea
 - 🏷️ **Filtrado por Categorías** - Filtro interactivo sin recargar
 - 📄 **Paginación** - Navegación entre páginas (10 posts/página)
 - 🔗 **Artículos Relacionados** - Basados en tags compartidos
@@ -22,9 +22,7 @@
 - 📋 **Copy Code Button** - Copiar código con un click
 - ⚡ **PWA Ready** - Service Worker + manifest para instalación
 - 🚀 **Prefetch Inteligente** - Precarga de páginas en hover
-- 🔍 **SEO Optimizado** - Meta tags, Open Graph, JSON-LD
-- 📝 **Contenido** - 15 artículos sobre Pi, IA y productividad
-- 🔍 **SEO** - Meta descriptions, Schema.org JSON-LD, sitemap optimizado, OG images dinámicas
+- 📈 **SEO Optimizado** - Meta descriptions, Open Graph, JSON-LD, sitemap, OG images dinámicas
 
 ## 🛠️ Stack Tecnológico
 
@@ -42,33 +40,46 @@
 ```
 pabloib/
 ├── content/
-│   ├── posts/          # Artículos del blog (9 posts)
+│   ├── posts/          # Artículos del blog
 │   └── about.md        # Página About
 ├── layouts/
 │   ├── _default/
 │   │   ├── baseof.html      # Template base + navegación
 │   │   ├── single.html      # Páginas individuales + relacionados
 │   │   ├── list.html        # Listados (tags, categorías)
-│   │   └── index.json       # Índice de búsqueda JSON
+│   │   ├── about.html       # Página About personalizada
+│   │   ├── index.json       # Índice de búsqueda JSON
+│   │   └── sitemap.xml      # Sitemap custom con prioridades
 │   ├── partials/
-│   │   ├── head.html        # Head con Tailwind + PWA manifest
+│   │   ├── head.html        # Head con Tailwind + SEO meta + PWA manifest
+│   │   ├── jsonld.html      # Schema.org JSON-LD structured data
+│   │   ├── og-image.html    # OG images dinámicas (SVG)
 │   │   ├── pagination.html  # Sistema de paginación
 │   │   └── related.html     # Artículos relacionados
 │   └── index.html           # Homepage con paginación
 ├── assets/
-│   ├── css/
-│   │   └── input.css        # Tailwind CSS input
-│   └── images/              # Imágenes procesables (Hugo Pipes)
+│   └── css/
+│       └── input.css        # Tailwind CSS input
 ├── static/
+│   ├── css/
+│   │   └── output.css       # Tailwind compilado (generado por build)
 │   ├── js/
-│   │   └── main.js          # Búsqueda, filtros, scroll, prefetch
+│   │   ├── main.js          # Búsqueda, filtros, scroll, prefetch
+│   │   └── theme-init.js    # Dark mode init (CSP compliant)
+│   ├── images/              # Imágenes estáticas (og-image.svg)
+│   ├── favicon.ico          # Favicon del sitio
+│   ├── apple-touch-icon.png # Icono para iOS (PWA)
+│   ├── icon-192.svg         # Icono PWA 192px
+│   ├── icon-512.svg         # Icono PWA 512px
+│   ├── _headers             # Security headers (CSP, HSTS, etc.)
+│   ├── _redirects           # Redirects Cloudflare Pages
 │   ├── manifest.json        # PWA manifest
-│   ├── sw.js                # Service Worker
-│   └── images/              # Imágenes estáticas (og-image, etc.)
-├── themes/paper/       # Theme base (submodule)
+│   ├── robots.txt           # Robots para crawlers
+│   └── sw.js                # Service Worker
+├── themes/paper/       # Theme base (submodule, NO editar)
 ├── hugo.toml           # Configuración Hugo
-├── package.json        # NPM config (Tailwind build)
-├── tailwind.config.js  # Tailwind configuration
+├── package.json        # NPM config (Tailwind + Hugo build)
+├── tailwind.config.js  # Tailwind design system
 ├── README.md           # Este archivo
 ├── CHANGELOG.md        # Historial de cambios
 └── ROADMAP.md          # Plan de desarrollo
@@ -105,7 +116,7 @@ El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pab
 
 | Parámetro | Valor |
 |-----------|-------|
-| Framework preset | Hugo |
+| Framework preset | None |
 | Build command | `npm run build` |
 | Build output directory | `public` |
 | Root directory | `/` |
@@ -117,9 +128,9 @@ El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pab
 
 ## 📝 Contenido
 
-- **9 artículos** sobre Pi Agent, IA y productividad
-- Categorías: Pi, Workflow, Desarrollo
-- Tags: pi, workflow, productividad, typescript, agentes
+- Artículos sobre Pi, IA, desarrollo y productividad
+- Categorías: Pi, Hugo, AI
+- Tags: pi, agentes, productividad, typescript, skills, debugging, prompt-engineering, contexto, multi-agente, y más
 
 ## 🏷️ Versiones
 
@@ -130,7 +141,7 @@ El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pab
 | v2.2 | ✅ Completado | Paginación, relacionados, scroll progress, back to top |
 | v2.3 | ✅ Completado | PWA, Service Worker, prefetch, Tailwind build local |
 | v2.4 | ✅ Completado | Security hardening: HSTS, CSP, SRI, unsafe=false |
-| v2.5 | ✅ Completado | SEO: descriptions, Schema.org, sitemap, OG images |
+| v2.5 | ✅ Completado | SEO + migración a Cloudflare Pages + fix CSS 404 |
 | v2.6 | 📋 Planificado | Comentarios, newsletter |
 | v3.0 | 💭 Visión | Nuevas secciones: proyectos, /now, /uses |
 
@@ -146,4 +157,4 @@ MIT © Pablo IB
 
 ---
 
-*Hecho con ❤️ y [Hugo](https://gohugo.io) — *Última actualización: 2026-04-06*
+*Hecho con ❤️ y [Hugo](https://gohugo.io) — *Última actualización: 2026-04-13*
