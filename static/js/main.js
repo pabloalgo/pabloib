@@ -9,6 +9,12 @@ document.addEventListener('DOMContentLoaded', async () => {
   
   if (!searchInput) return;
 
+  // Focus search input if ?search=1
+  if (new URLSearchParams(window.location.search).get('search') === '1') {
+    searchInput.focus();
+    window.history.replaceState({}, '', window.location.pathname);
+  }
+
   // Load Fuse.js
   if (typeof Fuse === 'undefined') {
     const script = document.createElement('script');

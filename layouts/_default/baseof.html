@@ -14,7 +14,7 @@
     <div class="flex items-center justify-between px-5 h-16 w-full max-w-screen-xl mx-auto">
       <div class="flex items-center gap-4">
         <a href="{{ .Site.BaseURL }}" class="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full">
-          <span class="material-symbols-outlined text-cyan-700 dark:text-cyan-400">menu</span>
+          <span class="material-symbols-outlined text-cyan-700 dark:text-cyan-400">home</span>
         </a>
         <a href="{{ .Site.BaseURL }}">
           <h1 class="text-xl font-extrabold tracking-tighter text-slate-900 dark:text-slate-50 font-headline">Pablo IB</h1>
@@ -25,9 +25,9 @@
         <button id="theme-toggle" class="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full" aria-label="Toggle dark mode">
           <span class="material-symbols-outlined text-cyan-700 dark:text-cyan-400" id="theme-icon">dark_mode</span>
         </button>
-        <button class="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full">
+        <a href="/?search=1" class="hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors active:scale-95 duration-200 p-2 rounded-full" aria-label="Buscar">
           <span class="material-symbols-outlined text-cyan-700 dark:text-cyan-400">search</span>
-        </button>
+        </a>
       </div>
     </div>
   </header>

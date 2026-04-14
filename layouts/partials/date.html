@@ -1,0 +1,11 @@
+{{- /* Formatea fecha en es-es. Recibe dict con "date" y "format" ("short"|"medium"|"long") */ -}}
+{{- $format := .format | default "medium" -}}
+{{- if .date -}}
+  {{- if eq $format "long" -}}
+    {{ .date | time.Format ":date_long" }}
+  {{- else if eq $format "short" -}}
+    {{ .date | time.Format ":date_medium" }}
+  {{- else -}}
+    {{ .date | time.Format ":date_medium" }}
+  {{- end -}}
+{{- end -}}

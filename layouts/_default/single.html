@@ -20,7 +20,7 @@
     
     <div class="flex items-center gap-3 pt-2">
       <time class="font-body text-sm font-medium text-on-surface-variant" datetime="{{ .Date.Format "2006-01-02" }}">
-        {{ .Date.Format "2 January 2006" }}
+        {{ partial "date.html" (dict "date" .Date) }}
       </time>
     </div>
   </header>

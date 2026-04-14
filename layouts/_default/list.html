@@ -37,11 +37,11 @@
         </h2>
         
         <p class="font-body text-on-surface-variant">
-          {{ .Summary | plainify | truncate 100 }}
+          {{ .Params.description | default .Summary | plainify | truncate 100 }}
         </p>
         
         <div class="flex items-center gap-3 pt-2">
-          <span class="font-body text-sm font-medium text-on-surface-variant">{{ .Date.Format "2 Jan 2006" }}</span>
+          <span class="font-body text-sm font-medium text-on-surface-variant">{{ partial "date.html" (dict "date" .Date "format" "short") }}</span>
         </div>
       </div>
     </article>

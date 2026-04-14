@@ -48,7 +48,7 @@
         </h3>
         
         <p class="text-sm font-body text-on-surface-variant mt-2 line-clamp-2">
-          {{ $page.Summary | plainify | truncate 80 }}
+          {{ $page.Params.description | default $page.Summary | plainify | truncate 80 }}
         </p>
         
       </a>

@@ -1,5 +1,6 @@
 baseURL = 'https://pabloib.com/'
 languageCode = 'es-es'
+defaultContentLanguage = 'es'
 title = 'Pablo IB | Tech Blog & Second Brain'
 theme = 'paper'
 
