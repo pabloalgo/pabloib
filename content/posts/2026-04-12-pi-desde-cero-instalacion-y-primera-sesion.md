@@ -1,27 +1,13 @@
 ---
 title: "Pi desde cero — Instalación y primera sesión"
-description: "Guía paso a paso para instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga, sin prerrequisitos imposibles."
+description: "Guía paso a paso para instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga técnica, sin prerrequisitos imposibles."
 date: 2026-04-12
+lastmod: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "instalación", "principiante", "guía", "agentes-ia"]
-readingTime: 10
+mode: tutorial
 draft: false
----
-
-
-**Publicado:** 2026-04-12 | **Categoría:** Pi | **Lectura:** 10 min
-
-Si nunca usaste un agente de código en la terminal, este artículo es para ti. Vamos a instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga, sin prerequisites imposibles.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Qué es Pi y por qué su filosofía minimal funciona
-- Cómo instalar Pi (npm y Ollama)
-- Configurar tu primer provider de LLM
-- Ejecutar tu primera sesión interactiva
-- Entender los 4 tools básicos en acción
+---Si nunca usaste un agente de código en la terminal, este artículo es para ti. Vamos a instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga, sin prerequisites imposibles.
 
 ---
 
@@ -318,7 +304,6 @@ pi
 
 ---
 
-## En resumen
 
 1. **Instala** con `npm install -g @mariozechner/pi-coding-agent`
 2. **Configura** tu API key (`export ANTHROPIC_API_KEY=...`)
@@ -336,11 +321,3 @@ La filosofía es simple: menos herramientas, más transparencia, más control pa
 - [Repositorio GitHub](https://github.com/badlogic/pi-mono) — Código fuente
 - [Tu AGENTS.md — Contexto que el agente entiende](/posts/) — Siguiente artículo de esta serie
 - [Por qué Pi cambió mi workflow de desarrollo](/posts/2026-03-23-pi-cambio-mi-workflow/) — Mi experiencia personal
-
----
-
-**Tags:** `pi`, `instalación`, `principiante`, `guía`, `agentes-ia`
-
----
-
-*Este artículo forma parte de la serie [Pi desde cero hasta intermedio](/categories/pi/) — Artículo 1 de 6*

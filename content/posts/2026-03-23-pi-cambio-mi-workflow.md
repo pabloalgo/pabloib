@@ -1,25 +1,16 @@
 ---
 title: "Por qué Pi cambió mi workflow de desarrollo"
-description: "La diferencia entre un agente de IA mediocre y uno excepcional no está en el modelo, sino en cuánto contexto puede acceder. Así redefinió Pi mi forma de programar."
+description: "La diferencia entre un agente mediocre y uno excepcional no está en el modelo, sino en cuánto contexto puede acceder. Así Pi redefinió mi forma de programar."
 date: 2026-03-23
+lastmod: 2026-03-23
 categories: ["Pi"]
 tags: ["pi", "workflow", "productividad"]
-readingTime: 8
+mode: opinion
 draft: false
 ---
 
 
-**Publicado:** 2026-03-23 | **Categoría:** Pi | **Lectura:** 8 min
-
 Después de meses usando agentes de IA para programar, descubrí que la diferencia no está en el modelo, sino en cuánto contexto puede acceder. Esto cambió todo.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Por qué los chatbots de IA tienen límites reales
-- Cómo Pi elimina el problema del copy-paste
-- Mi workflow actual con Pi
 
 ---
 
@@ -153,12 +144,9 @@ Con FOXNIO/ZAI como provider:
 3. **La automatización gana** → 50 archivos migrados solos vs 50 copy-pastes
 4. **Git es obligatorio** → Siempre poder volver atrás
 
-## En resumen
+## Siguiente paso
 
-1. Pi eliminó el copy-paste de mi workflow
-2. El acceso directo a archivos cambia las reglas del juego
-3. `ant_colony` para tareas grandes, trabajo directo para las pequeñas
-4. El costo es mínimo comparado con el tiempo ahorrado
+Si tu workflow todavía tiene copy-paste, empieza por el [AGENTS.md](/posts/2026-04-12-tu-agents-md-contexto-que-el-agente-entiende/) — es el archivo que le dice a Pi cómo funciona tu proyecto. Sin él, Pi adivina.
 
 ---
 
@@ -168,10 +156,3 @@ Con FOXNIO/ZAI como provider:
 - [Ant Colony: cuando un agente no es suficiente](/posts/2026-03-25-ant-colony-cuando-un-agente-no-es-suficiente/) - Workflows masivos con múltiples agentes
 - [Debugging con Pi: del stack trace al fix](/posts/2026-04-04-debugging-con-pi-del-stack-trace-al-fix/) - Cómo resolver bugs más rápido
 
----
-
-**Tags:** `pi`, `workflow`, `productividad`, `agentes-ia`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

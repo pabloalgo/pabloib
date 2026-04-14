@@ -4,10 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 {{- /* Title */ -}}
+{{- $displayTitle := .Title -}}
+{{- if eq .RelPermalink "/404.html" -}}
+  {{- $displayTitle = "404 — Página no encontrada" -}}
+{{- end -}}
 {{- if .IsHome -}}
   <title>{{ .Site.Title }}</title>
 {{- else -}}
-  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <title>{{ $displayTitle }} | {{ .Site.Title }}</title>
 {{- end -}}
 
 {{- /* Description */ -}}
@@ -43,7 +47,7 @@
 {{- /* Open Graph */ -}}
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
 <meta property="og:url" content="{{ .Permalink }}">
-<meta property="og:title" content="{{ .Title }}">
+<meta property="og:title" content="{{ $displayTitle }}">
 <meta property="og:description" content="{{ $description | truncate 200 }}">
 <meta property="og:image" content="{{ $ogImage }}">
 <meta property="og:site_name" content="{{ .Site.Title }}">
@@ -60,7 +64,7 @@
 
 {{- /* Twitter Cards */ -}}
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ .Title }}">
+<meta name="twitter:title" content="{{ $displayTitle }}">
 <meta name="twitter:description" content="{{ $description | truncate 200 }}">
 <meta name="twitter:image" content="{{ $ogImage }}">
 
@@ -70,8 +74,8 @@
 {{- end -}}
 
 {{- /* Robots */ -}}
-{{- if .Params.noindex -}}
-  <meta name="robots" content="noindex, nofollow">
+{{- if or .Params.noindex (eq .RelPermalink "/404.html") -}}
+  <meta name="robots" content="noindex, follow">
 {{- else -}}
   <meta name="robots" content="index, follow">
 {{- end -}}

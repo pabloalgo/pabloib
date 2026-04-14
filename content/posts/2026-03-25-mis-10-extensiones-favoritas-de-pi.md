@@ -1,26 +1,13 @@
 ---
 title: "Mis 10 extensiones favoritas de Pi"
-description: "Después de 6 meses con Pi en proyectos reales, estas son las extensiones que uso todos los días. No las más populares, las que realmente funcionan."
+description: "Después de 6 meses con Pi en proyectos reales, estas son las extensiones que uso todos los días. No las más populares, sino las que realmente funcionan."
 date: 2026-03-25
+lastmod: 2026-03-25
 categories: ["Pi"]
 tags: ["pi", "extensiones", "productividad", "tutorial"]
-readingTime: 12
+mode: review
 draft: false
----
-
-
-**Publicado:** 2026-03-25 | **Categoría:** Pi | **Lectura:** 12 min
-
-Después de usar Pi durante 6 meses en proyectos reales, estas son las extensiones que realmente cambian mi desarrollo. No son las más populares ni las más nuevas. Son las que **realmente uso todos los días**.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Las 10 extensiones que forman mi stack productivo
-- Por qué cada una es irremplazable para mí
-- Mi orden de instalación para un proyecto nuevo
-- Extensiones que descarté y por qué
+---Después de usar Pi durante 6 meses en proyectos reales, estas son las extensiones que realmente cambian mi desarrollo. No son las más populares ni las más nuevas. Son las que **realmente uso todos los días**.
 
 ---
 
@@ -456,7 +443,6 @@ cp custom-footer.ts ~/.pi/agent/extensions/
 
 ---
 
-## En resumen
 
 1. **No instales por instalar** → si no lo usas en 50%+ de sesiones, desinstala
 2. **Mi stack de producción:** pi-context, pi-ask-user, pi-rewind, pi-subagents, pi-serena-tools, glimpseui, onetool-pi, pi-tidy-mcp-adapter, pi-studio, custom-footer.ts
@@ -477,11 +463,3 @@ cp custom-footer.ts ~/.pi/agent/extensions/
 ## 💭 ¿Cuáles son tus extensiones irremplazables?
 
 ¿Qué extensiones no puedes vivir sin? ¿Alguna que probé y omití? Déjamelo en los comentarios.
-
----
-
-**Tags:** `pi`, `extensiones`, `productividad`, `stack`, `workflow`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

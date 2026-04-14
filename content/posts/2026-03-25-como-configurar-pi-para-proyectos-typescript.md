@@ -1,26 +1,13 @@
 ---
 title: "Cómo configurar Pi para proyectos TypeScript"
-description: "Pi está construido en TypeScript. Configurarlo para proyectos TS no es una configuración especial — es su modo nativo. Guía completa de setup."
+description: "Pi está construido en TypeScript. Configurarlo para proyectos TS no es una configuración especial — es su modo nativo. Guía completa de setup paso a paso."
 date: 2026-03-25
+lastmod: 2026-03-25
 categories: ["Pi"]
 tags: ["typescript", "pi", "configuracion", "tutorial"]
-readingTime: 8
+mode: tutorial
 draft: false
----
-
-
-**Publicado:** 2026-03-25 | **Categoría:** Pi | **Lectura:** 8 min
-
-Lo que nadie te dice: Pi está **construido en TypeScript**. Configurarlo para proyectos TypeScript no es una configuración especial — es su modo NATIVO.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Por qué Pi y TypeScript son una combinación perfecta
-- Cómo configurar models.json para TypeScript-friendly development
-- Extensiones y Skills que mejoran la experiencia TS
-- Mi setup de producción para proyectos TypeScript
+---Lo que nadie te dice: Pi está **construido en TypeScript**. Configurarlo para proyectos TypeScript no es una configuración especial — es su modo NATIVO.
 
 ---
 
@@ -382,7 +369,6 @@ rename_symbol(name_path="User", relative_path="src/types.ts", new_name="UserDTO"
 
 ---
 
-## En resumen
 
 1. **Pi está construido en TypeScript** → no es una configuración especial, es nativo
 2. **Configuración básica:** models.json + tsconfig.json
@@ -404,11 +390,3 @@ rename_symbol(name_path="User", relative_path="src/types.ts", new_name="UserDTO"
 ## 💬 ¿Qué framework TS usas con Pi?
 
 React, Vue, Next.js, Angular? ¿Algo diferente? ¿Tienes algún tip específico? Déjamelo en los comentarios.
-
----
-
-**Tags:** `pi`, `typescript`, `ts`, `configuración`, `desarrollo`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

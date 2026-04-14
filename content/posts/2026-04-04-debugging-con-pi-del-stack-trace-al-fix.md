@@ -1,26 +1,13 @@
 ---
 title: "Debugging con Pi: del stack trace al fix"
-description: "Pi es mejor para debugging que tu IDE. Lee el stack trace, analiza el código, encuentra el root cause y propone el fix — todo en el mismo contexto."
+description: "Pi es mejor para debugging que tu IDE. Lee el stack trace, analiza el código, encuentra el root cause y propone el fix — todo dentro del mismo contexto."
 date: 2026-04-04
+lastmod: 2026-04-04
 categories: ["Pi"]
 tags: ["pi", "debugging", "productividad", "tutorial"]
-readingTime: 10
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-04-04 | **Categoría:** Pi | **Lectura:** 10 min
-
-Lo que nadie te dice: Pi es mejor para debugging que tu IDE. Veo el stack trace, leo el código, encuentro el root cause y propongo el fix — todo en el mismo contexto, sin cambiar de ventana.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Por qué Pi transforma debugging de tedioso a rápido
-- Cómo usar Serena para navegar stack traces
-- Comandos específicos para debugging
-- Mi workflow de producción para bugs complejos
+---Lo que nadie te dice: Pi es mejor para debugging que tu IDE. Veo el stack trace, leo el código, encuentro el root cause y propongo el fix — todo en el mismo contexto, sin cambiar de ventana.
 
 ---
 
@@ -469,7 +456,6 @@ Pi: [Genera patch con null check]
 
 ---
 
-## En resumen
 
 1. **Pi es mejor que tu IDE para debugging** → stack trace → código → fix en segundos
 2. **Serena es clave** → navega código como un IDE, pero en terminal
@@ -491,11 +477,3 @@ Pi: [Genera patch con null check]
 ## 💭 ¿Qué debugging workflow usas?
 
 ¿Prefieres VS Code, Pi, o una mezcla? ¿Algún tip para debugging que quieras compartir? Déjamelo en los comentarios.
-
----
-
-**Tags:** `pi`, `debugging`, `serena`, `productividad`, `workflow`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

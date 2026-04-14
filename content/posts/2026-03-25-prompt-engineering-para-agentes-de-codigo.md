@@ -2,25 +2,12 @@
 title: "Prompt engineering para agentes de código"
 description: "El prompt engineering tradicional está muriendo. Lo que lo reemplaza no es mejor prompting, es context engineering + agentes. Guía práctica desde la terminal."
 date: 2026-03-25
+lastmod: 2026-03-25
 categories: ["AI"]
 tags: ["prompt-engineering", "agentes", "pi", "ia", "context-engineering"]
-readingTime: 11
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-03-25 | **Categoría:** AI | **Lectura:** 11 min
-
-2026 trajo un cambio que nadie está hablando: el prompt engineering tradicional está muriendo. Lo que reemplaza no es "mejor prompting", es **context engineering + agentes**. Y tu terminal es el mejor lugar para hacerlo.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Por qué los prompts gigantes no funcionan en 2026
-- Cómo Pi cambia las reglas del juego con herramientas
-- Mis patrones de prompting para agentes de código
-- Las 3 reglas de oro para prompts efectivos
+---2026 trajo un cambio que nadie está hablando: el prompt engineering tradicional está muriendo. Lo que reemplaza no es "mejor prompting", es **context engineering + agentes**. Y tu terminal es el mejor lugar para hacerlo.
 
 ---
 
@@ -346,7 +333,6 @@ Pi está diseñado exactamente para estas tendencias.
 
 ---
 
-## En resumen
 
 1. **El prompt gigante murió en 2024** → Lo que funciona es context engineering
 2. **Corto > Largo** → 3 líneas de instrucciones + herramientas > 500 líneas de especificaciones
@@ -368,11 +354,3 @@ Pi está diseñado exactamente para estas tendencias.
 ## 💭 ¿Qué prompting patterns usas tú?
 
 ¿Tienes algún truco que funcionó mejor que los míos? ¿Algún error que repetís? Déjamelo en los comentarios.
-
----
-
-**Tags:** `prompt-engineering`, `agentes`, `pi`, `ia`, `context-engineering`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

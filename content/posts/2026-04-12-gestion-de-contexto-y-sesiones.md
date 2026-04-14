@@ -1,28 +1,13 @@
 ---
 title: "Gestión de contexto y sesiones"
-description: "El contexto es el recurso más valioso con agentes de IA. Pi tiene compaction automática, sesiones en árbol y navegación temporal para mantener productividad durante horas."
+description: "El contexto es el recurso más valioso con agentes de IA. Pi tiene compaction automática, sesiones en árbol y navegación temporal para mantener la productividad."
 date: 2026-04-12
+lastmod: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "contexto", "sesiones", "compaction", "intermedio"]
-readingTime: 12
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-04-12 | **Categoría:** Pi | **Lectura:** 12 min
-
-El contexto es el recurso más valioso cuando trabajas con agentes de IA. Pi tiene mecanismos sofisticados para gestionarlo: compaction automática, sesiones con estructura de árbol, y navegación temporal. Entender cómo funciona te permite mantener sesiones productivas durante horas sin degradación.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Cómo funciona el context window y por qué se agota
-- Compaction: automática, manual y configurable
-- Sesiones como árboles JSONL con branching
-- Navegación con `/tree` y `/fork`
-- Patrones prácticos para sesiones largas
-- Cómo recuperar contexto después de compactar
+---El contexto es el recurso más valioso cuando trabajas con agentes de IA. Pi tiene mecanismos sofisticados para gestionarlo: compaction automática, sesiones con estructura de árbol, y navegación temporal. Entender cómo funciona te permite mantener sesiones productivas durante horas sin degradación.
 
 ---
 
@@ -386,7 +371,6 @@ Con `/tree` puedes navegar a cualquier punto de la historia, incluyendo mensajes
 
 ---
 
-## En resumen
 
 1. **El contexto es finito** — Pi lo gestiona con compaction automática
 2. **Compaction resume lo antiguo** y conserva los últimos ~20k tokens
@@ -404,11 +388,3 @@ Con `/tree` puedes navegar a cualquier punto de la historia, incluyendo mensajes
 - [Patrones avanzados — Multi-agente y automatización](/posts/) — Siguiente artículo de esta serie
 - [Documentación de compaction](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/compaction.md) — Detalles internos
 - [Documentación de sesiones](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/session.md) — Formato JSONL
-
----
-
-**Tags:** `pi`, `contexto`, `sesiones`, `compaction`, `intermedio`
-
----
-
-*Este artículo forma parte de la serie [Pi desde cero hasta intermedio](/categories/pi/) — Artículo 5 de 6*

@@ -1,25 +1,13 @@
 ---
 title: "Serena vs OneTool: ¿cuándo usar cada uno?"
-description: "Dos herramientas poderosas en mi stack. Pero usar ambas al mismo tiempo es como llevar un cuchillo de chef y un martillo a la misma cocina. Cuándo usar cada una."
+description: "Dos herramientas poderosas en mi stack. Usar ambas a la vez es como llevar un cuchillo de chef y un martillo a la misma cocina. Cuándo usar cada una y por qué."
 date: 2026-03-25
+lastmod: 2026-03-25
 categories: ["Pi"]
 tags: ["serena", "onetool", "pi", "integraciones"]
-readingTime: 10
+mode: review
 draft: false
----
-
-
-**Publicado:** 2026-03-25 | **Categoría:** Pi | **Lectura:** 10 min
-
-Dos de las herramientas más poderosas en mi stack. Pero usar ambas al mismo tiempo es como llevar un cuchillo de chef y un martillo a la misma cocina. Aquí cuándo usar cada una.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Cuándo usar Serena para análisis profundo de código
-- Cuándo usar OneTool para workflows integrados
-- La matriz de decisión que me ahorra tiempo todos los días
+---Dos de las herramientas más poderosas en mi stack. Pero usar ambas al mismo tiempo es como llevar un cuchillo de chef y un martillo a la misma cocina. Aquí cuándo usar cada una.
 
 ---
 
@@ -280,7 +268,6 @@ ot.server(proxy='serena')          # OneTool → Serena
 
 ---
 
-## En resumen
 
 1. **Serena** = Arquitecto de código (LSP, análisis profundo, refactor)
 2. **OneTool** = Orquestador de workflows (100+ tools, memoria, integración)
@@ -303,11 +290,3 @@ ot.server(proxy='serena')          # OneTool → Serena
 ## 💭 ¿Tú qué herramienta usas más?
 
 ¿Serena o OneTool? ¿O ambos? ¿Qué casos de uso tienes que no cubrí? Déjamelo en los comentarios.
-
----
-
-**Tags:** `serena`, `onetool`, `mcp`, `pi`, `herramientas`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

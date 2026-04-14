@@ -2,27 +2,12 @@
 title: "Patrones avanzados — Multi-agente y automatización"
 description: "Los 5 patrones agentic principales de Pi: orquestación multi-agente, subagentes con contexto aislado, automatización y el SDK para integración programática."
 date: 2026-04-12
+lastmod: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "multi-agente", "automatización", "sdk", "avanzado"]
-readingTime: 14
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-04-12 | **Categoría:** Pi | **Lectura:** 14 min
-
-Pi es minimalista en su core, pero poderoso en sus modos de uso. Más allá de la sesión interactiva, puedes orquestar múltiples agentes, automatizar tareas, y embeber Pi en tus propias aplicaciones. Este artículo cubre los 5 patrones agentic principales, subagentes, y el SDK para integración programática.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Los 5 patrones agentic y cuándo usar cada uno
-- Cómo Pi usa subagentes con contexto aislado
-- `pi -p` para automatización en scripts
-- El SDK de Pi para embeber agentes en aplicaciones
-- Agentes especializados (scout, planner, worker, reviewer)
-- Flujos de trabajo encadenados y paralelos
+---Pi es minimalista en su core, pero poderoso en sus modos de uso. Más allá de la sesión interactiva, puedes orquestar múltiples agentes, automatizar tareas, y embeber Pi en tus propias aplicaciones. Este artículo cubre los 5 patrones agentic principales, subagentes, y el SDK para integración programática.
 
 ---
 
@@ -460,7 +445,6 @@ await session.prompt("Analiza el log de errores y sugiere fixes");
 
 ---
 
-## En resumen
 
 1. **ReAct** es el patrón por defecto — funciona para el 90% de tareas
 2. **Plan-and-Execute** para tareas complejas — primero plan, luego ejecución paso a paso
@@ -480,11 +464,3 @@ await session.prompt("Analiza el log de errores y sugiere fixes");
 - [Ejemplo de subagentes](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent/examples/extensions/subagent) — Implementación de referencia
 - [OpenClaw](https://github.com/openclaw/openclaw) — Caso real del SDK en producción
 - [Pi desde cero — Instalación y primera sesión](/posts/2026-04-12-pi-desde-cero-instalacion-y-primera-sesion/) — Artículo 1 de esta serie
-
----
-
-**Tags:** `pi`, `multi-agente`, `automatización`, `sdk`, `avanzado`
-
----
-
-*Este artículo forma parte de la serie [Pi desde cero hasta intermedio](/categories/pi/) — Artículo 6 de 6 — Final de la serie*

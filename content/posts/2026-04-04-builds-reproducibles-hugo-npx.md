@@ -2,25 +2,12 @@
 title: "Builds reproducibles en Hugo con npx"
 description: "Fijar la versión de Hugo en package.json con npx elimina dependencias de binarios globales y garantiza builds idénticos en local, CI y cualquier máquina."
 date: 2026-04-04
+lastmod: 2026-04-04
 categories: ["Hugo"]
 tags: ["hugo", "build", "devops", "productividad", "ci-cd"]
-readingTime: 6
+mode: tutorial
 draft: false
----
-
-
-**Publicado:** 2026-04-04 | **Categoría:** Hugo | **Lectura:** 6 min
-
-Fijar la versión de Hugo en `package.json` con `npx` elimina dependencias de binarios globales y garantiza builds reproducibles. Tu local, CI y cualquier desarrollador obtienen el mismo resultado.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Por qué los binarios globales rompen builds
-- Cómo usar `npx hugo-extended@VERSION` en scripts de npm
-- Comandos concretos para `dev` y `build`
-- Impacto en consistencia entre local y CI
+---Fijar la versión de Hugo en `package.json` con `npx` elimina dependencias de binarios globales y garantiza builds reproducibles. Tu local, CI y cualquier desarrollador obtienen el mismo resultado.
 
 ---
 
@@ -338,7 +325,6 @@ npm run clean
 
 ---
 
-## En resumen
 
 1. **No uses binarios globales** → dependen del sistema, rompen CI
 2. **Fija versiones con npx** → `hugo-extended@0.159.2`
@@ -359,11 +345,3 @@ npm run clean
 ## 💭 ¿Cómo manejas las versiones de herramientas?
 
 ¿Usas binarios globales, Docker, o npx? ¿Alguna vez tuviste un build que fallaba en CI pero no en local?
-
----
-
-**Tags:** `hugo`, `build`, `devops`, `ci-cd`, `productividad`
-
----
-
-*Este artículo es parte de la serie [Hugo](/tags/hugo/)*

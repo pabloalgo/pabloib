@@ -2,24 +2,15 @@
 title: "Ant Colony: cuando un agente no es suficiente"
 description: "Cuando un solo agente se ahoga en tu código, no necesitas un mejor modelo. Necesitas más agentes. Así funciona Ant Colony y el patrón multi-agente en Pi."
 date: 2026-03-25
+lastmod: 2026-03-25
 categories: ["Pi"]
 tags: ["ant-colony", "pi", "agentes", "productividad"]
-readingTime: 10
+mode: guide
 draft: false
 ---
 
 
-**Publicado:** 2026-03-25 | **Categoría:** Pi | **Lectura:** 10 min
-
 Después de usar agentes de IA durante meses, me di cuenta de algo obvio que nadie te dice: cuando un solo agente se ahoga en tu código, no necesitas un mejor modelo. Necesitas más agentes.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Por qué un solo agente tiene límites reales en tareas grandes
-- Cómo Ant Colony divide, paraleliza y verifica automáticamente
-- Mi experiencia real migrando 50 archivos con Ant Colony vs ChatGPT
 
 ---
 
@@ -299,13 +290,9 @@ Pi tiene otro sistema multi-agente: `pi-subagents` (de Nico).
 
 ---
 
-## En resumen
+## Siguiente paso
 
-1. **Un solo agente se ahoga en tareas masivas** → no es el modelo, es la carga cognitiva
-2. **Ant Colony divide, paraleliza, verifica automáticamente** → un enjambre que se auto-organiza
-3. **Tareas unitarias → Pi directo, tareas masivas → Ant Colony**
-4. **El costo es mayor, pero el tiempo ahorrado es infinito** → 3 horas vs 30 minutos
-5. **No necesitas instalar nada** → viene built-in en Pi
+Si quieres controlar cada paso de un multi-agente (en vez de lanzar y olvidar), lee sobre [Skills — Superpoderes bajo demanda](/posts/2026-04-12-skills-superpoderes-bajo-demanda/) para entender cómo Pi decide qué herramientas usar en cada subtarea.
 
 ---
 
@@ -320,11 +307,3 @@ Pi tiene otro sistema multi-agente: `pi-subagents` (de Nico).
 ## 💬 ¿Has usado Ant Colony?
 
 ¿Qué tareas masivas has resuelto con Ant Colony? ¿Cuál ha sido tu experiencia? Déjamelo en los comentarios.
-
----
-
-**Tags:** `ant-colony`, `multi-agente`, `pi`, `productividad`, `automatización`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

@@ -1,26 +1,13 @@
 ---
 title: "Del caos al orden: gestionando contexto con Pi"
-description: "Las sesiones de IA son como una pila de platos que eventualmente se cae. Pi tiene 3 sistemas para transformar el caos en orden predecible."
+description: "Las sesiones de IA son como una pila de platos: pones uno encima de otro y se caen. Pi tiene 3 sistemas para transformar ese caos en orden predecible."
 date: 2026-03-25
+lastmod: 2026-03-25
 categories: ["Pi"]
 tags: ["pi", "context", "productividad"]
-readingTime: 9
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-03-25 | **Categoría:** Pi | **Lectura:** 9 min
-
-Las sesiones de IA son como una pila de platos: pones uno, otro, otro... eventualmente la pila se cae. Pi tiene 3 sistemas para manejar esto, y juntos transformaron el caos de mis sesiones en orden predecible.
-
----
-
-## 🎯 Lo que aprenderás
-
-- El problema del "contexto perdido" en agentes de IA
-- Cómo pi-context gestiona sesiones gigantes
-- Cómo branching te permite explorar en paralelo
-- Cómo tags y checkpoints te ahorran horas
+---Las sesiones de IA son como una pila de platos: pones uno, otro, otro... eventualmente la pila se cae. Pi tiene 3 sistemas para manejar esto, y juntos transformaron el caos de mis sesiones en orden predecible.
 
 ---
 
@@ -401,7 +388,6 @@ Pi tiene compaction automática que comprime contexto viejo.
 
 ---
 
-## En resumen
 
 1. **El problema:** Sesiones gigantes que se pierden, no hay save points, no hay branching
 2. **Sistema #1: Tags** → Save points, volver atrás, diffs
@@ -423,11 +409,3 @@ Pi tiene compaction automática que comprime contexto viejo.
 ## 💭 ¿Cómo manejas tus sesiones?
 
 ¿Usas alguna otra técnica? ¿Algún patrón que funcione mejor que estos? Déjamelo en los comentarios.
-
----
-
-**Tags:** `pi-context`, `gestion-contexto`, `sesiones`, `productividad`
-
----
-
-*Este artículo forma parte de la categoría [Pi](/categories/pi/)*

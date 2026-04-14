@@ -1,28 +1,13 @@
 ---
 title: "Extensiones — Pi que se programa a sí mismo"
-description: "Las skills dan instrucciones a Pi. Las extensiones le dan código ejecutable: módulos TypeScript que registran tools, interceptan llamadas y crean componentes UI."
+description: "Las skills dan instrucciones a Pi. Las extensiones le dan código ejecutable: módulos TS que registran tools, interceptan llamadas y crean componentes UI."
 date: 2026-04-12
+lastmod: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "extensiones", "typescript", "personalización", "intermedio"]
-readingTime: 13
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-04-12 | **Categoría:** Pi | **Lectura:** 13 min
-
-Las skills le dan instrucciones a Pi. Las extensiones le dan **código ejecutable**. Son módulos TypeScript que pueden registrar tools custom, interceptar llamadas, modificar el contexto, y crear componentes en la UI. Y la parte más alucinante: Pi puede escribir sus propias extensiones, recargarlas, y probarlas. Todo en vivo.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Qué son las extensiones y cómo se diferencian de las skills
-- El sistema jiti: TypeScript sin build step
-- Estructura de una extensión y sus estilos
-- Escribir tu primera extensión paso a paso
-- El paradigma self-extension: Pi escribe extensiones para sí mismo
-- Extensiones populares que vale la pena instalar
+---Las skills le dan instrucciones a Pi. Las extensiones le dan **código ejecutable**. Son módulos TypeScript que pueden registrar tools custom, interceptar llamadas, modificar el contexto, y crear componentes en la UI. Y la parte más alucinante: Pi puede escribir sus propias extensiones, recargarlas, y probarlas. Todo en vivo.
 
 ---
 
@@ -455,7 +440,6 @@ También puedes instalar cualquier paquete npm añadiendo un `package.json` junt
 
 ---
 
-## En resumen
 
 1. **Extensiones = código TypeScript** que Pi ejecuta, no instrucciones textuales como las skills
 2. **jiti** permite TypeScript sin build step — escribes `.ts`, haces `/reload`, y funciona
@@ -473,11 +457,3 @@ También puedes instalar cualquier paquete npm añadiendo un `package.json` junt
 - [Documentación de extensiones](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/extensions.md) — Referencia completa
 - [Ejemplos de extensiones](https://github.com/badlogic/pi-mono/tree/main/packages/coding-agent/examples/extensions) — 60+ ejemplos funcionales
 - [Pi: The Minimal Agent Within OpenClaw](https://lucumr.pocoo.org/2026/1/31/pi/) — Armin Ronacher sobre el self-extension paradigm
-
----
-
-**Tags:** `pi`, `extensiones`, `typescript`, `personalización`, `intermedio`
-
----
-
-*Este artículo forma parte de la serie [Pi desde cero hasta intermedio](/categories/pi/) — Artículo 4 de 6*

@@ -1,28 +1,13 @@
 ---
 title: "Tu AGENTS.md — Contexto que el agente entiende"
-description: "Sin AGENTS.md, Pi adivina. Con él, Pi sabe. Cómo escribir el archivo más importante de tu proyecto para que el agente entienda tu código."
+description: "Sin AGENTS.md, Pi adivina. Con él, Pi sabe. Cómo escribir el archivo más importante de tu proyecto para que el agente entienda tu código y convenciones."
 date: 2026-04-12
+lastmod: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "agents-md", "contexto", "configuración", "principiante"]
-readingTime: 12
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-04-12 | **Categoría:** Pi | **Lectura:** 12 min
-
-La diferencia entre un agente que te entiende y uno que no está en un archivo: `AGENTS.md`. Es donde le dices a Pi cómo funciona tu proyecto, qué convenciones sigues y qué esperar de él. Sin él, Pi adivina. Con él, Pi sabe.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Qué es AGENTS.md y por qué es el archivo más importante de Pi
-- Cómo funciona la jerarquía de archivos de contexto
-- Escribir instrucciones que el agente realmente sigue
-- SYSTEM.md y APPEND_SYSTEM.md para controlar el system prompt
-- settings.json para configuración global y por proyecto
-- Ejemplo práctico: configurar Pi para un proyecto real
+---La diferencia entre un agente que te entiende y uno que no está en un archivo: `AGENTS.md`. Es donde le dices a Pi cómo funciona tu proyecto, qué convenciones sigues y qué esperar de él. Sin él, Pi adivina. Con él, Pi sabe.
 
 ---
 
@@ -378,7 +363,6 @@ Pi puede ejecutar `bash`, pero si no sabe cuál es el comando correcto, puede ej
 
 ---
 
-## En resumen
 
 1. **AGENTS.md** es el archivo más importante de tu setup — le da a Pi el contexto de tu proyecto
 2. Se **concatena** desde 3 niveles: global → padres → proyecto actual
@@ -395,11 +379,3 @@ Pi puede ejecutar `bash`, pero si no sabe cuál es el comando correcto, puede ej
 - [Skills — Superpoderes bajo demanda](/posts/) — Siguiente artículo de esta serie
 - [Documentación de settings](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/settings.md) — Todas las opciones de configuración
 - [Por qué Pi cambió mi workflow de desarrollo](/posts/2026-03-23-pi-cambio-mi-workflow/) — Mi experiencia personal
-
----
-
-**Tags:** `pi`, `agents-md`, `contexto`, `configuración`, `principiante`
-
----
-
-*Este artículo forma parte de la serie [Pi desde cero hasta intermedio](/categories/pi/) — Artículo 2 de 6*

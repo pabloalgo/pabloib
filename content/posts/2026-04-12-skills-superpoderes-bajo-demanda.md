@@ -2,27 +2,12 @@
 title: "Skills — Superpoderes bajo demanda"
 description: "Las skills son paquetes de instrucciones que se cargan bajo demanda sin inflar el core de Pi. Un estándar abierto que funciona en Pi, Claude Code y Codex."
 date: 2026-04-12
+lastmod: 2026-04-12
 categories: ["Pi"]
 tags: ["pi", "skills", "agentskills", "personalización", "intermedio"]
-readingTime: 11
+mode: guide
 draft: false
----
-
-
-**Publicado:** 2026-04-12 | **Categoría:** Pi | **Lectura:** 11 min
-
-Pi viene con 4 tools y un system prompt de 100 tokens. ¿Cómo haces que haga cosas avanzadas sin inflar el core? La respuesta es **skills**: paquetes de instrucciones que se cargan bajo demanda, solo cuando se necesitan. Y son un estándar abierto: funcionan en Pi, Claude Code, Codex, y más.
-
----
-
-## 🎯 Lo que aprenderás
-
-- Qué son las skills y cómo funciona el estándar agentskills.io
-- Progressive disclosure: por qué las skills no consumen contexto hasta que las necesitas
-- Cómo instalar skills de la comunidad
-- El formato SKILL.md y sus campos
-- Cómo crear tu primera skill custom
-- Skills populares que vale la pena tener
+---Pi viene con 4 tools y un system prompt de 100 tokens. ¿Cómo haces que haga cosas avanzadas sin inflar el core? La respuesta es **skills**: paquetes de instrucciones que se cargan bajo demanda, solo cuando se necesitan. Y son un estándar abierto: funcionan en Pi, Claude Code, Codex, y más.
 
 ---
 
@@ -424,7 +409,6 @@ pi --no-skills
 
 ---
 
-## En resumen
 
 1. **Skills = instrucciones especializadas** que se cargan bajo demanda, no siempre
 2. **Progressive disclosure** significa que 20 skills solo consumen ~2,000 tokens hasta que se necesiten
@@ -442,11 +426,3 @@ pi --no-skills
 - [agentskills.io](https://agentskills.io) — Especificación oficial del estándar
 - [Pi packages](https://shittycodingagent.ai/packages) — Directorio oficial de paquetes
 - [awesome-pi-agent](https://github.com/qualisero/awesome-pi-agent) — Lista curada de recursos
-
----
-
-**Tags:** `pi`, `skills`, `agentskills`, `personalización`, `intermedio`
-
----
-
-*Este artículo forma parte de la serie [Pi desde cero hasta intermedio](/categories/pi/) — Artículo 3 de 6*
