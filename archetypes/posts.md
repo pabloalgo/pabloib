@@ -5,27 +5,33 @@ date: {{ .Date }}
 lastmod: {{ .Date }}
 categories: []
 tags: []
+readingTime: 5
+mode: guide
+image: ""
 draft: true
-isCJKLanguage: false
+aliases: []
 ---
 
-<!-- Escribe tu artículo. Estructura sugerida:
+<!-- Estructura editorial:
 
-## Hook (2-3 frases, con experiencia u opinión)
-La primera vez que... / El problema con X es que...
+Hook (2-3 frases, sin heading — experiencia u opinión bold)
 
-## ¿Qué es X y por qué importa?
-Respuesta directa en 40-60 palabras.
+---
 
 ## El problema
 Qué no funciona. Qué intenté primero.
 
-## Mi solución
+## La solución / Cómo funciona
 Paso a paso con código. Trade-offs.
 
-## Lo que no me funcionó
-Errores reales y cómo los solucioné.
+## Ejemplos / Comparación
+Tabla o ejemplos prácticos.
+
+## ¿Cuándo NO usar...?
+Límites y casos donde no aplica.
 
 ## Conclusión
-Opinión o próximo paso concreto. Link a post relacionado.
+Opinión o próximo paso concreto.
+
+Modos: tutorial | guide | opinion | review
 -->

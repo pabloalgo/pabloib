@@ -20,13 +20,14 @@ Después de cambios en código (no docs): `npm run build` → verificar sin erro
 
 ## Estructura clave
 
-- `content/posts/*.md` — Artículos (15). Front matter obligatorio: title, description, date, categories, tags, readingTime
+- `content/posts/*.md` — Artículos. Front matter obligatorio: title, description, date, lastmod, categories, tags, readingTime, mode, image, aliases
 - `content/about.md` — Página About (contiene HTML, ojo con Goldmark unsafe=false)
 - `layouts/` — Templates Hugo. Overrides del tema Paper (NO editar themes/paper/)
 - `layouts/partials/` — head.html (SEO/meta), jsonld.html (Schema.org), og-image.html (OG dinámicas)
 - `static/css/output.css` — Tailwind compilado (generado por build, NO editar manualmente)
 - `assets/css/input.css` — Tailwind input
 - `hugo.toml` — Config Hugo (taxonomías, menú, markup unsafe=false, outputs HTML+RSS+JSON)
+- `archetypes/posts.md` — Archetype para nuevos posts (campos y estructura editorial)
 - `tailwind.config.js` — Design system (colores Material Design, tipografías, plugins)
 - `static/_headers` — Security headers para Cloudflare
 - `static/js/main.js` — Búsqueda Fuse.js, filtros, dark mode, prefetch
@@ -40,12 +41,17 @@ Después de cambios en código (no docs): `npm run build` → verificar sin erro
 title: "Título del artículo"
 description: "Descripción SEO de máximo 160 caracteres para Google snippets"
 date: 2026-04-13
+lastmod: 2026-04-13
 categories: ["Pi"]
 tags: ["pi", "tutorial"]
 readingTime: 8
+mode: guide
+image: ""
+aliases: []
 draft: false
 ---
 ```
+Modos disponibles: `tutorial`, `guide`, `opinion`, `review`
 
 **Layouts** — Todos heredan baseof.html con blocks `head` y `main`. SEO en partials:
 - `head.html` → meta tags, OG, Twitter cards (usa description del front matter)
