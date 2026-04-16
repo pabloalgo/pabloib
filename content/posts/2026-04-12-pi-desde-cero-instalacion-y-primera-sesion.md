@@ -70,14 +70,14 @@ Pi necesita acceso a un modelo de lenguaje. Funciona con 15+ providers: OpenAI, 
 ### Con Anthropic (Claude) — recomendado para empezar
 
 ```bash
-export ANTHROPIC_API_KEY="sk-ant-tu-clave-aqui"
+export ANTHROPIC_API_KEY="<tu-api-key>"
 pi
 ```
 
 ### Con OpenAI (GPT-4o)
 
 ```bash
-export OPENAI_API_KEY="sk-tu-clave-aqui"
+export OPENAI_API_KEY="<tu-api-key>"
 pi --provider openai --model gpt-4o
 ```
 
@@ -90,7 +90,7 @@ pi --provider ollama --model devstral
 
 > 💡 **Tip:** Guarda tu API key en `~/.bashrc` o `~/.zshrc` para no escribirla cada vez:
 > ```bash
-> echo 'export ANTHROPIC_API_KEY="sk-ant-..."' >> ~/.bashrc
+> echo 'export ANTHROPIC_API_KEY="<tu-api-key>"' >> ~/.bashrc
 > ```
 
 Para ver todos los models disponibles:
@@ -219,9 +219,9 @@ Cuando lanzas `pi`, verás algo como `AGENTS.md: loaded (3 files)`. Es el archiv
 
 1. `~/.pi/agent/AGENTS.md` — instrucciones globales (para todos tus proyectos)
 2. Directorios padre — instrucciones compartidas
-3. `./AGENTS.md` o `./.pi/AGENTS.md` — instrucciones del proyecto actual
+3. `./AGENTS.md` — instrucciones del proyecto actual (o `./CLAUDE.md` como alias)
 
-Todos se concatenan automáticamente.
+Pi busca estos archivos directamente en cada directorio (no dentro de subdirectorios como `.pi/`). Todos se concatenan automáticamente.
 
 Ejemplo mínimo de `AGENTS.md`:
 
@@ -281,7 +281,7 @@ Si todo está ✓, estás listo para el siguiente paso.
 # Verifica que la variable existe
 echo $ANTHROPIC_API_KEY
 # Si está vacía, expórtala:
-export ANTHROPIC_API_KEY="sk-ant-..."
+export ANTHROPIC_API_KEY="<tu-api-key>"
 ```
 
 ### "Model not found"
