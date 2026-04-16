@@ -31,13 +31,14 @@ Pi resuelve esto con `AGENTS.md`: un archivo markdown con instrucciones que **se
 Pi busca archivos de contexto en tres niveles, de más general a más específico:
 
 ```
-~/.pi/agent/AGENTS.md     ← Global (todas las sesiones)
+~/.pi/agent/AGENTS.md         ← Global (todas las sesiones)
        ↓
-/projects/web/AGENTS.md   ← Directorio padre
+/projects/web/AGENTS.md       ← Directorio padre
        ↓
-/projects/web/app/AGENTS.md  ← Directorio actual
-/projects/web/app/.pi/AGENTS.md  ← También válido
+/projects/web/app/AGENTS.md   ← Directorio actual (cwd)
 ```
+
+Pi busca `AGENTS.md` o `CLAUDE.md` directamente en cada directorio, caminando desde el cwd hacia arriba. **No busca dentro de subdirectorios** como `.pi/` — solo en la raíz de cada nivel.
 
 **Todos los archivos que encuentre se concatenan.** No se sobreescriben, se acumulan.
 
