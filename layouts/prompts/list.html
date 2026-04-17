@@ -4,52 +4,62 @@
 
 {{ define "main" }}
 <section class="mt-6">
-  <header class="mb-10">
+  <header class="mb-8">
     <div class="flex items-center gap-3 mb-3">
       <span class="material-symbols-outlined text-primary" style="font-size: 28px;">terminal</span>
       <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">Librería de Prompts</span>
     </div>
     <h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tighter">{{ .Title }}</h1>
     {{- if .Description -}}
-    <p class="mt-3 font-body text-on-surface-variant text-lg leading-relaxed">{{ .Description }}</p>
+    <p class="mt-3 font-body text-on-surface-variant leading-relaxed">{{ .Description }}</p>
     {{- end -}}
   </header>
 
-  {{- /* Prompts Grid */ -}}
-  <section class="space-y-16">
+  {{- /* Prompt Cards Grid */ -}}
+  <section class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {{- range .Pages.ByDate.Reverse -}}
     <article class="group">
-      <a href="{{ .Permalink }}" class="block space-y-4">
-        {{- /* Metadata row */ -}}
-        <div class="flex items-center gap-3">
-          {{- with .Params.usecase -}}
-          <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">{{ . }}</span>
-          {{- end -}}
-          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
-          <time class="font-label text-[10px] uppercase tracking-widest text-outline" datetime="{{ .Date.Format "2006-01-02" }}">
-            {{ partial "date.html" (dict "date" .Date "format" "short") }}
-          </time>
+      <a href="{{ .Permalink }}" class="flex flex-col bg-surface-container-low dark:bg-slate-900/50 border border-outline-variant/10 dark:border-slate-800 rounded-xl overflow-hidden hover:border-primary/30 hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
+        {{- /* Card Header */ -}}
+        <div class="p-5 pb-4">
+          <div class="flex items-center gap-2 mb-3 flex-wrap">
+            {{- with .Params.usecase -}}
+            <span class="inline-flex items-center gap-1 px-2.5 py-0.5 bg-primary/10 text-primary font-label text-[10px] uppercase tracking-widest font-bold rounded-md">
+              {{ . }}
+            </span>
+            {{- end -}}
+            {{- range first 2 .Params.tags -}}
+            <span class="px-2 py-0.5 bg-surface-container-highest dark:bg-slate-800 text-on-surface-variant font-label text-[10px] uppercase tracking-widest rounded-md">
+              {{ . }}
+            </span>
+            {{- end -}}
+            {{- if gt (len .Params.tags) 2 -}}
+            <span class="font-label text-[10px] text-outline">+{{ sub (len .Params.tags) 2 }}</span>
+            {{- end -}}
+          </div>
+          <h2 class="text-lg font-headline font-bold text-on-surface leading-tight tracking-tight group-hover:text-primary transition-colors">
+            {{ .Title }}
+          </h2>
         </div>
 
-        {{- /* Title */ -}}
-        <h2 class="text-2xl font-headline font-bold text-on-surface leading-tight tracking-tight group-hover:text-primary transition-colors">
-          {{ .Title }}
-        </h2>
+        {{- /* Code Preview with fade-out */ -}}
+        {{- with .Params.prompt -}}
+        <div class="relative mx-5 mb-3 bg-[#131b2e] dark:bg-slate-950 rounded-lg p-4 overflow-hidden">
+          <pre class="text-sm font-mono text-slate-300 leading-relaxed whitespace-pre-wrap line-clamp-4">{{ . }}</pre>
+          <div class="absolute inset-x-0 bottom-0 h-12 bg-gradient-to-t from-[#131b2e] dark:from-slate-950 to-transparent pointer-events-none"></div>
+        </div>
+        {{- end -}}
 
-        {{- /* Description */ -}}
-        <p class="font-body text-on-surface-variant leading-relaxed">
-          {{ .Params.description | default .Summary | plainify }}
-        </p>
-
-        {{- /* Footer: models + variables count */ -}}
-        <div class="flex items-center gap-3 pt-2 flex-wrap">
-          {{- range .Params.models -}}
-          <span class="px-3 py-1 bg-surface-container-low text-on-surface-variant font-label text-xs uppercase tracking-widest rounded-full">{{ . }}</span>
-          {{- end -}}
-          {{- with .Params.variables -}}
-          <span class="font-body text-sm text-outline">{{ len . }} variables</span>
-          {{- end -}}
-          <span class="ml-auto material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
+        {{- /* Card Footer */ -}}
+        <div class="flex items-center justify-between px-5 py-3 border-t border-outline-variant/10 dark:border-slate-800 mt-auto">
+          <div class="flex items-center gap-2">
+            {{- with .Params.variables -}}
+            <span class="font-body text-xs text-outline">{{ len . }} variables</span>
+            <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+            {{- end -}}
+            <span class="font-body text-xs text-outline">{{ len .Params.models }} modelos</span>
+          </div>
+          <span class="material-symbols-outlined text-primary text-sm opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
         </div>
       </a>
     </article>
