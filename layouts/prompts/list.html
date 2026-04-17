@@ -16,42 +16,40 @@
   </header>
 
   {{- /* Prompts Grid */ -}}
-  <section class="space-y-6">
+  <section class="space-y-16">
     {{- range .Pages.ByDate.Reverse -}}
     <article class="group">
-      <a href="{{ .Permalink }}" class="block p-5 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
-        <div class="space-y-3">
-          {{- /* Metadata row */ -}}
-          <div class="flex items-center gap-3 flex-wrap">
-            {{ partial "prompt-metadata.html" . }}
-            <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
-            <time class="font-label text-[10px] uppercase tracking-widest text-outline" datetime="{{ .Date.Format "2006-01-02" }}">
-              {{ partial "date.html" (dict "date" .Date "format" "short") }}
-            </time>
-          </div>
-
-          {{- /* Title */ -}}
-          <h2 class="text-lg font-headline font-bold text-on-surface leading-tight tracking-tight group-hover:text-primary transition-colors">
-            {{ .Title }}
-          </h2>
-
-          {{- /* Description */ -}}
-          <p class="font-body text-on-surface-variant text-sm leading-relaxed">
-            {{ .Params.description | default .Summary | plainify | truncate 140 }}
-          </p>
-
-          {{- /* Variables preview */ -}}
-          {{- with .Params.variables -}}
-          <div class="flex items-center gap-2 flex-wrap pt-1">
-            <span class="font-label text-[10px] uppercase tracking-widest text-outline">Variables:</span>
-            {{- range first 4 . -}}
-            <code class="text-xs bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded font-mono">{{ . }}</code>
-            {{- end -}}
-            {{- if gt (len .) 4 -}}
-            <span class="font-label text-[10px] text-outline">+{{ sub (len .) 4 }} más</span>
-            {{- end -}}
-          </div>
+      <a href="{{ .Permalink }}" class="block space-y-4">
+        {{- /* Metadata row */ -}}
+        <div class="flex items-center gap-3">
+          {{- with .Params.usecase -}}
+          <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">{{ . }}</span>
           {{- end -}}
+          <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+          <time class="font-label text-[10px] uppercase tracking-widest text-outline" datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ partial "date.html" (dict "date" .Date "format" "short") }}
+          </time>
+        </div>
+
+        {{- /* Title */ -}}
+        <h2 class="text-2xl font-headline font-bold text-on-surface leading-tight tracking-tight group-hover:text-primary transition-colors">
+          {{ .Title }}
+        </h2>
+
+        {{- /* Description */ -}}
+        <p class="font-body text-on-surface-variant leading-relaxed">
+          {{ .Params.description | default .Summary | plainify }}
+        </p>
+
+        {{- /* Footer: models + variables count */ -}}
+        <div class="flex items-center gap-3 pt-2 flex-wrap">
+          {{- range .Params.models -}}
+          <span class="px-3 py-1 bg-surface-container-low text-on-surface-variant font-label text-xs uppercase tracking-widest rounded-full">{{ . }}</span>
+          {{- end -}}
+          {{- with .Params.variables -}}
+          <span class="font-body text-sm text-outline">{{ len . }} variables</span>
+          {{- end -}}
+          <span class="ml-auto material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all">arrow_forward</span>
         </div>
       </a>
     </article>
