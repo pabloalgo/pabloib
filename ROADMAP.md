@@ -132,6 +132,26 @@ Plan de desarrollo y mejoras futuras del proyecto.
   - Agregar `description` a todo el front matter
   - Mejorar snippets en buscadores
 
+### 📝 Sección /prompts/
+
+- [x] **MVP de librería de prompts**
+  - Sección nativa de Hugo en `content/prompts/`
+  - Templates dedicados: `layouts/prompts/list.html` y `single.html`
+  - 3 prompts de ejemplo publicados
+  - Copy-to-clipboard con `prompts.js` (CSP compliant)
+  - Archetype para nuevos prompts
+  - Enlace en navegación principal
+  - JSON-LD, SEO y sitemap heredados
+  - Partials reutilizables: `prompt-metadata`, `tags-footer`, `related-section`
+
+- [ ] **Fase 2 — Prompts comunitarios con OpnForm**
+  - Formulario público con [OpnForm](https://opnform.com/) (software libre, self-hostable, cuenta pro vitalicia)
+  - Campos replican el front matter del archetype (`title`, `description`, `usecase`, `models`, `prompt`, `variables`, `tags`)
+  - CTA "Envía tu prompt" en `/prompts/`
+  - Notificación al autor → curación manual → commit si se aprueba
+  - Posible automatización: webhook → GitHub Action → issue con contenido formateado
+  - Alternativa evaluada y descartada: GitHub Issue template (más barrera técnica), Tally/Formspree (no libre, vendor lock-in)
+
 ---
 
 ## 💬 v2.6 - Interactividad
@@ -190,7 +210,7 @@ Plan de desarrollo y mejoras futuras del proyecto.
 | v2.2 | ✅ Completado | 2026-03-26 |
 | v2.3 | ✅ Completado | 2026-03-26 |
 | v2.4 | ✅ Completado | 2026-04-06 |
-| v2.5 | ✅ Completado | 2026-04-13 |
+| v2.5 | ✅ Completado | 2026-04-17 |
 | v2.6 | 📋 Planificado | TBD |
 | v3.0 | 💭 Visión | TBD |
 
@@ -205,4 +225,4 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ---
 
-*Última actualización: 2026-04-06*
+*Última actualización: 2026-04-17*
