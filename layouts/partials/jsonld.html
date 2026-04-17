@@ -19,8 +19,8 @@
   -}}
   {{- $schema = $schema | append $website -}}
 
-{{- else if eq .Section "posts" -}}
-  {{- /* Article schema for blog posts */ -}}
+{{- else if or (eq .Section "posts") (eq .Section "prompts") -}}
+  {{- /* Article schema for blog posts and prompts */ -}}
   {{- $article := dict
     "@context" "https://schema.org"
     "@type" "Article"
@@ -85,8 +85,10 @@
 {{- $crumbs := slice -}}
 {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 1 "name" "Inicio" "item" .Site.BaseURL) -}}
 {{- if .IsHome -}}
-{{- else if eq .Section "posts" -}}
-  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" "Blog" "item" (printf "%sposts/" .Site.BaseURL)) -}}
+{{- else if or (eq .Section "posts") (eq .Section "prompts") -}}
+  {{- $sectionName := cond (eq .Section "posts") "Blog" "Prompts" -}}
+  {{- $sectionURL := cond (eq .Section "posts") (printf "%sposts/" .Site.BaseURL) (printf "%sprompts/" .Site.BaseURL) -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" $sectionName "item" $sectionURL) -}}
   {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 3 "name" .Title "item" .Permalink) -}}
 {{- else -}}
   {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" 2 "name" .Title "item" .Permalink) -}}

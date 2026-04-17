@@ -1,0 +1,61 @@
+{{ define "head" }}
+  {{ partial "head.html" . }}
+{{ end }}
+
+{{ define "main" }}
+<section class="mt-6">
+  <header class="mb-10">
+    <div class="flex items-center gap-3 mb-3">
+      <span class="material-symbols-outlined text-primary" style="font-size: 28px;">terminal</span>
+      <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">Librería de Prompts</span>
+    </div>
+    <h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tighter">{{ .Title }}</h1>
+    {{- if .Description -}}
+    <p class="mt-3 font-body text-on-surface-variant text-lg leading-relaxed">{{ .Description }}</p>
+    {{- end -}}
+  </header>
+
+  {{- /* Prompts Grid */ -}}
+  <section class="space-y-6">
+    {{- range .Pages.ByDate.Reverse -}}
+    <article class="group">
+      <a href="{{ .Permalink }}" class="block p-5 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+        <div class="space-y-3">
+          {{- /* Metadata row */ -}}
+          <div class="flex items-center gap-3 flex-wrap">
+            {{ partial "prompt-metadata.html" . }}
+            <span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+            <time class="font-label text-[10px] uppercase tracking-widest text-outline" datetime="{{ .Date.Format "2006-01-02" }}">
+              {{ partial "date.html" (dict "date" .Date "format" "short") }}
+            </time>
+          </div>
+
+          {{- /* Title */ -}}
+          <h2 class="text-lg font-headline font-bold text-on-surface leading-tight tracking-tight group-hover:text-primary transition-colors">
+            {{ .Title }}
+          </h2>
+
+          {{- /* Description */ -}}
+          <p class="font-body text-on-surface-variant text-sm leading-relaxed">
+            {{ .Params.description | default .Summary | plainify | truncate 140 }}
+          </p>
+
+          {{- /* Variables preview */ -}}
+          {{- with .Params.variables -}}
+          <div class="flex items-center gap-2 flex-wrap pt-1">
+            <span class="font-label text-[10px] uppercase tracking-widest text-outline">Variables:</span>
+            {{- range first 4 . -}}
+            <code class="text-xs bg-surface-container-highest text-on-surface-variant px-2 py-0.5 rounded font-mono">{{ . }}</code>
+            {{- end -}}
+            {{- if gt (len .) 4 -}}
+            <span class="font-label text-[10px] text-outline">+{{ sub (len .) 4 }} más</span>
+            {{- end -}}
+          </div>
+          {{- end -}}
+        </div>
+      </a>
+    </article>
+    {{- end -}}
+  </section>
+</section>
+{{ end }}

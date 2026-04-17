@@ -38,17 +38,7 @@
   </div>
   
   {{- /* Tags */ -}}
-  {{- if .Params.tags -}}
-  <footer class="mt-12 pt-8 border-t border-outline-variant/20">
-    <div class="flex flex-wrap gap-2">
-      {{- range .Params.tags -}}
-      <a href="{{ "/tags/" | relURL }}{{ . | urlize }}/" class="px-4 py-2 bg-surface-container-highest text-on-surface-variant font-label text-sm uppercase tracking-widest rounded-full hover:bg-surface-container-high transition-colors">
-        #{{ . }}
-      </a>
-      {{- end -}}
-    </div>
-  </footer>
-  {{- end -}}
+  {{ partial "tags-footer.html" . }}
   
   {{- /* Navigation */ -}}
   <nav class="mt-12 pt-8 border-t border-outline-variant/20">

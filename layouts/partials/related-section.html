@@ -1,0 +1,27 @@
+{{- /* Related section — expects dict: title, items (slice of slugs), section ("prompts"|"posts"), ctx */ -}}
+{{- with .items -}}
+<section class="mt-12 pt-8 border-t border-outline-variant/20">
+  <h2 class="text-xl font-headline font-bold text-on-surface mb-6">{{ $.title }}</h2>
+  <div class="grid md:grid-cols-2 gap-4">
+    {{- range . -}}
+    {{- with $.ctx.Site.GetPage (printf "/%s/%s" $.section .) -}}
+    <a href="{{ .Permalink }}" class="group block p-4 bg-surface-container-low rounded-xl hover:bg-surface-container transition-colors">
+      <div class="flex items-center gap-2 mb-2">
+        {{- if eq $.section "prompts" -}}
+          {{- with .Params.usecase -}}
+          <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">{{ . }}</span>
+          {{- end -}}
+        {{- else -}}
+          <span class="font-label text-[10px] uppercase tracking-widest text-primary font-bold">
+            {{ if .Params.categories }}{{ index .Params.categories 0 }}{{ else }}Blog{{ end }}
+          </span>
+        {{- end -}}
+      </div>
+      <h3 class="font-headline font-bold text-on-surface group-hover:text-primary transition-colors">{{ .Title }}</h3>
+      <p class="text-sm font-body text-on-surface-variant mt-1">{{ .Params.description | default "" | truncate 80 }}</p>
+    </a>
+    {{- end -}}
+    {{- end -}}
+  </div>
+</section>
+{{- end -}}
