@@ -2,12 +2,14 @@
 title: "Gestión de contexto y sesiones"
 description: "El contexto es el recurso más valioso con agentes de IA. Pi tiene compaction automática, sesiones en árbol y navegación temporal para mantener la productividad."
 date: 2026-04-12
-lastmod: 2026-04-12
+lastmod: 2026-04-16
 categories: ["Pi"]
 tags: ["pi", "contexto", "sesiones", "compaction", "intermedio"]
 mode: guide
 draft: false
----El contexto es el recurso más valioso cuando trabajas con agentes de IA. Pi tiene mecanismos sofisticados para gestionarlo: compaction automática, sesiones con estructura de árbol, y navegación temporal. Entender cómo funciona te permite mantener sesiones productivas durante horas sin degradación.
+---
+
+El contexto es el recurso más valioso cuando trabajas con agentes de IA. Pi tiene mecanismos sofisticados para gestionarlo: compaction automática, sesiones con estructura de árbol, y navegación temporal. Entender cómo funciona te permite mantener sesiones productivas durante horas sin degradación.
 
 ---
 
@@ -385,6 +387,6 @@ Con `/tree` puedes navegar a cualquier punto de la historia, incluyendo mensajes
 ## 🔗 Recursos
 
 - [Extensiones — Pi que se programa a sí mismo](/posts/2026-04-12-extensiones-pi-que-se-programa-a-si-mismo/) — Artículo anterior de esta serie
-- [Patrones avanzados — Multi-agente y automatización](/posts/) — Siguiente artículo de esta serie
+- [Patrones avanzados — Multi-agente y automatización](/posts/2026-04-12-patrones-avanzados-multi-agente-y-automatizacion/) — Siguiente artículo de esta serie
 - [Documentación de compaction](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/compaction.md) — Detalles internos
 - [Documentación de sesiones](https://github.com/badlogic/pi-mono/blob/main/packages/coding-agent/docs/session.md) — Formato JSONL

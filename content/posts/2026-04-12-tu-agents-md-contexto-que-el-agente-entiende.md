@@ -2,12 +2,14 @@
 title: "Tu AGENTS.md — Contexto que el agente entiende"
 description: "Sin AGENTS.md, Pi adivina. Con él, Pi sabe. Cómo escribir el archivo más importante de tu proyecto para que el agente entienda tu código y convenciones."
 date: 2026-04-12
-lastmod: 2026-04-12
+lastmod: 2026-04-16
 categories: ["Pi"]
 tags: ["pi", "agents-md", "contexto", "configuración", "principiante"]
 mode: guide
 draft: false
----La diferencia entre un agente que te entiende y uno que no está en un archivo: `AGENTS.md`. Es donde le dices a Pi cómo funciona tu proyecto, qué convenciones sigues y qué esperar de él. Sin él, Pi adivina. Con él, Pi sabe.
+---
+
+La diferencia entre un agente que te entiende y uno que no está en un archivo: `AGENTS.md`. Es donde le dices a Pi cómo funciona tu proyecto, qué convenciones sigues y qué esperar de él. Sin él, Pi adivina. Con él, Pi sabe.
 
 ---
 

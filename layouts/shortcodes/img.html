@@ -1,0 +1,18 @@
+{{/*
+  Shortcode: img
+  Uso: {{< img src="image.png" alt="Descripción" width="800" height="450" caption="Opcional" >}}
+  Atributos obligatorios: src, alt
+  Atributos opcionales: width (default 800), height (default 450), caption
+*/ -}}
+<figure>
+  <img src="{{ .Get "src" | relURL }}"
+       alt="{{ .Get "alt" }}"
+       loading="lazy"
+       decoding="async"
+       width="{{ .Get "width" | default "800" }}"
+       height="{{ .Get "height" | default "450" }}"
+       class="rounded-xl my-6">
+  {{- with .Get "caption" }}
+  <figcaption class="text-sm text-on-surface-variant mt-2 italic">{{ . }}</figcaption>
+  {{- end -}}
+</figure>

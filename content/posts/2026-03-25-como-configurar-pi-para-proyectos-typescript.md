@@ -2,7 +2,7 @@
 title: "Cómo configurar Pi para proyectos TypeScript"
 description: "Pi está construido en TypeScript. Configurarlo para proyectos TS no es una configuración especial — es su modo nativo. Guía completa de setup paso a paso."
 date: 2026-03-25
-lastmod: 2026-03-25
+lastmod: 2026-04-16
 categories: ["Pi"]
 tags: ["typescript", "pi", "configuracion", "tutorial"]
 mode: tutorial
@@ -47,7 +47,7 @@ pi
   "defaultThinkingLevel": "high",
   "providers": {
     "anthropic": {
-      "apiKey": "sk-ant-...",
+      "apiKey": "<tu-api-key>",
       "defaultModel": "claude-sonnet-4",
       "models": [
         {

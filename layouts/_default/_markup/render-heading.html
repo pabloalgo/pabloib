@@ -1,0 +1,15 @@
+{{/*
+  Render hook: headings
+  Wraps leading emojis with aria-hidden="true" so screen readers skip them.
+  Hugo headingContext provides: .Level, .Text, .PlainText, .Attributes
+*/ -}}
+<h{{ .Level }} id="{{ .Attributes.id }}">
+{{- $text := .PlainText -}}
+{{- $emojiRe := `^(\p{So}+\s*)(.*)` -}}
+{{- $m := findRESubmatch $emojiRe $text -}}
+{{- if $m -}}
+  <span aria-hidden="true">{{ index (index $m 0) 1 }}</span>{{ index (index $m 0) 2 }}
+{{- else -}}
+  {{ $text }}
+{{- end -}}
+</h{{ .Level }}>

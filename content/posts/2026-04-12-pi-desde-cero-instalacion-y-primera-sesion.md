@@ -2,12 +2,14 @@
 title: "Pi desde cero — Instalación y primera sesión"
 description: "Guía paso a paso para instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga técnica, sin prerrequisitos imposibles."
 date: 2026-04-12
-lastmod: 2026-04-12
+lastmod: 2026-04-16
 categories: ["Pi"]
 tags: ["pi", "instalación", "principiante", "guía", "agentes-ia"]
 mode: tutorial
 draft: false
----Si nunca usaste un agente de código en la terminal, este artículo es para ti. Vamos a instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga, sin prerequisites imposibles.
+---
+
+Si nunca usaste un agente de código en la terminal, este artículo es para ti. Vamos a instalar Pi, configurarlo y tener una sesión funcional en menos de 10 minutos. Sin jerga, sin prerrequisitos imposibles.
 
 ---
 
@@ -306,7 +308,7 @@ pi
 
 
 1. **Instala** con `npm install -g @mariozechner/pi-coding-agent`
-2. **Configura** tu API key (`export ANTHROPIC_API_KEY=...`)
+2. **Configura** tu API key (`export ANTHROPIC_API_KEY="<tu-api-key>"`)
 3. **Ejecuta** `pi` dentro de un proyecto
 4. **Escribe** lo que necesitas en lenguaje natural
 5. Pi usa **4 tools** (read, write, edit, bash) para resolverlo
@@ -319,5 +321,5 @@ La filosofía es simple: menos herramientas, más transparencia, más control pa
 
 - [Pi oficial](https://shittycodingagent.ai/) — Documentación y packages
 - [Repositorio GitHub](https://github.com/badlogic/pi-mono) — Código fuente
-- [Tu AGENTS.md — Contexto que el agente entiende](/posts/) — Siguiente artículo de esta serie
+- [Tu AGENTS.md — Contexto que el agente entiende](/posts/2026-04-12-tu-agents-md-contexto-que-el-agente-entiende/) — Siguiente artículo de esta serie
 - [Por qué Pi cambió mi workflow de desarrollo](/posts/2026-03-23-pi-cambio-mi-workflow/) — Mi experiencia personal

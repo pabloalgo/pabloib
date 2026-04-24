@@ -60,9 +60,18 @@ Modos disponibles: `tutorial`, `guide`, `opinion`, `review`
 
 **CSS** — `assets/css/input.css` → Tailwind CLI → `static/css/output.css` → Hugo copia a `public/css/`
 
-**JavaScript** — Solo client-side. Archivos externos en `static/js/`. Nunca inline scripts (CSP).
+**JavaScript** — Solo client-side. Archivos externos en `static/js/`.
+
+**Checklist rápido para posts sobre Pi**:
+- Verificar comandos, flags y rutas contra docs oficiales o código fuente de Pi
+- No extrapolar reglas de `.pi/` a `AGENTS.md`/`CLAUDE.md`
+- Usar placeholders neutros (`<tu-api-key>`) — nunca strings que parezcan secrets reales
+- Si se edita un post existente: revisar front matter, links internos y actualizar `lastmod`
 
 ## Convenciones
+
+### Rutas absolutas siempre
+Usar **siempre rutas absolutas** en archivos, comandos, y comunicación. Nunca rutas relativas (`../`, `./`). Esto evita errores del agente al escribir archivos y confusión del usuario al leer.
 
 - **Commits:** Conventional Commits. Ejemplo: `feat(seo): add JSON-LD for articles`
 - **Versión:** Semantic Versioning en `package.json`
@@ -84,6 +93,21 @@ Modos disponibles: `tutorial`, `guide`, `opinion`, `review`
 - CSP estricto — No inline scripts, solo `self` + cdn.jsdelivr.net
 - SRI para recursos externos
 - HSTS preload, X-Frame-Options DENY, headers completos en `static/_headers`
+
+## Wiki (LLM Wiki — patrón Karpathy)
+
+Base de conocimiento privada que Pi mantiene incrementalmente. Las notas maduras se promueven a posts del blog.
+
+- `wiki/` — NO es contenido Hugo, no se publica. Es el "taller" privado del blog.
+- `wiki/conventions.md` — Reglas completas de la wiki (front matter, workflows, estados)
+- **4 workflows**: ingest (procesar fuentes), query (responder desde wiki), lint (health check), promote (nota → post)
+- **Estados**: `seedling` → `budding` → `mature` → `post`
+- `wiki/index.md` — Catálogo de todas las notas (actualizar en cada ingest)
+- `wiki/log.md` — Log cronológico append-only
+- `wiki/topics/` — Páginas de síntesis por tema (las que maduran → posts)
+- `wiki/sources/` — Resúmenes de fuentes (artículos, papers, videos)
+- `wiki/concepts/` — Definiciones breves de conceptos
+- Al promover un topic a post: usar skill `pabloib-writer`, crear en `content/posts/`, actualizar status a `post`
 
 ## Restricciones
 

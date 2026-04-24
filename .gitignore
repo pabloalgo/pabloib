@@ -54,6 +54,12 @@ yarn.lock
 # Pi local files
 .pi/
 .serena/
+.agents/
+.claude/
+skills-lock.json
+
+# Wiki (private knowledge base, not Hugo content)
+wiki/
 
 # Build artifacts
 dist/
