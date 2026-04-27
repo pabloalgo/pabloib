@@ -11,7 +11,7 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 
 ### Added
 
-- Consolto video chat integration research (widget IDs documented, CSP implications mapped)
+- Consolto video chat integration — implemented, deployed to production, verified working, then reverted to explore alternative approaches. Research documented in ROADMAP v2.6. Widget IDs and CSP requirements mapped.
 
 ---
 

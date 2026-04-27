@@ -36,6 +36,7 @@ Después de cambios en código (no docs): `npm run build` → verificar sin erro
 ## Patrones
 
 **Nuevos posts** — Crear en `content/posts/YYYY-MM-DD-slug.md`:
+
 ```yaml
 ---
 title: "Título del artículo"
@@ -51,9 +52,11 @@ aliases: []
 draft: false
 ---
 ```
+
 Modos disponibles: `tutorial`, `guide`, `opinion`, `review`
 
 **Layouts** — Todos heredan baseof.html con blocks `head` y `main`. SEO en partials:
+
 - `head.html` → meta tags, OG, Twitter cards (usa description del front matter)
 - `jsonld.html` → Article + BreadcrumbList por página
 - `og-image.html` → SVG dinámico con título del post via `resources.FromString`
@@ -63,6 +66,7 @@ Modos disponibles: `tutorial`, `guide`, `opinion`, `review`
 **JavaScript** — Solo client-side. Archivos externos en `static/js/`.
 
 **Checklist rápido para posts sobre Pi**:
+
 - Verificar comandos, flags y rutas contra docs oficiales o código fuente de Pi
 - No extrapolar reglas de `.pi/` a `AGENTS.md`/`CLAUDE.md`
 - Usar placeholders neutros (`<tu-api-key>`) — nunca strings que parezcan secrets reales
@@ -71,6 +75,7 @@ Modos disponibles: `tutorial`, `guide`, `opinion`, `review`
 ## Convenciones
 
 ### Rutas absolutas siempre
+
 Usar **siempre rutas absolutas** en archivos, comandos, y comunicación. Nunca rutas relativas (`../`, `./`). Esto evita errores del agente al escribir archivos y confusión del usuario al leer.
 
 - **Commits:** Conventional Commits. Ejemplo: `feat(seo): add JSON-LD for articles`
@@ -93,6 +98,17 @@ Usar **siempre rutas absolutas** en archivos, comandos, y comunicación. Nunca r
 - CSP estricto — No inline scripts, solo `self` + cdn.jsdelivr.net
 - SRI para recursos externos
 - HSTS preload, X-Frame-Options DENY, headers completos en `static/_headers`
+
+## Integraciones pendientes
+
+### Consolto Video Chat (v2.6 — en exploración)
+
+- Widget de video chat / live chat para todo el sitio
+- Widget ID: `65e937c3dcea669377311401`, Agent ID: `65ecb711dcea66937739bdf0`
+- Requiere: relajar CSP (`script-src`, `connect-src`, `frame-src` para `*.consolto.com`), habilitar `camera=(self)`, `microphone=(self)`
+- Primera implementación: script loader externalizado en `/static/js/consolto.js`, deployado y verificado en producción, luego revertido
+- Siguiente paso: evaluar enfoques alternativos de integración
+- Referencia: tag `consolto-deployed` en git history con la implementación que funcionó
 
 ## Wiki (LLM Wiki — patrón Karpathy)
 

@@ -5,7 +5,7 @@
 > **Última actualización:** 2026-04-13
 
 ![Hugo](https://img.shields.io/badge/Hugo-v0.159.2-ff4081?logo=hugo&logoColor=white)
-![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v3.4%20(build%20local)-38bdf8?logo=tailwindcss&logoColor=white)
+![TailwindCSS](<https://img.shields.io/badge/TailwindCSS-v3.4%20(build%20local)-38bdf8?logo=tailwindcss&logoColor=white>)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
 ## ✨ Características
@@ -26,14 +26,14 @@
 
 ## 🛠️ Stack Tecnológico
 
-| Categoría | Tecnología |
-|-----------|------------|
-| **SSG** | Hugo v0.159.2 (extended, vía npm) |
-| **CSS** | Tailwind CSS v3.4 (build local) |
+| Categoría   | Tecnología                              |
+| ----------- | --------------------------------------- |
+| **SSG**     | Hugo v0.159.2 (extended, vía npm)       |
+| **CSS**     | Tailwind CSS v3.4 (build local)         |
 | **Fuentes** | Plus Jakarta Sans, Inter, Space Grotesk |
-| **Iconos** | Material SymbolsOutlined |
-| **Hosting** | Cloudflare Pages |
-| **Dominio** | pabloib.com (via Cloudflare Pages) |
+| **Iconos**  | Material SymbolsOutlined                |
+| **Hosting** | Cloudflare Pages                        |
+| **Dominio** | pabloib.com (via Cloudflare Pages)      |
 
 ## 📁 Estructura del Proyecto
 
@@ -114,13 +114,13 @@ El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pab
 
 **Configuración en Cloudflare Dashboard:**
 
-| Parámetro | Valor |
-|-----------|-------|
-| Framework preset | None |
-| Build command | `npm run build` |
-| Build output directory | `public` |
-| Root directory | `/` |
-| NODE_VERSION | `18` |
+| Parámetro              | Valor           |
+| ---------------------- | --------------- |
+| Framework preset       | None            |
+| Build command          | `npm run build` |
+| Build output directory | `public`        |
+| Root directory         | `/`             |
+| NODE_VERSION           | `18`            |
 
 **Custom domain:** `pabloib.com` configurado via Pages → Custom domains.
 
@@ -134,16 +134,16 @@ El sitio se deploya automáticamente via Cloudflare Pages conectado al repo `pab
 
 ## 🏷️ Versiones
 
-| Versión | Estado | Descripción |
-|---------|--------|-------------|
-| v2.0 | ✅ Completado | Rediseño "Architectural Editor" + Tailwind |
-| v2.1 | ✅ Completado | Búsqueda, filtros, copy code, about page |
-| v2.2 | ✅ Completado | Paginación, relacionados, scroll progress, back to top |
-| v2.3 | ✅ Completado | PWA, Service Worker, prefetch, Tailwind build local |
-| v2.4 | ✅ Completado | Security hardening: HSTS, CSP, SRI, unsafe=false |
-| v2.5 | ✅ Completado | SEO + migración a Cloudflare Pages + fix CSS 404 |
-| v2.6 | 📋 Planificado | Comentarios, newsletter |
-| v3.0 | 💭 Visión | Nuevas secciones: proyectos, /now, /uses |
+| Versión | Estado         | Descripción                                                   |
+| ------- | -------------- | ------------------------------------------------------------- |
+| v2.0    | ✅ Completado  | Rediseño "Architectural Editor" + Tailwind                    |
+| v2.1    | ✅ Completado  | Búsqueda, filtros, copy code, about page                      |
+| v2.2    | ✅ Completado  | Paginación, relacionados, scroll progress, back to top        |
+| v2.3    | ✅ Completado  | PWA, Service Worker, prefetch, Tailwind build local           |
+| v2.4    | ✅ Completado  | Security hardening: HSTS, CSP, SRI, unsafe=false              |
+| v2.5    | ✅ Completado  | SEO + migración a Cloudflare Pages + fix CSS 404              |
+| v2.6    | 📋 Planificado | Comentarios, newsletter, Consolto video chat (en exploración) |
+| v3.0    | 💭 Visión      | Nuevas secciones: proyectos, /now, /uses                      |
 
 Ver [ROADMAP.md](./ROADMAP.md) para detalles completos.
 
@@ -157,4 +157,4 @@ MIT © Pablo IB
 
 ---
 
-*Hecho con ❤️ y [Hugo](https://gohugo.io) — *Última actualización: 2026-04-13*
+*Hecho con ❤️ y [Hugo](https://gohugo.io) — *Última actualización: 2026-04-13\*
