@@ -1,7 +1,7 @@
 ---
 title: "RTK prometía ahorrar un 80% de tokens. Dos horas después lo desactivé"
 description: "Instalé RTK para ahorrar tokens sin medir si tenía un problema real de contexto. La extensión truncaba los archivos que el agente escribía. Lección: mide antes."
-date: 2026-04-28
+date: 2026-04-27
 lastmod: 2026-04-28
 categories: ["Pi"]
 tags: ["pi", "rtk", "tokens", "optimización", "agentes"]
