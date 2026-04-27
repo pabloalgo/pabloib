@@ -173,6 +173,16 @@ Plan de desarrollo y mejoras futuras del proyecto.
   - Formulario en footer
   - CTA en artículos populares
 
+### 🎥 Video Chat ([Consolto](https://www.consolto.com/))
+
+- [ ] **Integración de Consolto**
+  - Widget de video chat / live chat en todo el sitio
+  - Widget ID: `65e937c3dcea669377311401`, Agent ID: `65ecb711dcea66937739bdf0`
+  - Script loader externalizado en `/static/js/consolto.js` (CSP compliant)
+  - Requiere relajar CSP: `script-src`, `connect-src`, `frame-src` para dominios `*.consolto.com`
+  - Requiere habilitar `camera=(self)`, `microphone=(self)` en Permissions-Policy
+  - **Estado:** en exploración — evaluando opciones de integración (widget default, botón custom, GTM)
+
 ---
 
 ## 📚 v3.0 - Nuevas Secciones
@@ -203,16 +213,16 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ## 📊 Estado del Progreso
 
-| Versión | Estado | Fecha |
-|---------|--------|-------|
-| v2.0 | ✅ Completado | 2026-03-26 |
-| v2.1 | ✅ Completado | 2026-03-26 |
-| v2.2 | ✅ Completado | 2026-03-26 |
-| v2.3 | ✅ Completado | 2026-03-26 |
-| v2.4 | ✅ Completado | 2026-04-06 |
-| v2.5 | ✅ Completado | 2026-04-17 |
-| v2.6 | 📋 Planificado | TBD |
-| v3.0 | 💭 Visión | TBD |
+| Versión | Estado         | Fecha      |
+| ------- | -------------- | ---------- |
+| v2.0    | ✅ Completado  | 2026-03-26 |
+| v2.1    | ✅ Completado  | 2026-03-26 |
+| v2.2    | ✅ Completado  | 2026-03-26 |
+| v2.3    | ✅ Completado  | 2026-03-26 |
+| v2.4    | ✅ Completado  | 2026-04-06 |
+| v2.5    | ✅ Completado  | 2026-04-17 |
+| v2.6    | 📋 Planificado | TBD        |
+| v3.0    | 💭 Visión      | TBD        |
 
 ---
 
@@ -225,4 +235,4 @@ Plan de desarrollo y mejoras futuras del proyecto.
 
 ---
 
-*Última actualización: 2026-04-17*
+_Última actualización: 2026-04-27_
