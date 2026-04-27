@@ -11,6 +11,10 @@ y este proyecto adhiere a [Semantic Versioning](https://semver.org/spec/v2.0.0.h
 
 ### Added
 
+- Post: "RTK prometía ahorrar un 80% de tokens. Dos horas después lo desactivé" — opinión sobre optimización prematura de tokens
+
+### Added
+
 - Consolto video chat integration — implemented, deployed to production, verified working, then reverted to explore alternative approaches. Research documented in ROADMAP v2.6. Widget IDs and CSP requirements mapped.
 
 ---
