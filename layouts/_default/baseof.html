@@ -64,11 +64,13 @@
   {{- /* JSON-LD Structured Data */ -}}
   {{ partial "jsonld.html" . }}
 
+  {{- /* Consolto Video Chat */ -}}
+  <script src="/js/consolto.js" defer></script>
+
   {{- /* Back to Top Button */ -}}
   <button id="back-to-top" class="fixed bottom-24 right-5 z-40 p-3 bg-primary text-on-primary rounded-full shadow-lg opacity-0 translate-y-4 pointer-events-none transition-all duration-300 hover:bg-primary/90" aria-label="Volver arriba">
     <span class="material-symbols-outlined">keyboard_arrow_up</span>
   </button>
-
 
 </body>
 </html>
