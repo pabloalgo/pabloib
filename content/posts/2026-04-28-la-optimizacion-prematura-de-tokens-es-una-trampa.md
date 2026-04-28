@@ -1,7 +1,7 @@
 ---
 title: "RTK prometía ahorrar un 80% de tokens. Dos horas después lo desactivé"
 description: "Instalé RTK para ahorrar tokens sin medir si tenía un problema real de contexto. La extensión truncaba los archivos que el agente escribía. Lección: mide antes."
-date: 2026-04-27
+date: 2026-04-28
 lastmod: 2026-04-28
 categories: ["Pi"]
 tags: ["pi", "rtk", "tokens", "optimización", "agentes"]
@@ -73,7 +73,7 @@ const READ_EXACT_OUTPUT_LINE_THRESHOLD = 80;
 
 Si un archivo tiene más de 80 líneas, la extensión lo compacta. No importa qué archivo sea. No es configurable. Está quemado en el código.
 
-## Un buen berberecho en la nevera equivocada
+## El problema no era RTK
 
 Quiero ser claro: RTK no hizo nada mal. Hizo exactamente lo que estaba diseñado para hacer — compactar output. El proxy funciona bien, es rápido, está bien diseñado. Si usas Claude Code, RTK tiene hooks nativos y los benchmarks de "80% de ahorro" aplican directamente. Es una herramienta legítima.
 
